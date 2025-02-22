@@ -5,7 +5,6 @@ using TMPro;
 public class ScenePlotManagerScript : MonoBehaviour
 {
 
-
     public TextMeshProUGUI characterName;
     public TextMeshProUGUI phrase;
 
@@ -14,7 +13,10 @@ public class ScenePlotManagerScript : MonoBehaviour
         characterName.text = "Maria";
         phrase.text = "I am Maria from Chisinau";
 
+        // load a
+
     }
+
 
     void Update()
     {
