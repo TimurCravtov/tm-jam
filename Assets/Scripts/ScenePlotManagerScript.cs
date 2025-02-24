@@ -7,6 +7,8 @@ public class ScenePlotManagerScript : MonoBehaviour
 
     public TextMeshProUGUI characterName;
     public TextMeshProUGUI phrase;
+    public int rr;
+
 
     void Start()
     {
@@ -20,6 +22,5 @@ public class ScenePlotManagerScript : MonoBehaviour
 
     void Update()
     {
-        
     }
 }
