@@ -548,7 +548,7 @@ GameObject:
   - component: {fileID: 1788485694}
   - component: {fileID: 1788485693}
   m_Layer: 5
-  m_Name: Test
+  m_Name: CharacterRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -593,7 +593,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: 7fa069af8e22bbe43b298eaa961aa859, type: 3}
+  m_Texture: {fileID: 2800000, guid: d5e298c61b90c4542bc868cac00ac230, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -988,7 +988,7 @@ GameObject:
   - component: {fileID: 1404402159122083938}
   - component: {fileID: 1918921826036077531}
   m_Layer: 5
-  m_Name: Anita
+  m_Name: CharacterCenter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
