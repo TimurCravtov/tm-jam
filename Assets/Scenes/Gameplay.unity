@@ -227,6 +227,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2082106470}
+  - {fileID: 1788485692}
   - {fileID: 5372070993396448869}
   m_Father: {fileID: 655946783185202983}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -487,6 +488,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: {fileID: 4432842087848452844}
   phrase: {fileID: 5442946694728973393}
+  anitaObject: {fileID: 1918921826036077531}
   rr: 0
 --- !u!4 &662166579
 Transform:
@@ -534,6 +536,78 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1788485691
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1788485692}
+  - component: {fileID: 1788485694}
+  - component: {fileID: 1788485693}
+  m_Layer: 5
+  m_Name: Test
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1788485692
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1788485691}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 465275429}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 1609.5142, y: 112.49}
+  m_SizeDelta: {x: 796.6486, y: 770.21}
+  m_Pivot: {x: 1.8710868, y: 0.5}
+--- !u!114 &1788485693
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1788485691}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Texture: {fileID: 2800000, guid: 7fa069af8e22bbe43b298eaa961aa859, type: 3}
+  m_UVRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+--- !u!222 &1788485694
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1788485691}
+  m_CullTransparentMesh: 1
 --- !u!1 &2059353031
 GameObject:
   m_ObjectHideFlags: 0
@@ -914,7 +988,7 @@ GameObject:
   - component: {fileID: 1404402159122083938}
   - component: {fileID: 1918921826036077531}
   m_Layer: 5
-  m_Name: CharacterRight
+  m_Name: Anita
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -997,7 +1071,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: 1f13d35086ece12499a9d209febe8216, type: 3}
+  m_Texture: {fileID: 2800000, guid: 7fa069af8e22bbe43b298eaa961aa859, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -1660,8 +1734,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 458.56714, y: 88.963615}
-  m_SizeDelta: {x: 717.82, y: 723.16}
+  m_AnchoredPosition: {x: 0, y: 151.41}
+  m_SizeDelta: {x: 841.7916, y: 848.0535}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &5442946694728973393
 MonoBehaviour:
