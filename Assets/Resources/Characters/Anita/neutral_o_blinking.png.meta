@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 1f13d35086ece12499a9d209febe8216
+guid: e21024e356f0eea4d87f7cb216ec5c09
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2306104080349393049
-    second: neutral_outline_0
+      213: 2545835541256651012
+    second: neutral_blinking_o_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: neutral_outline_0
+      name: neutral_blinking_o_0
       rect:
         serializedVersion: 2
-        x: 7
+        x: 8
         y: 0
-        width: 79
-        height: 96
+        width: 77
+        height: 93
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 76f02b3ae821fffd0800000000000000
-      internalID: -2306104080349393049
+      spriteID: 401ca25bfef945320800000000000000
+      internalID: 2545835541256651012
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      neutral_outline_0: -2306104080349393049
+      neutral_blinking_o_0: 2545835541256651012
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
