@@ -3,61 +3,79 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.Collections;
 
-public class ButtonBehaviour : MonoBehaviour
+public class SceneTransitionManager : MonoBehaviour
 {
-    [Header("Scene Transition")]
-    public string targetSceneName = "Gameplay";
+    // Singleton pattern for easy access
+    public static SceneTransitionManager Instance { get; private set; }
+
+    [Header("Transition Settings")]
     public Animator transitionAnimator;
     public float transitionTime = 1.0f;
-    public string animationTriggerName = "FadeIn";
+    public string animationTriggerName = "Fade";
 
-    // Reference to button
+    private void Awake()
+    {
+        // Singleton implementation
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    public void LoadScene(string sceneName)
+    {
+        StartCoroutine(Transition(sceneName));
+    }
+
+    private IEnumerator Transition(string sceneName)
+    {
+        // Play the transition animation
+        transitionAnimator.SetTrigger(animationTriggerName);
+
+        // Wait for the animation to complete
+        yield return new WaitForSeconds(transitionTime);
+
+        // Load the new scene
+        SceneManager.LoadScene(sceneName);
+
+        // You might want to reset the animation state or play a reverse animation here
+        // For example, to fade out and then fade back in:
+        transitionAnimator.SetTrigger("EndTransition");
+    }
+}
+
+public class ButtonBehaviour : MonoBehaviour
+{
+    public string targetSceneName = "YourNextSceneName";
+
     private Button button;
 
     void Start()
     {
-        // Get the button component and add listener
         button = GetComponent<Button>();
         if (button != null)
         {
             button.onClick.AddListener(TransitToAnotherStage);
         }
-
-        // Make sure we have an animator
-        if (transitionAnimator == null)
-        {
-            Debug.LogWarning("No transition animator assigned to ButtonBehaviour. Please assign an animator with transition animation.");
-        }
     }
 
     public void TransitToAnotherStage()
     {
-        Debug.Log("Starting transition to scene: " + targetSceneName);
-        StartCoroutine(LoadSceneWithTransition());
-    }
-
-    IEnumerator LoadSceneWithTransition()
-    {
-        // Trigger the animation
-        if (transitionAnimator != null)
+        // Use the transition manager to handle the scene transition
+        if (SceneTransitionManager.Instance != null)
         {
-            transitionAnimator.SetTrigger(animationTriggerName);
-
-            // Wait for animation to complete
-            yield return new WaitForSeconds(transitionTime);
+            SceneTransitionManager.Instance.LoadScene(targetSceneName);
         }
-
-        // Load the new scene
-        SceneManager.LoadScene(targetSceneName);
-    }
-
-    public void Exit()
-    {
-        Debug.Log("Exiting application");
-#if UNITY_EDITOR
-        UnityEditor.EditorApplication.isPlaying = false;
-#else
-            Application.Quit();
-#endif
+        else
+        {
+            Debug.LogError("SceneTransitionManager not found in the scene!");
+            // Fallback direct loading if no manager is available
+            SceneManager.LoadScene(targetSceneName);
+        }
     }
 }
