@@ -12,10 +12,12 @@ public class ScriptPlotManagerScript : MonoBehaviour
     public RawImage localBackground;
     public GameObject choicePanelOuter;
     public GameObject choicePanelInner;
+    public TextMeshProUGUI choiceTextArea;
+    public TextMeshProUGUI variantChoosenArea;
+
     public GameObject characterLeft;
     public GameObject characterCenter;
     public GameObject characterRight;
-    public GameObject choiceButtonPrefab;
     private GameScript gameScript;
     private int currentDialogueIndex = 0;
     private Scene currentScene;
@@ -23,6 +25,7 @@ public class ScriptPlotManagerScript : MonoBehaviour
 
     void Start()
     {
+
         if (scriptLoader == null)
         {
             Debug.LogError("ScriptLoader is not assigned in Inspector!");
@@ -103,6 +106,8 @@ public class ScriptPlotManagerScript : MonoBehaviour
         // Update character display
         UpdateCharacterDisplay(line);
 
+        ShowChoices();
+
         if (line.waitForInput)
         {
             currentDialogueIndex++;
@@ -182,18 +187,51 @@ public class ScriptPlotManagerScript : MonoBehaviour
         }
     }
 
+
     public void ShowChoices()
     {
+        // Only show choice panel if there are choices to display
+        if (currentScene.next.choices == null || currentScene.next.choices.Count == 0)
+        {
+            choicePanelOuter.SetActive(false);
+            return;
+        }
+
         choicePanelOuter.SetActive(true);
-        foreach (Transform child in choicePanelInner.transform)
+
+        int choicesCount = currentScene.next.choices.Count;
+
+        // Calculate sizes based on the number of choices
+        float choiceHeight = 60f; // Height per choice
+        float padding = 20f; // Padding around choices
+
+        // Set outer panel size
+        RectTransform outerRect = choicePanelOuter.GetComponent<RectTransform>();
+        float outerHeight = (choiceHeight * choicesCount) + (padding * 2);
+        outerRect.sizeDelta = new Vector2(outerRect.sizeDelta.x, outerHeight);
+
+        // Set inner panel size (slightly smaller than the outer panel, with padding)
+        RectTransform innerRect = choicePanelInner.GetComponent<RectTransform>();
+        float innerHeight = (choiceHeight * choicesCount) + padding;
+        innerRect.sizeDelta = new Vector2(innerRect.sizeDelta.x - padding * 2, innerHeight - padding * 2);
+
+        // Center the inner panel inside the outer panel
+        innerRect.anchoredPosition = Vector2.zero;
+
+        // Build the choices text dynamically
+        string choicesText = "";
+        for (int i = 0; i < currentScene.next.choices.Count; i++)
         {
-            Destroy(child.gameObject);
+            if (i > 0) choicesText += "\n\n";
+            choicesText += currentScene.next.choices[i].text;
         }
-        foreach (SceneChoices choice in currentScene.next.choices)
-        {
-            GameObject choiceButton = Instantiate(choiceButtonPrefab, choicePanelInner.transform);
-            choiceButton.GetComponentInChildren<TextMeshProUGUI>().text = choice.text;
-            choiceButton.GetComponent<Button>().onClick.AddListener(() => LoadScene(choice.nextScene));
-        }
+
+        choiceTextArea.text = choicesText;
+
+        // Make sure the text is properly positioned within the inner panel
+        RectTransform textRect = choiceTextArea.GetComponent<RectTransform>();
+        textRect.anchoredPosition = Vector2.zero;
+        textRect.sizeDelta = new Vector2(innerRect.sizeDelta.x - padding * 2, innerHeight - padding * 2);
     }
+
 }

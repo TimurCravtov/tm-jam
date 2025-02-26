@@ -2,7 +2,7 @@
     "scenes": [
         {
             "id": "scene1",
-            "background": "neon_street",
+            "background": "street",
             "transitions": {
                 "type": "fade",
                 "duration": 1.0
@@ -85,7 +85,11 @@
                     ]
                 }
             ],
-            "next": {
+            "next":
+            {
+                            "scene": "scene2_positive",
+
+
                 "choices": [
                     {
                         "text": "Agree with Anita",
@@ -100,7 +104,7 @@
         },
         {
             "id": "scene2_positive",
-            "background": "sunset_park",
+            "background": "neon_street",
             "transitions": {
                 "type": "fade",
                 "duration": 1.0
