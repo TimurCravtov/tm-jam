@@ -53,10 +53,13 @@ public class ScriptPlotManagerScript : MonoBehaviour
             if (scene.id == sceneId)
             {
                 currentScene = scene;
-                localBackground.texture = Resources.Load<Texture>($"{scene.background}");
 
-                if (localBackground.texture == null) {
+                localBackground.texture = Resources.Load<Texture>($"Backgrounds/{scene.background}");
+
+                if (localBackground.texture == null)
+                {
                     Debug.LogError("Background is null");
+                    Debug.LogError(scene.background); // scene.png
 
                 }
                 currentDialogueIndex = 0;
@@ -73,7 +76,7 @@ public class ScriptPlotManagerScript : MonoBehaviour
         Debug.Log(currentScene.dialogue.Count);
         if (currentDialogueIndex >= currentScene.dialogue.Count)
         {
-            ShowChoices();
+            HandleNextNavigation();
             return;
         }
 
@@ -103,6 +106,25 @@ public class ScriptPlotManagerScript : MonoBehaviour
         if (line.waitForInput)
         {
             currentDialogueIndex++;
+        }
+    }
+
+    void HandleNextNavigation()
+    {
+        // Check if there's a direct next scene
+        if (!string.IsNullOrEmpty(currentScene.next.scene))
+        {
+            // Direct navigation to the next scene
+            LoadScene(currentScene.next.scene);
+        }
+        // Otherwise, check if there are choices
+        else if (currentScene.next.choices != null && currentScene.next.choices.Count > 0)
+        {
+            ShowChoices();
+        }
+        else
+        {
+            Debug.LogWarning("No next navigation or choices found for scene: " + currentScene.id);
         }
     }
 

@@ -2,7 +2,7 @@
     "scenes": [
         {
             "id": "scene1",
-            "background": "street.png",
+            "background": "neon_street",
             "transitions": {
                 "type": "fade",
                 "duration": 1.0
@@ -86,7 +86,6 @@
                 }
             ],
             "next": {
-                "scene": "scene1",
                 "choices": [
                     {
                         "text": "Agree with Anita",
@@ -97,6 +96,92 @@
                         "nextScene": "scene2_negative"
                     }
                 ]
+            }
+        },
+        {
+            "id": "scene2_positive",
+            "background": "sunset_park",
+            "transitions": {
+                "type": "fade",
+                "duration": 1.0
+            },
+            "dialogue": [
+                {
+                    "text": "Yeah, it does feel like a perfect evening.",
+                    "animation": "smile",
+                    "waitForInput": true,
+                    "characters": [
+                        {
+                            "id": "Ben",
+                            "name": "Ben",
+                            "emotion": "content",
+                            "position": "right",
+                            "visible": true,
+                            "isSpeaking": true
+                        }
+                    ]
+                },
+                {
+                    "text": "I knew you'd agree! Let's enjoy the moment.",
+                    "animation": "laugh",
+                    "waitForInput": true,
+                    "characters": [
+                        {
+                            "id": "Anita",
+                            "name": "Anita",
+                            "emotion": "joyful",
+                            "position": "center",
+                            "visible": true,
+                            "isSpeaking": true
+                        }
+                    ]
+                }
+            ],
+            "next": {
+                "scene": "scene3"
+            }
+        },
+        {
+            "id": "scene2_negative",
+            "background": "stormy_clouds",
+            "transitions": {
+                "type": "fade",
+                "duration": 1.0
+            },
+            "dialogue": [
+                {
+                    "text": "I don't know... those clouds look pretty dark.",
+                    "animation": "worried",
+                    "waitForInput": true,
+                    "characters": [
+                        {
+                            "id": "Ben",
+                            "name": "Ben",
+                            "emotion": "concerned",
+                            "position": "right",
+                            "visible": true,
+                            "isSpeaking": true
+                        }
+                    ]
+                },
+                {
+                    "text": "Maybe you're right. We should find shelter just in case!",
+                    "animation": "alert",
+                    "waitForInput": true,
+                    "characters": [
+                        {
+                            "id": "Anita",
+                            "name": "Anita",
+                            "emotion": "worried",
+                            "position": "center",
+                            "visible": true,
+                            "isSpeaking": true
+                        }
+                    ]
+                }
+            ],
+            "next": {
+                "scene": "scene3"
             }
         }
     ]
