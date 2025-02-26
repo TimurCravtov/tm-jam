@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      angry_o_blinking_0: 3524752160509954127
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

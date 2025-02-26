@@ -2,14 +2,27 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.Collections;
-using System.Collections.Generic;using System;
-public class ScriptManager : MonoBehaviour
+using System.Collections.Generic;
+using System;
+using TMPro;
+public class ScriptPlotManagerScript : MonoBehaviour
 {
-    public Text dialogueText;
+    public TextMeshProUGUI phraseText;
+    public TextMeshProUGUI phraseSpeakerName;
+
     public RawImage localBackground;
 
-    public GameObject choicePanel;
-    public Button choiceButtonPrefab;
+    public GameObject choicePanelOuter;
+    public GameObject choicePanelInner;
+
+    public TextMeshProUGUI choicesOnPanel;
+    public TextMeshProUGUI selectedChoiceArrowArea;
+
+
+    public GameObject characterLeft;
+    public GameObject chracterCenter;
+    public GameObject characterRight;
+
 
     private GameScript gameScript;
     private int currentDialogueIndex = 0;
@@ -54,12 +67,12 @@ public class ScriptManager : MonoBehaviour
     {
         if (currentDialogueIndex >= currentScene.dialogue.Count)
         {
-            ShowChoices();
+            //ShowChoices();
             return;
         }
 
         Dialogue line = currentScene.dialogue[currentDialogueIndex];
-        dialogueText.text = line.text;
+        phraseText.text = line.text;
 
         if (line.waitForInput)
         {
@@ -67,22 +80,21 @@ public class ScriptManager : MonoBehaviour
         }
     }
 
-    void ShowChoices()
-    {
-        choicePanel.SetActive(true);
+    //void ShowChoices()
+    //{
+    //    choicePanel.SetActive(true);
 
-        foreach (Transform child in choicePanel.transform)
-        {
-            Destroy(child.gameObject);
-        }
+    //    foreach (Transform child in choicePanel.transform)
+    //    {
+    //        Destroy(child.gameObject);
+    //    }
 
-        foreach (SceneChoices choice in currentScene.next.choices)
-        {
-            Button button = Instantiate(choiceButtonPrefab, choicePanel.transform);
-            button.GetComponentInChildren<Text>().text = choice.text;
-            button.onClick.AddListener(() => LoadScene(choice.nextScene));
-        }
-    }
+    //    foreach (SceneChoices choice in currentScene.next.choices)
+    //    {
+    //        button.GetComponentInChildren<Text>().text = choice.text;
+    //        button.onClick.AddListener(() => LoadScene(choice.nextScene));
+    //    }
+    //}
 
     public void OnNextClicked()
     {
