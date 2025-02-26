@@ -190,7 +190,7 @@ public class ScriptPlotManagerScript : MonoBehaviour
 
     public void ShowChoices()
     {
-        // Only show choice panel if there are choices to display
+
         if (currentScene.next.choices == null || currentScene.next.choices.Count == 0)
         {
             choicePanelOuter.SetActive(false);
@@ -201,24 +201,14 @@ public class ScriptPlotManagerScript : MonoBehaviour
 
         int choicesCount = currentScene.next.choices.Count;
 
-        // Calculate sizes based on the number of choices
-        float choiceHeight = 60f; // Height per choice
-        float padding = 20f; // Padding around choices
+        float choiceAdditionaHeight = 80;
+        float defaultContainerHeight = 60f;
 
-        // Set outer panel size
         RectTransform outerRect = choicePanelOuter.GetComponent<RectTransform>();
-        float outerHeight = (choiceHeight * choicesCount) + (padding * 2);
+        float outerHeight = defaultContainerHeight + (choiceAdditionaHeight * choicesCount);
+
         outerRect.sizeDelta = new Vector2(outerRect.sizeDelta.x, outerHeight);
 
-        // Set inner panel size (slightly smaller than the outer panel, with padding)
-        RectTransform innerRect = choicePanelInner.GetComponent<RectTransform>();
-        float innerHeight = (choiceHeight * choicesCount) + padding;
-        innerRect.sizeDelta = new Vector2(innerRect.sizeDelta.x - padding * 2, innerHeight - padding * 2);
-
-        // Center the inner panel inside the outer panel
-        innerRect.anchoredPosition = Vector2.zero;
-
-        // Build the choices text dynamically
         string choicesText = "";
         for (int i = 0; i < currentScene.next.choices.Count; i++)
         {
@@ -227,11 +217,6 @@ public class ScriptPlotManagerScript : MonoBehaviour
         }
 
         choiceTextArea.text = choicesText;
-
-        // Make sure the text is properly positioned within the inner panel
-        RectTransform textRect = choiceTextArea.GetComponent<RectTransform>();
-        textRect.anchoredPosition = Vector2.zero;
-        textRect.sizeDelta = new Vector2(innerRect.sizeDelta.x - padding * 2, innerHeight - padding * 2);
     }
 
 }

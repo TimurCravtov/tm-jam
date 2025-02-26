@@ -96,6 +96,10 @@
                         "nextScene": "scene2_positive"
                     },
                     {
+                        "text": "In with Anita",
+                        "nextScene": "scene2_positive"
+                    },
+                    {
                         "text": "Disagree with Anita",
                         "nextScene": "scene2_negative"
                     }
