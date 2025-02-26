@@ -1,129 +1,95 @@
 using UnityEngine;
-using TMPro;
 using UnityEngine.UI;
-using System;
+using UnityEngine.SceneManagement;
 using System.Collections;
-
-public class ScenePlotManagerScript : MonoBehaviour
+using System.Collections.Generic;using System;
+public class ScriptManager : MonoBehaviour
 {
-    public TextMeshProUGUI characterName;
-    public TextMeshProUGUI phrase;
-    public RawImage anitaObject;
-    TimeSpan currentTime;
-    TimeSpan startTime;
-    public int rr;
-    private bool isSpeaking = false;
+    public Text dialogueText;
+    public RawImage localBackground;
 
-    private string anitaBaseTextureStr = "Characters/Anita/";
-    private string emotion = "neutral";
-    private bool blinking = false;
-    private bool talking = false;
+    public GameObject choicePanel;
+    public Button choiceButtonPrefab;
 
-    // Speech text to display
-    private string[] dialogueLines = new string[] {
-        "Hello, my name is Maria from Chisinau.",
-        "It's nice to meet you today.",
-        "I'm here to guide you through this demonstration.",
-        "Let me know if you need any assistance."
-    };
-
-    // Emotion states for different dialogue lines
-    private string[] emotionStates = new string[] {
-        "neutral",
-        "neutral",
-        "neutral",
-        "neutral",
-    };
-
-    private int currentDialogueLine = 0;
-    private float speakDuration = 7f; // Speaking for 7 seconds
-    private float pauseDuration = 2f; // Pause between speaking
+    private GameScript gameScript;
+    private int currentDialogueIndex = 0;
+    private Scene currentScene;
+    [SerializeField] private ScriptLoader scriptLoader;
 
     void Start()
     {
-        currentTime = DateTime.Now.TimeOfDay;
-        startTime = currentTime;
+        Debug.Log(localBackground.ToString());
+        if (scriptLoader == null)
+        {
+            Debug.LogError("ScriptLoader is not assigned in Inspector!");
+            return;
+        }
 
-        characterName.text = "Maria";
-        phrase.text = "";
+        gameScript = scriptLoader.gameScript;
 
-        UpdateTexture();
-        StartCoroutine(SpeakingSequence());
+        if (gameScript == null)
+        {
+            Debug.LogError("Game script is not loaded!");
+            return;
+        }
+        LoadScene("scene1");
     }
 
-    void Update()
+    void LoadScene(string sceneId)
     {
-        currentTime = DateTime.Now.TimeOfDay;
-
-        // Handle blinking every 3 seconds for 500ms
-        if (currentTime.Seconds % 3 == 0 && currentTime.Milliseconds < 500)
+        foreach (Scene scene in gameScript.scenes)
         {
-            blinking = true;
-        }
-        else
-        {
-            blinking = false;
-        }
-
-        UpdateTexture();
-    }
-
-    void UpdateTexture()
-    {
-        // Build texture path based on current state
-        string texturePath = anitaBaseTextureStr + emotion;
-
-        if (talking)
-        {
-            texturePath += "_o"; // Open mouth when talking
-        }
-
-        if (blinking)
-        {
-            texturePath += "_blinking"; // Add blinking state
-        }
-
-        // Load the appropriate texture
-        anitaObject.texture = Resources.Load<Texture>(texturePath);
-    }
-
-    IEnumerator SpeakingSequence()
-    {
-        yield return new WaitForSeconds(1f); // Initial delay
-
-        while (true)
-        {
-            // Start speaking
-            isSpeaking = true;
-            talking = true;
-            phrase.text = dialogueLines[currentDialogueLine];
-            emotion = emotionStates[currentDialogueLine];
-
-            // Speaking for 7 seconds with mouth animation
-            float speakEndTime = Time.time + speakDuration;
-            while (Time.time < speakEndTime)
+            if (scene.id == sceneId)
             {
-                // Toggle talking state every 0.2 seconds for mouth movement
-                if (Time.time % 0.4f < 0.2f)
-                {
-                    talking = true;
-                }
-                else
-                {
-                    talking = false;
-                }
-
-                yield return null;
+                currentScene = scene;
+                localBackground.texture = Resources.Load<Texture>(scene.background);
+                currentDialogueIndex = 0;
+                ShowDialogue();
+                return;
             }
-
-            // Pause between sentences
-            isSpeaking = false;
-            talking = false;
-            phrase.text = "";
-            yield return new WaitForSeconds(pauseDuration);
-
-            // Move to next dialogue line
-            currentDialogueLine = (currentDialogueLine + 1) % dialogueLines.Length;
         }
     }
+
+    public void ShowDialogue()
+    {
+        if (currentDialogueIndex >= currentScene.dialogue.Count)
+        {
+            ShowChoices();
+            return;
+        }
+
+        Dialogue line = currentScene.dialogue[currentDialogueIndex];
+        dialogueText.text = line.text;
+
+        if (line.waitForInput)
+        {
+            currentDialogueIndex++;
+        }
+    }
+
+    void ShowChoices()
+    {
+        choicePanel.SetActive(true);
+
+        foreach (Transform child in choicePanel.transform)
+        {
+            Destroy(child.gameObject);
+        }
+
+        foreach (SceneChoices choice in currentScene.next.choices)
+        {
+            Button button = Instantiate(choiceButtonPrefab, choicePanel.transform);
+            button.GetComponentInChildren<Text>().text = choice.text;
+            button.onClick.AddListener(() => LoadScene(choice.nextScene));
+        }
+    }
+
+    public void OnNextClicked()
+    {
+        ShowDialogue();
+    }
+}
+
+public class LocalBackground
+{
 }

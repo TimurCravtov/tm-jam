@@ -1,4 +1,0 @@
-repository "jam/jam@7972444582468@cloud"
-  path "/"
-    br "/main"
-    co "/main"
