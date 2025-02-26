@@ -11,7 +11,7 @@ public class ScriptLoader : MonoBehaviour
         LoadScript();
     }
 
-    void LoadScript()
+    public GameScript LoadScript()
     {
         if (File.Exists(jsonFilePath))
         {
@@ -23,5 +23,6 @@ public class ScriptLoader : MonoBehaviour
         {
             Debug.LogError("JSON file not found!");
         }
+        return gameScript;
     }
 }

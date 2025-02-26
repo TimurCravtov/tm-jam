@@ -1,99 +1,88 @@
 {
-    "characters": [
-        {
-            "id": "Anita",
-            "name": "Anita",
-            "sprite_dir": "assets/characters/anita/",
-            "position": "center",
-            "initialRect": [ 50, 50, 200, 400 ],
-            "visible": false,
-            "animations": {
-                "blink": "assets/characters/anita/_blinking",
-                "speak": "assets/characters/anita/_speaking"
-            }
-        },
-        {
-            "id": "Ben",
-            "name": "Ben",
-            "sprite_dir": "assets/characters/ben/",
-            "position": "right",
-            "initialRect": [ 300, 50, 200, 400 ],
-            "visible": false,
-            "animations": {
-                "blink": "assets/characters/ben/_blinking",
-                "speak": "assets/characters/ben/_speaking"
-            }
-        }
-    ],
-
     "scenes": [
         {
             "id": "scene1",
-            "background": "Backgrounds/street.png",
+            "background": "street.png",
             "transitions": {
                 "type": "fade",
                 "duration": 1.0
             },
             "dialogue": [
                 {
-                    "character": "Anita",
                     "text": "Hey there! It's such a nice day, isn't it?",
-                    "emotion": "happy",
-                    "position": "center",
-                    "visible": true,
                     "animation": "blink",
-                    "waitForInput": true
-                },
-                {
-                    "character": "Anita",
-                    "text": "I love coming to the park to clear my mind.",
-                    "emotion": "thoughtful",
-                    "position": "center",
-                    "visible": true,
-                    "animation": "speak",
-                    "waitForInput": true
-                },
-                {
-                    "character": "Anita",
-                    "text": "Oh, I have to go now. See you later!",
-                    "emotion": "neutral",
-                    "position": "center",
-                    "visible": false,
-                    "waitForInput": true
-                },
-                {
-                    "character": "Anita",
-                    "text": "Hey Ben, do you think it's going to rain later?",
-                    "emotion": "curious",
-                    "position": "center",
-                    "visible": true,
-                    "animation": "speak",
-                    "otherCharacters": [
+                    "waitForInput": true,
+                    "characters": [
                         {
-                            "character": "Ben",
-                            "emotion": "neutral",
-                            "position": "right",
-                            "visible": true
-                        }
-                    ],
-                    "waitForInput": true
-                },
-                {
-                    "character": "Ben",
-                    "text": "I don't think so. The sky looks clear!",
-                    "emotion": "confident",
-                    "position": "right",
-                    "visible": true,
-                    "animation": "speak",
-                    "otherCharacters": [
-                        {
-                            "character": "Anita",
+                            "id": "Anita",
+                            "name": "Anita",
                             "emotion": "happy",
                             "position": "center",
-                            "visible": true
+                            "visible": true,
+                            "isSpeaking": true
                         }
-                    ],
-                    "waitForInput": true
+                    ]
+                },
+                {
+                    "text": "I love coming to the park to clear my mind.",
+                    "animation": "speak",
+                    "waitForInput": true,
+                    "characters": [
+                        {
+                            "id": "Anita",
+                            "name": "Anita",
+                            "emotion": "thoughtful",
+                            "position": "center",
+                            "visible": true,
+                            "isSpeaking": true
+                        }
+                    ]
+                },
+                {
+                    "text": "Hey Ben, do you think it's going to rain later?",
+                    "animation": "speak",
+                    "waitForInput": true,
+                    "characters": [
+                        {
+                            "id": "Anita",
+                            "name": "Anita",
+                            "emotion": "curious",
+                            "position": "center",
+                            "visible": true,
+                            "isSpeaking": true
+                        },
+                        {
+                            "id": "Ben",
+                            "name": "Ben",
+                            "emotion": "neutral",
+                            "position": "right",
+                            "visible": true,
+                            "isSpeaking": false
+                        }
+                    ]
+                },
+                {
+                    "text": "I don't think so. The sky looks clear!",
+                    "animation": "speak",
+                    "waitForInput": true,
+                    "characters": [
+                        {
+                            "id": "Anita",
+                            "name": "Anita",
+                            "emotion": "happy",
+                            "position": "center",
+                            "visible": true,
+                            "isSpeaking": false
+                        },
+                        {
+                            "id": "Ben",
+                            "name": "Ben",
+                            "emotion": "confident",
+                            "position": "right",
+                            "visible": true,
+                            "isSpeaking": true
+                        }
+                    ]
                 }
             ],
             "next": {
