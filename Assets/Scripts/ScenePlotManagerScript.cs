@@ -271,8 +271,12 @@ public class ScriptPlotManagerScript : MonoBehaviour
             {
                 choicesText += ">> ";
             }
+            else
+            {
+                choicesText += "    ";
+            }
 
-            choicesText += currentScene.next.choices[i].text;
+                choicesText += currentScene.next.choices[i].text;
         }
 
         choiceTextArea.text = choicesText;

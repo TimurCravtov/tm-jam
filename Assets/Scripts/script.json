@@ -150,7 +150,7 @@
         },
         {
             "id": "scene2_negative",
-            "background": "stormy_clouds",
+            "background": "room",
             "transitions": {
                 "type": "fade",
                 "duration": 1.0
