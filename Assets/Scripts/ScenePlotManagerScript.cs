@@ -13,7 +13,6 @@ public class ScriptPlotManagerScript : MonoBehaviour
     public GameObject choicePanelOuter;
     public GameObject choicePanelInner;
     public TextMeshProUGUI choiceTextArea;
-    public TextMeshProUGUI variantChoosenArea;
 
     public GameObject characterLeft;
     public GameObject characterCenter;
@@ -23,11 +22,17 @@ public class ScriptPlotManagerScript : MonoBehaviour
     private Scene currentScene;
     [SerializeField] private ScriptLoader scriptLoader;
 
+    // Variables for choice selection
+    private int currentChoiceIndex = 0;
+    private bool isChoosingOption = false;
+
     void Start()
     {
+        choicePanelOuter.SetActive(false);
 
         if (scriptLoader == null)
         {
+
             Debug.LogError("ScriptLoader is not assigned in Inspector!");
             return;
         }
@@ -42,10 +47,46 @@ public class ScriptPlotManagerScript : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.RightArrow))
+        if (isChoosingOption)
+        {
+            HandleChoiceNavigation();
+        }
+        else if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.RightArrow))
         {
             ShowDialogue();
         }
+    }
+
+    void HandleChoiceNavigation()
+    {
+        if (currentScene.next.choices == null || currentScene.next.choices.Count == 0)
+            return;
+
+        int choicesCount = currentScene.next.choices.Count;
+
+        // Up arrow to navigate to previous choice
+        if (Input.GetKeyDown(KeyCode.UpArrow))
+        {
+            currentChoiceIndex = (currentChoiceIndex - 1 + choicesCount) % choicesCount;
+            UpdateChoiceSelection();
+        }
+        // Down arrow to navigate to next choice
+        else if (Input.GetKeyDown(KeyCode.DownArrow))
+        {
+            currentChoiceIndex = (currentChoiceIndex + 1) % choicesCount;
+            UpdateChoiceSelection();
+        }
+        // Enter key to select choice
+        else if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.KeypadEnter))
+        {
+            SelectChoice(currentChoiceIndex);
+        }
+    }
+
+    void UpdateChoiceSelection()
+    {
+        // Update the choice text with the selector indicator
+        UpdateChoiceText();
     }
 
     void LoadScene(string sceneId)
@@ -63,9 +104,10 @@ public class ScriptPlotManagerScript : MonoBehaviour
                 {
                     Debug.LogError("Background is null");
                     Debug.LogError(scene.background); // scene.png
-
                 }
+
                 currentDialogueIndex = 0;
+                isChoosingOption = false;
                 ShowDialogue();
                 return;
             }
@@ -106,8 +148,6 @@ public class ScriptPlotManagerScript : MonoBehaviour
         // Update character display
         UpdateCharacterDisplay(line);
 
-        ShowChoices();
-
         if (line.waitForInput)
         {
             currentDialogueIndex++;
@@ -119,6 +159,7 @@ public class ScriptPlotManagerScript : MonoBehaviour
         // Check if there's a direct next scene
         if (!string.IsNullOrEmpty(currentScene.next.scene))
         {
+
             // Direct navigation to the next scene
             LoadScene(currentScene.next.scene);
         }
@@ -126,6 +167,9 @@ public class ScriptPlotManagerScript : MonoBehaviour
         else if (currentScene.next.choices != null && currentScene.next.choices.Count > 0)
         {
             ShowChoices();
+            isChoosingOption = true;
+            currentChoiceIndex = 0;
+            UpdateChoiceSelection();
         }
         else
         {
@@ -187,10 +231,8 @@ public class ScriptPlotManagerScript : MonoBehaviour
         }
     }
 
-
     public void ShowChoices()
     {
-
         if (currentScene.next.choices == null || currentScene.next.choices.Count == 0)
         {
             choicePanelOuter.SetActive(false);
@@ -201,22 +243,63 @@ public class ScriptPlotManagerScript : MonoBehaviour
 
         int choicesCount = currentScene.next.choices.Count;
 
-        float choiceAdditionaHeight = 80;
+        float choiceAdditionalHeight = 80;
         float defaultContainerHeight = 60f;
 
         RectTransform outerRect = choicePanelOuter.GetComponent<RectTransform>();
-        float outerHeight = defaultContainerHeight + (choiceAdditionaHeight * choicesCount);
+        float outerHeight = defaultContainerHeight + (choiceAdditionalHeight * choicesCount);
 
         outerRect.sizeDelta = new Vector2(outerRect.sizeDelta.x, outerHeight);
 
+        // Make sure the choice text area is active
+        choiceTextArea.gameObject.SetActive(true);
+
+        // Update the choice text with the selector indicator
+        UpdateChoiceText();
+    }
+
+    private void UpdateChoiceText()
+    {
+        // Format the choices text with the selector indicator (>>) next to the current choice
         string choicesText = "";
         for (int i = 0; i < currentScene.next.choices.Count; i++)
         {
             if (i > 0) choicesText += "\n\n";
+
+            // Add selection indicator (>>) to the currently selected choice
+            if (i == currentChoiceIndex)
+            {
+                choicesText += ">> ";
+            }
+
             choicesText += currentScene.next.choices[i].text;
         }
 
         choiceTextArea.text = choicesText;
     }
 
+    void SelectChoice(int index)
+    {
+        if (currentScene.next.choices != null && index < currentScene.next.choices.Count)
+        {
+            SceneChoices selectedChoice = currentScene.next.choices[index];
+
+            // Reset choice state
+            isChoosingOption = false;
+            currentChoiceIndex = 0;
+
+            // Hide choice panel
+            choicePanelOuter.SetActive(false);
+
+            // Load the next scene based on the choice
+            if (!string.IsNullOrEmpty(selectedChoice.nextScene))
+            {
+                LoadScene(selectedChoice.nextScene);
+            }
+            else
+            {
+                Debug.LogWarning($"Choice at index {index} does not have a valid next scene.");
+            }
+        }
+    }
 }
