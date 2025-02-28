@@ -547,12 +547,12 @@ GameObject:
   - component: {fileID: 803782893}
   - component: {fileID: 803782892}
   m_Layer: 5
-  m_Name: TransitionCanvas
+  m_Name: FadePanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &803782891
 RectTransform:
   m_ObjectHideFlags: 0
@@ -569,8 +569,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0.0025024414}
+  m_SizeDelta: {x: 0, y: -0.0050049}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &803782892
 Animator:
@@ -580,9 +580,9 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 803782890}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: df0de9e9c485d3e4ebbc8cae2e4a4ee5, type: 2}
+  m_Controller: {fileID: 9100000, guid: 2093c8559cec3694a9bba9d4bc90daed, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1127,14 +1127,14 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1748595656}
         m_TargetAssemblyTypeName: ButtonBehaviour, Assembly-CSharp
-        m_MethodName: TransitToAnotherStage
-        m_Mode: 1
+        m_MethodName: ChangeScene
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: Gameplay
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1748595654
@@ -1187,7 +1187,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 935d1858c908706418196a72be3bdfd7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetSceneName: Gameplay
+  fadeAnimator: {fileID: 803782892}
+  fadeScreenOut: {fileID: 803782890}
 --- !u!1 &1999714438
 GameObject:
   m_ObjectHideFlags: 0
