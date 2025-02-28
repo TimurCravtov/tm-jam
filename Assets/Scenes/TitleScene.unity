@@ -580,7 +580,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 803782890}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: df0de9e9c485d3e4ebbc8cae2e4a4ee5, type: 2}
   m_CullingMode: 0
@@ -1188,9 +1188,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetSceneName: Gameplay
-  transitionAnimator: {fileID: 0}
-  transitionTime: 1
-  animationTriggerName: FadeIn
 --- !u!1 &1999714438
 GameObject:
   m_ObjectHideFlags: 0
