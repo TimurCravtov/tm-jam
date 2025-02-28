@@ -21,6 +21,7 @@ public class ScriptPlotManagerScript : MonoBehaviour
     private int currentDialogueIndex = 0;
     private Scene currentScene;
     [SerializeField] private ScriptLoader scriptLoader;
+    [SerializeField] private SceneTransitionManager sceneTransitionManager;
 
     // Variables for choice selection
     private int currentChoiceIndex = 0;
@@ -91,6 +92,7 @@ public class ScriptPlotManagerScript : MonoBehaviour
 
     void LoadScene(string sceneId)
     {
+        StartCoroutine(sceneTransitionManager.Fade("FadeOut", 1f));
         foreach (Scene scene in gameScript.scenes)
         {
             Debug.Log(scene.id);
@@ -99,6 +101,7 @@ public class ScriptPlotManagerScript : MonoBehaviour
                 currentScene = scene;
 
                 localBackground.texture = Resources.Load<Texture>($"Backgrounds/{scene.background}");
+                StartCoroutine(sceneTransitionManager.Fade("FadeIn", 1f));
 
                 if (localBackground.texture == null)
                 {
