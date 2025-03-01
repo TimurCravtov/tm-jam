@@ -3,10 +3,7 @@
         {
             "id": "scene1",
             "background": "street",
-            "transitions": {
-                "type": "fade",
-                "duration": 1.0
-            },
+            "transitions": true,
             "dialogue": [
                 {
                     "text": "Hey there! It's such a nice day, isn't it?",
@@ -108,10 +105,7 @@
         {
             "id": "scene2_positive",
             "background": "neon_street",
-            "transitions": {
-                "type": "fade",
-                "duration": 1.0
-            },
+            "transitions": true,
             "dialogue": [
                 {
                     "text": "Yeah, it does feel like a perfect evening.",
@@ -151,10 +145,7 @@
         {
             "id": "scene2_negative",
             "background": "room",
-            "transitions": {
-                "type": "fade",
-                "duration": 1.0
-            },
+            "transitions": true,
             "dialogue": [
                 {
                     "text": "I don't know... those clouds look pretty dark.",
