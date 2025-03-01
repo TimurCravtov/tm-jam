@@ -104,11 +104,11 @@ public class ScriptPlotManagerScript : MonoBehaviour
             Debug.Log(scene.id);
             if (scene.id == sceneId)
             {
-                StartCoroutine(sceneTransitionManager.Fade("FadeOut", 1f));
+                StartCoroutine(sceneTransitionManager.Fade("FadeOut","FadeIn", 1f));
                 currentScene = scene;
 
                 localBackground.texture = Resources.Load<Texture>($"Backgrounds/{scene.background}");
-                StartCoroutine(sceneTransitionManager.Fade("FadeIn", 1f));
+                StartCoroutine(sceneTransitionManager.Fade("FadeIn", "FadeOut", 1f));
 
                 if (localBackground.texture == null)
                 {
