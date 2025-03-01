@@ -6,7 +6,6 @@ public class ButtonBehaviour : MonoBehaviour
 {
     public Animator fadeAnimator;
     [SerializeField] GameObject fadeScreenOut;
-
     public void ChangeScene(string sceneName)
     {
         StartCoroutine(Transition(sceneName));
