@@ -8,6 +8,7 @@ using UnityEditor.SearchService;
 
 public class ScriptPlotManagerScript : MonoBehaviour
 {
+    [SerializeField] private TextCreator phrase;
     public TextMeshProUGUI phraseText;
     public TextMeshProUGUI phraseSpeakerName;
     public RawImage localBackground;
@@ -128,8 +129,6 @@ public class ScriptPlotManagerScript : MonoBehaviour
 
     public void ShowDialogue()
     {
-        Debug.Log(currentDialogueIndex);
-        Debug.Log(currentScene.dialogue.Count);
         if (currentDialogueIndex >= currentScene.dialogue.Count)
         {
             HandleNextNavigation();
@@ -137,9 +136,11 @@ public class ScriptPlotManagerScript : MonoBehaviour
         }
 
         Dialogue line = currentScene.dialogue[currentDialogueIndex];
-        phraseText.text = line.text;
 
-        // Find the speaking character to display their name
+        // Use the new scrolling text function
+        phrase.StartTextScroll(line.text);
+
+        // Display speaker name
         DialogueCharacter speakingCharacter = null;
         if (line.characters != null)
         {
@@ -152,8 +153,6 @@ public class ScriptPlotManagerScript : MonoBehaviour
                 }
             }
         }
-
-        // Display speaker name if found
         phraseSpeakerName.text = speakingCharacter != null ? speakingCharacter.name : "";
 
         // Update character display
@@ -164,6 +163,7 @@ public class ScriptPlotManagerScript : MonoBehaviour
             currentDialogueIndex++;
         }
     }
+
 
     void HandleNextNavigation()
     {
@@ -318,3 +318,4 @@ public class ScriptPlotManagerScript : MonoBehaviour
         }
     }
 }
+
