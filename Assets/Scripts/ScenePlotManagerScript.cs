@@ -23,10 +23,17 @@ public class ScriptPlotManagerScript : MonoBehaviour
     [SerializeField] private ScriptLoader scriptLoader;
     [SerializeField] private SceneTransitionManager sceneTransitionManager;
 
+    private string saveFilePath = "Assets/Resources/save.json";
+
     // Variables for choice selection
     private int currentChoiceIndex = 0;
     private bool isChoosingOption = false;
+    
 
+    public string GetCurrentSceneId()
+    {
+        return currentScene.id;
+    }
     void Start()
     {
         choicePanelOuter.SetActive(false);
