@@ -21,6 +21,7 @@ public class ScriptPlotManagerScript : MonoBehaviour
     private int currentDialogueIndex = 0;
     private Scene currentScene;
     [SerializeField] private ScriptLoader scriptLoader;
+    [SerializeField] private SceneTransitionManager sceneTransitionManager;
 
     private string saveFilePath = "Assets/Resources/save.json";
 
@@ -103,9 +104,11 @@ public class ScriptPlotManagerScript : MonoBehaviour
             Debug.Log(scene.id);
             if (scene.id == sceneId)
             {
+                StartCoroutine(sceneTransitionManager.Fade("FadeOut", 1f));
                 currentScene = scene;
 
                 localBackground.texture = Resources.Load<Texture>($"Backgrounds/{scene.background}");
+                StartCoroutine(sceneTransitionManager.Fade("FadeIn", 1f));
 
                 if (localBackground.texture == null)
                 {

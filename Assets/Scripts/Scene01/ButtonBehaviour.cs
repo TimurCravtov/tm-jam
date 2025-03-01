@@ -17,6 +17,5 @@ public class ButtonBehaviour : MonoBehaviour
         fadeAnimator.SetTrigger("FadeOut"); // Play fade out animation
         yield return new WaitForSeconds(1f); // Wait for animation to complete
         SceneManager.LoadScene(sceneName);
-        
     }
 }
