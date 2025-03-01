@@ -22,13 +22,6 @@ public class Dialogue
 }
 
 [Serializable]
-public class SceneTransition
-{
-    public string type;
-    public float duration;
-}
-
-[Serializable]
 public class SceneChoices
 {
     public string text;
@@ -47,7 +40,7 @@ public class Scene
 {
     public string id;
     public string background;
-    public SceneTransition transitions;
+    public bool transition;
     public List<Dialogue> dialogue;
     public SceneNext next;
 }
