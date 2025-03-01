@@ -1,0 +1,254 @@
+[33mcommit 51449d649ac50acf18a7cced5151738b26d8a242[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mnew[m[33m, [m[1;31morigin/new[m[33m)[m
+Merge: 94b7290 4cee1fd
+Author: NeValetik <109535885+NeValetik@users.noreply.github.com>
+Date:   Sat Mar 1 16:10:51 2025 +0200
+
+    Merge pull request #1 from TimurCravtov/new-feature
+    
+    Merging new feature
+
+[33mcommit 4cee1fda13feee6590fde066806b6c06ca7a5184[m
+Merge: 6df521d 94b7290
+Author: NeValetik <109535885+NeValetik@users.noreply.github.com>
+Date:   Sat Mar 1 16:10:36 2025 +0200
+
+    Merge branch 'new' into new-feature
+
+[33mcommit 94b72905e4f6e0fa62488047331d5b8bec0ca96b[m
+Author: NeValetik <snowchug@gmail.com>
+Date:   Sat Mar 1 15:35:12 2025 +0200
+
+    fade changes between scenes
+
+[33mcommit 6df521d95fd090b27b90df2f5f1d8bbdd54e05ba[m[33m ([m[1;31morigin/new-feature[m[33m)[m
+Author: Nicolae M. <nicolaemargamd@gmail.com>
+Date:   Sat Mar 1 03:59:07 2025 +0200
+
+    Added save slots
+
+[33mcommit 5b6a2938371ff7914bb8b458976976558edc49d5[m
+Author: Nicolae M. <nicolaemargamd@gmail.com>
+Date:   Sat Mar 1 03:49:25 2025 +0200
+
+    Added saving system
+
+[33mcommit edd69752da4b96c07225d6d17d50fdef3d2332b8[m
+Author: Nicolae M. <nicolaemargamd@gmail.com>
+Date:   Sat Mar 1 03:14:55 2025 +0200
+
+    Added save system
+
+[33mcommit c71ca9e5d2df77635103355053fa6213cc582565[m
+Author: NeValetik <snowchug@gmail.com>
+Date:   Sat Mar 1 01:58:12 2025 +0200
+
+    fixes
+
+[33mcommit 2c5ce70111c26908010d5e772a414bf0aac092de[m
+Merge: 3aea92f 29f5bd2
+Author: Nicolae M. <nicolaemargamd@gmail.com>
+Date:   Sat Mar 1 00:31:08 2025 +0200
+
+    Merge branch 'new' of https://github.com/TimurCravtov/tm-jam into new
+
+[33mcommit 3aea92fb9167858c7909c946ae9eb36d67da29a7[m[33m ([m[1;31morigin/save-feature[m[33m)[m
+Author: Nicolae M. <nicolaemargamd@gmail.com>
+Date:   Sat Mar 1 00:30:19 2025 +0200
+
+    Added Save Slot Design
+
+[33mcommit 29f5bd238b2e2b01dc2a0c3ab251d22060c9f94f[m
+Author: NeValetik <snowchug@gmail.com>
+Date:   Fri Feb 28 16:10:27 2025 +0200
+
+    made trasition from title screen to gameplay(made it reusable)
+
+[33mcommit f629e7e79d5823123a7da77aa1b8435195485fd0[m
+Author: NeValetik <snowchug@gmail.com>
+Date:   Fri Feb 28 09:18:59 2025 +0200
+
+    fade in be like -_-
+
+[33mcommit b260203d4e048388b1d1115bd9a2c51c6a3f3451[m
+Merge: 1924804 7ec21ab
+Author: NeValetik <snowchug@gmail.com>
+Date:   Fri Feb 28 09:18:33 2025 +0200
+
+    Merge branch 'new' of https://github.com/TimurCravtov/tm-jam into new
+
+[33mcommit 7ec21ab7171891e3e75f5b68e780820083570f40[m
+Author: Timur Cravtov <timurcravtov04@gmail.com>
+Date:   Thu Feb 27 12:47:50 2025 +0200
+
+    fixed the arrows layout
+
+[33mcommit 1f282831f13b0e9b8e7548234a644d4a0b283887[m
+Author: Timur Cravtov <timurcravtov04@gmail.com>
+Date:   Thu Feb 27 12:22:15 2025 +0200
+
+    added option working
+
+[33mcommit 192480458f8fbcf1c5449e1b8ea4b2bd7f8f9ffe[m
+Merge: d6eb781 2033d35
+Author: NeValetik <snowchug@gmail.com>
+Date:   Wed Feb 26 22:55:39 2025 +0200
+
+    Merge branch 'new' of https://github.com/TimurCravtov/tm-jam into new
+
+[33mcommit d6eb781ac0f4baff73dcba3f2383dc3cd6b6a053[m
+Author: NeValetik <snowchug@gmail.com>
+Date:   Wed Feb 26 22:55:29 2025 +0200
+
+    wip transitions
+
+[33mcommit 2033d35f911b9b39f3ce4628e3123948b60067ea[m
+Author: Timur Cravtov <timurcravtov04@gmail.com>
+Date:   Wed Feb 26 22:35:51 2025 +0200
+
+    scenes working? i think
+
+[33mcommit a7c64b0869db788ab85415bffb1bbfa6c57d91ed[m
+Author: Timur Cravtov <timurcravtov04@gmail.com>
+Date:   Wed Feb 26 21:59:17 2025 +0200
+
+    fixed text container grow
+
+[33mcommit c0c87b15255334d36a492f0e832f98c760d289e6[m
+Author: NeValetik <snowchug@gmail.com>
+Date:   Wed Feb 26 21:11:18 2025 +0200
+
+    button from the title page not adds transition to nextscene
+
+[33mcommit 342985ddad85154289bfc323698b956072438a3c[m
+Author: Timur Cravtov <timurcravtov04@gmail.com>
+Date:   Wed Feb 26 15:12:30 2025 +0200
+
+    added choices
+
+[33mcommit 2367ddc7aba7dc4f2900cf721aae71a0e9ee820b[m
+Author: Timur Cravtov <timurcravtov04@gmail.com>
+Date:   Wed Feb 26 15:06:43 2025 +0200
+
+    container autoresizeble
+
+[33mcommit 01bcf22ccf168708cf6521a472835dc8bff105f9[m
+Author: Timur Cravtov <timurcravtov04@gmail.com>
+Date:   Wed Feb 26 13:28:52 2025 +0200
+
+    scene
+
+[33mcommit 81cc4c8a48e5e9d187a318aed9a54ac64fb29124[m
+Author: Timur Cravtov <timurcravtov04@gmail.com>
+Date:   Wed Feb 26 13:27:55 2025 +0200
+
+    fixed relative position of text
+
+[33mcommit fb08d297a26cdc82a4b57260917140a7da6b5c43[m
+Author: Timur Cravtov <timurcravtov04@gmail.com>
+Date:   Wed Feb 26 12:24:28 2025 +0200
+
+    back fix
+
+[33mcommit 2cdcd069a727642f69857e3229ed9e5736840340[m
+Author: Timur Cravtov <timurcravtov04@gmail.com>
+Date:   Wed Feb 26 12:10:34 2025 +0200
+
+    asdasdas
+
+[33mcommit 2a0179133a4361a7b8675932ba8635f02b7212d6[m
+Author: Timur Cravtov <timurcravtov04@gmail.com>
+Date:   Wed Feb 26 10:50:05 2025 +0200
+
+    added boxes
+
+[33mcommit a1398f111e41f191178e528302e1285d21119968[m[33m ([m[1;31morigin/main[m[33m, [m[1;32mmain[m[33m)[m
+Merge: b482c90 d68faf3
+Author: Timur Cravtov <timurcravtov04@gmail.com>
+Date:   Wed Feb 26 10:17:53 2025 +0200
+
+    2
+
+[33mcommit d68faf39075b9804e3274be17c340a08f2919a73[m
+Author: Nicolae M. <nicolaemargamd@gmail.com>
+Date:   Wed Feb 26 10:13:18 2025 +0200
+
+    Added Script Manager
+
+[33mcommit b482c905496c9fbd9ba6a36cd0acec5253ac0e10[m
+Author: Timur Cravtov <timurcravtov04@gmail.com>
+Date:   Tue Feb 25 21:52:36 2025 +0200
+
+    added scene config
+
+[33mcommit 27c442bc4e35a9abdca8c309ecd1bf6e5b025523[m
+Author: Timur Cravtov <timurcravtov04@gmail.com>
+Date:   Tue Feb 25 21:48:22 2025 +0200
+
+    Brianna
+
+[33mcommit fabf10a465a9b1eb752f91b27dc6f38cca61bf69[m
+Author: Timur Cravtov <timurcravtov04@gmail.com>
+Date:   Tue Feb 25 21:02:11 2025 +0200
+
+    now for real
+
+[33mcommit 5cef50e0bb2f638c51b784f267dcc1d3e2450aad[m
+Author: Timur Cravtov <timurcravtov04@gmail.com>
+Date:   Tue Feb 25 21:00:39 2025 +0200
+
+    added blinking, etc
+
+[33mcommit 7640bcce5429d21f5d2ae24da35d0f3cece093c9[m
+Author: Timur Cravtov <timurcravtov04@gmail.com>
+Date:   Tue Feb 25 16:00:03 2025 +0200
+
+    title scene
+
+[33mcommit 05786fb30f8add8ff2201b04870f71acc50857c5[m
+Author: Timur Cravtov <timurcravtov04@gmail.com>
+Date:   Mon Feb 24 21:25:33 2025 +0200
+
+    some fonts
+
+[33mcommit 0e14c2188fdebbff3b9ba7302350002fc25918e3[m
+Author: Timur Cravtov <timurcravtov04@gmail.com>
+Date:   Sat Feb 22 15:57:21 2025 +0200
+
+    fix font asset gameplay
+
+[33mcommit 8737115c5ff9a840b038433ea0bc6e84c141cdfc[m
+Author: Timur Cravtov <timurcravtov04@gmail.com>
+Date:   Sun Feb 16 21:11:56 2025 +0200
+
+    added main scipt
+
+[33mcommit 3198976e750e009d5cfdb2f61f7a0586a88f961a[m
+Merge: b0d285a 474bda4
+Author: Timur Cravtov <timurcravtov04@gmail.com>
+Date:   Sun Feb 16 17:25:30 2025 +0200
+
+    dfssdf
+
+[33mcommit b0d285adf3a6fe847c1faa755ac4cec5c1ffdb63[m
+Author: Timur Cravtov <timurcravtov04@gmail.com>
+Date:   Sun Feb 16 17:22:48 2025 +0200
+
+    some changes
+
+[33mcommit 474bda422882a447fc43ef17e0f3117f7749ae12[m
+Author: NeValetik <snowchug@gmail.com>
+Date:   Sun Feb 16 11:06:32 2025 +0200
+
+    working added fadein on first scene
+
+[33mcommit 083f5457c7371c12f2b559914769d9dec0c06962[m
+Author: Timur Cravtov <timurcravtov04@gmail.com>
+Date:   Sun Feb 16 10:59:55 2025 +0200
+
+    starting scene
+
+[33mcommit 67689b2ffda6a407b494a62c65e278bc062bb862[m
+Author: Timur Cravtov <timurcravtov04@gmail.com>
+Date:   Fri Feb 14 16:07:04 2025 +0200
+
+    initial
