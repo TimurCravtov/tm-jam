@@ -4,9 +4,11 @@ using UnityEngine.SceneManagement;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using UnityEditor.SearchService;
 
 public class ScriptPlotManagerScript : MonoBehaviour
 {
+    [SerializeField] private TextCreator phrase;
     public TextMeshProUGUI phraseText;
     public TextMeshProUGUI phraseSpeakerName;
     public RawImage localBackground;
@@ -21,6 +23,7 @@ public class ScriptPlotManagerScript : MonoBehaviour
     private int currentDialogueIndex = 0;
     private Scene currentScene;
     [SerializeField] private ScriptLoader scriptLoader;
+    [SerializeField] private SceneTransitionManager sceneTransitionManager;
 
     // Variables for choice selection
     private int currentChoiceIndex = 0;
@@ -47,7 +50,8 @@ public class ScriptPlotManagerScript : MonoBehaviour
             Debug.LogError("Game script is not loaded!");
             return;
         }
-        //LoadScene("scene1");
+
+        StartCoroutine(LoadSceneWithFade("scene1"));
     }
 
     void Update()
@@ -94,28 +98,30 @@ public class ScriptPlotManagerScript : MonoBehaviour
         UpdateChoiceText();
     }
 
-    public void LoadScene(string sceneId)
+    IEnumerator LoadSceneWithFade(string sceneId)
     {
+        if (sceneId != "scene1")
+        {
+            yield return StartCoroutine(sceneTransitionManager.Fade("FadeOut", "FadeIn", 1f));
+        }
+
         foreach (Scene scene in gameScript.scenes)
         {
-            Debug.Log(scene.id);
             if (scene.id == sceneId)
             {
                 currentScene = scene;
 
                 localBackground.texture = Resources.Load<Texture>($"Backgrounds/{scene.background}");
-
-                if (localBackground.texture == null)
+                if (scene.transition)
                 {
-                    Debug.LogError("Background is null");
-                    Debug.LogError(scene.background); // scene.png
+                    StartCoroutine(sceneTransitionManager.Fade("FadeIn", "FadeOut", 1f));
                 }
 
                 currentDialogueIndex = 0;
                 isChoosingOption = false;
                 currentChoiceIndex = 0;
                 ShowDialogue();
-                return;
+                yield break;
             }
         }
         Debug.LogError("scene not load");
@@ -123,8 +129,6 @@ public class ScriptPlotManagerScript : MonoBehaviour
 
     public void ShowDialogue()
     {
-        Debug.Log(currentDialogueIndex);
-        Debug.Log(currentScene.dialogue.Count);
         if (currentDialogueIndex >= currentScene.dialogue.Count)
         {
             HandleNextNavigation();
@@ -132,9 +136,11 @@ public class ScriptPlotManagerScript : MonoBehaviour
         }
 
         Dialogue line = currentScene.dialogue[currentDialogueIndex];
-        phraseText.text = line.text;
-        Debug.Log(line.text);
-        // Find the speaking character to display their name
+
+        // Use the new scrolling text function
+        phrase.StartTextScroll(line.text);
+
+        // Display speaker name
         DialogueCharacter speakingCharacter = null;
         if (line.characters != null)
         {
@@ -147,8 +153,6 @@ public class ScriptPlotManagerScript : MonoBehaviour
                 }
             }
         }
-
-        // Display speaker name if found
         phraseSpeakerName.text = speakingCharacter != null ? speakingCharacter.name : "";
 
         // Update character display
@@ -160,6 +164,7 @@ public class ScriptPlotManagerScript : MonoBehaviour
         }
     }
 
+
     void HandleNextNavigation()
     {
         // Check if there's a direct next scene
@@ -167,7 +172,7 @@ public class ScriptPlotManagerScript : MonoBehaviour
         {
 
             // Direct navigation to the next scene
-            LoadScene(currentScene.next.scene);
+            StartCoroutine(LoadSceneWithFade(currentScene.next.scene));
         }
         // Otherwise, check if there are choices
         else if (currentScene.next.choices != null && currentScene.next.choices.Count > 0)
@@ -304,7 +309,7 @@ public class ScriptPlotManagerScript : MonoBehaviour
             // Load the next scene based on the choice
             if (!string.IsNullOrEmpty(selectedChoice.nextScene))
             {
-                LoadScene(selectedChoice.nextScene);
+                StartCoroutine(LoadSceneWithFade(selectedChoice.nextScene));
             }
             else
             {
@@ -348,3 +353,4 @@ public class ScriptPlotManagerScript : MonoBehaviour
 
 
 }
+
