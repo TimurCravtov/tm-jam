@@ -51,7 +51,7 @@ public class ScriptPlotManagerScript : MonoBehaviour
             return;
         }
 
-        StartCoroutine(LoadSceneWithFade("scene1"));
+        //StartCoroutine(LoadSceneWithFade("scene1"));
     }
 
     void Update()
@@ -98,7 +98,7 @@ public class ScriptPlotManagerScript : MonoBehaviour
         UpdateChoiceText();
     }
 
-    IEnumerator LoadSceneWithFade(string sceneId)
+    public IEnumerator LoadSceneWithFade(string sceneId)
     {
         if (sceneId != "scene1")
         {

@@ -55,7 +55,7 @@ public class SaveManager : MonoBehaviour
         if (File.ReadAllText(saveFilePath) == "")
         {
             Debug.Log("Save file empty.");
-            plotManager.LoadScene("scene1");
+            StartCoroutine(plotManager.LoadSceneWithFade("scene1"));
             return;
         }
 
@@ -73,7 +73,7 @@ public class SaveManager : MonoBehaviour
         // Apply loaded data to PlotManager
         plotManager.SetCurrentDialogueIndex(loadedData.currentDialogueIndex);
         plotManager.SetChoiceSelection(loadedData.currentChoiceIndex, loadedData.isChoosingOption);
-        plotManager.LoadScene(loadedData.currentSceneId);
+        StartCoroutine(plotManager.LoadSceneWithFade(loadedData.currentSceneId));
 
     }
 }

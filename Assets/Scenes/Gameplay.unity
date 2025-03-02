@@ -396,6 +396,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   saveButtonSlot: {fileID: 0}
+  saveButtonText: {fileID: 0}
   saveFilePath: Assets/Resources/save.json
   saveSlotFilePath: 
 --- !u!1 &27444980
@@ -1366,7 +1367,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1461789578}
         m_TargetAssemblyTypeName: ButtonBehaviour, Assembly-CSharp
         m_MethodName: ChangeScene
         m_Mode: 5
@@ -1431,6 +1432,8 @@ GameObject:
   - component: {fileID: 1417009786}
   - component: {fileID: 1461789576}
   - component: {fileID: 1461789577}
+  - component: {fileID: 1461789578}
+  - component: {fileID: 1461789579}
   m_Layer: 5
   m_Name: Menu
   m_TagString: Untagged
@@ -1484,6 +1487,33 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &1461789578
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1461789573}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 935d1858c908706418196a72be3bdfd7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeAnimator: {fileID: 76910698}
+  fadeScreenOut: {fileID: 76910697}
+--- !u!114 &1461789579
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1461789573}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71a1d78d51520f448b6c537b4fc6d12c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myText: {fileID: 1871596684}
 --- !u!1 &1578577426
 GameObject:
   m_ObjectHideFlags: 0
