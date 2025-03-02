@@ -22,8 +22,6 @@ public class ScriptPlotManagerScript : MonoBehaviour
     private Scene currentScene;
     [SerializeField] private ScriptLoader scriptLoader;
 
-    private string saveFilePath = "Assets/Resources/save.json";
-
     // Variables for choice selection
     private int currentChoiceIndex = 0;
     private bool isChoosingOption = false;
@@ -49,7 +47,7 @@ public class ScriptPlotManagerScript : MonoBehaviour
             Debug.LogError("Game script is not loaded!");
             return;
         }
-        LoadScene("scene1");
+        //LoadScene("scene1");
     }
 
     void Update()
@@ -96,7 +94,7 @@ public class ScriptPlotManagerScript : MonoBehaviour
         UpdateChoiceText();
     }
 
-    void LoadScene(string sceneId)
+    public void LoadScene(string sceneId)
     {
         foreach (Scene scene in gameScript.scenes)
         {
@@ -115,6 +113,7 @@ public class ScriptPlotManagerScript : MonoBehaviour
 
                 currentDialogueIndex = 0;
                 isChoosingOption = false;
+                currentChoiceIndex = 0;
                 ShowDialogue();
                 return;
             }
@@ -134,7 +133,7 @@ public class ScriptPlotManagerScript : MonoBehaviour
 
         Dialogue line = currentScene.dialogue[currentDialogueIndex];
         phraseText.text = line.text;
-
+        Debug.Log(line.text);
         // Find the speaking character to display their name
         DialogueCharacter speakingCharacter = null;
         if (line.characters != null)
@@ -313,4 +312,39 @@ public class ScriptPlotManagerScript : MonoBehaviour
             }
         }
     }
+    public int GetCurrentDialogueIndex()
+    {
+        return currentDialogueIndex;
+    }
+
+    public bool IsChoosingOption()
+    {
+        return isChoosingOption;
+    }
+
+    public int GetCurrentChoiceIndex()
+    {
+        return currentChoiceIndex;
+    }
+    public string GetBackgroundPath()
+    {
+        return currentScene.background;
+    }
+    public List<int> GetSelectedChoices()
+    {
+        // Example: Returning a list of past choices if tracking is implemented.
+        return new List<int>();  // Modify this to return actual selected choices
+    }
+    public void SetCurrentDialogueIndex(int index)
+    {
+        currentDialogueIndex = index;
+    }
+
+    public void SetChoiceSelection(int choiceIndex, bool isChoosing)
+    {
+        currentChoiceIndex = choiceIndex;
+        isChoosingOption = isChoosing;
+    }
+
+
 }
