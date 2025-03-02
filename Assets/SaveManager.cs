@@ -8,7 +8,7 @@ public class SaveManager : MonoBehaviour
 {
     public Button saveButton;
     public ScriptPlotManagerScript plotManager;
-    public string saveFilePath = "Assets/Resources/save.json";
+    public string saveFilePath;
 
     void Start()
     {

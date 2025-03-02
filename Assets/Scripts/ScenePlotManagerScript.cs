@@ -102,7 +102,7 @@ public class ScriptPlotManagerScript : MonoBehaviour
     {
         if (sceneId != "scene1")
         {
-            yield return StartCoroutine(sceneTransitionManager.Fade("FadeOut", "FadeIn", 1f));
+            StartCoroutine(sceneTransitionManager.Fade("FadeOut", "FadeIn", 1f));
         }
 
         foreach (Scene scene in gameScript.scenes)
@@ -219,7 +219,7 @@ public class ScriptPlotManagerScript : MonoBehaviour
                 }
                 else
                 {
-                    Debug.LogWarning($"Could not load texture: {emotionPath}");
+                    Debug.LogWarning($"Could not load texture: {emotionPath}"); 
                 }
             }
         }
