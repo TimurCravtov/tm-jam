@@ -2,19 +2,14 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.IO;
 using TMPro;
+using System.Collections.Generic;
 
 public class SaveManager : MonoBehaviour
 {
-    // Reference to the save button
     public Button saveButton;
-
-    // Reference to the SceneManagerScript that holds the current scene
     public ScriptPlotManagerScript plotManager;
+    public string saveFilePath;
 
-    // Path to the save file
-    public string saveFilePath = "Assets/Resources/save.json";
-
-    // Start is called before the first frame update
     void Start()
     {
         if (saveButton != null)
@@ -25,35 +20,70 @@ public class SaveManager : MonoBehaviour
         if (plotManager == null)
         {
             Debug.LogError("PlotManager not assigned!");
+            return;
         }
+
+        LoadGame(); // Load data when the game starts
     }
 
-    // Method to save the current scene ID into the save file
     void SaveGame()
     {
-        // Get the current scene ID from the plotManager
-        string currentSceneId = plotManager.GetCurrentSceneId();
+        if (plotManager == null)
+        {
+            Debug.LogError("PlotManager not found!");
+            return;
+        }
 
-        // Create a SaveData object to store the scene ID
         SaveData saveData = new SaveData
         {
-            currentSceneId = currentSceneId
+            currentSceneId = plotManager.GetCurrentSceneId(),
+            currentDialogueIndex = plotManager.GetCurrentDialogueIndex() - 1,
+            isChoosingOption = plotManager.IsChoosingOption(),
+            currentChoiceIndex = plotManager.GetCurrentChoiceIndex(),
+            selectedChoices = plotManager.GetSelectedChoices(),
+            saveDate = System.DateTime.Now.ToString("dd-MM-yy HH:mm:ss")
         };
 
-        // Convert the SaveData object to JSON
-        string json = JsonUtility.ToJson(saveData);
-
-        // Write the JSON to the file
+        string json = JsonUtility.ToJson(saveData, true);
         File.WriteAllText(saveFilePath, json);
-        Debug.Log(json);
-        Debug.Log("Game saved with scene: " + currentSceneId);
-        Debug.Log("Save file path: " + saveFilePath);
+
+        Debug.Log("Game saved:\n" + json);
+    }
+
+    void LoadGame()
+    {
+        if (File.ReadAllText(saveFilePath) == "")
+        {
+            Debug.Log("Save file empty.");
+            StartCoroutine(plotManager.LoadSceneWithFade("scene1"));
+            return;
+        }
+
+        string json = File.ReadAllText(saveFilePath);
+        SaveData loadedData = JsonUtility.FromJson<SaveData>(json);
+
+        if (loadedData == null)
+        {
+            Debug.LogError("Failed to load save data.");
+            return;
+        }
+
+        Debug.Log("Game loaded:\n" + json);
+
+        // Apply loaded data to PlotManager
+        plotManager.SetCurrentDialogueIndex(loadedData.currentDialogueIndex);
+        plotManager.SetChoiceSelection(loadedData.currentChoiceIndex, loadedData.isChoosingOption);
+        StartCoroutine(plotManager.LoadSceneWithFade(loadedData.currentSceneId));
     }
 }
 
-// Define the structure of the save data
 [System.Serializable]
 public class SaveData
 {
     public string currentSceneId;
+    public int currentDialogueIndex;
+    public bool isChoosingOption;
+    public int currentChoiceIndex;
+    public List<int> selectedChoices;
+    public string saveDate;
 }

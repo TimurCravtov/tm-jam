@@ -30,7 +30,7 @@ public class ScriptPlotManagerScript : MonoBehaviour
     // Variables for choice selection
     private int currentChoiceIndex = 0;
     private bool isChoosingOption = false;
-    
+
 
     public string GetCurrentSceneId()
     {
@@ -52,7 +52,7 @@ public class ScriptPlotManagerScript : MonoBehaviour
             Debug.LogError("Game script is not loaded!");
             return;
         }
-        StartCoroutine(LoadSceneWithFade("scene1"));
+        //StartCoroutine(LoadSceneWithFade("scene1"));
     }
 
     void Update()
@@ -61,11 +61,19 @@ public class ScriptPlotManagerScript : MonoBehaviour
         {
             HandleChoiceNavigation();
         }
-        else if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.RightArrow))
+        else if (Input.GetKeyDown(KeyCode.Space))
         {
-            ShowDialogue();
+            if (!phrase.isTextFullyDisplayed)
+            {
+                phrase.SkipOrNext(); // First press skips text animation
+            }
+            else
+            {
+                ShowDialogue(); // Second press moves to the next dialogue
+            }
         }
     }
+
 
     void HandleChoiceNavigation()
     {
@@ -99,7 +107,7 @@ public class ScriptPlotManagerScript : MonoBehaviour
         UpdateChoiceText();
     }
 
-    IEnumerator LoadSceneWithFade(string sceneId)
+    public IEnumerator LoadSceneWithFade(string sceneId)
     {
         if (sceneId != "scene1")
         {
@@ -120,6 +128,7 @@ public class ScriptPlotManagerScript : MonoBehaviour
 
                 currentDialogueIndex = 0;
                 isChoosingOption = false;
+                currentChoiceIndex = 0;
                 ShowDialogue();
                 yield break;
             }
@@ -287,7 +296,7 @@ public class ScriptPlotManagerScript : MonoBehaviour
                 choicesText += "    ";
             }
 
-                choicesText += currentScene.next.choices[i].text;
+            choicesText += currentScene.next.choices[i].text;
         }
 
         choiceTextArea.text = choicesText;
@@ -317,5 +326,38 @@ public class ScriptPlotManagerScript : MonoBehaviour
             }
         }
     }
-}
 
+    public int GetCurrentDialogueIndex()
+    {
+        return currentDialogueIndex;
+    }
+
+    public bool IsChoosingOption()
+    {
+        return isChoosingOption;
+    }
+
+    public int GetCurrentChoiceIndex()
+    {
+        return currentChoiceIndex;
+    }
+    public string GetBackgroundPath()
+    {
+        return currentScene.background;
+    }
+    public List<int> GetSelectedChoices()
+    {
+        // Example: Returning a list of past choices if tracking is implemented.
+        return new List<int>();  // Modify this to return actual selected choices
+    }
+    public void SetCurrentDialogueIndex(int index)
+    {
+        currentDialogueIndex = index;
+    }
+
+    public void SetChoiceSelection(int choiceIndex, bool isChoosing)
+    {
+        currentChoiceIndex = choiceIndex;
+        isChoosingOption = isChoosing;
+    }
+}
