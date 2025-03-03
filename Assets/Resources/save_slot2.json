@@ -1,8 +1,8 @@
 {
     "currentSceneId": "scene1",
-    "currentDialogueIndex": 0,
-    "isChoosingOption": false,
+    "currentDialogueIndex": 3,
+    "isChoosingOption": true,
     "currentChoiceIndex": 0,
     "selectedChoices": [],
-    "saveDate": "02-03-25 15:58:50"
+    "saveDate": "03-03-25 10:57:30"
 }

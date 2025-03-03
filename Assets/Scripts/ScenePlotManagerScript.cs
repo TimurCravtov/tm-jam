@@ -25,10 +25,12 @@ public class ScriptPlotManagerScript : MonoBehaviour
     [SerializeField] private ScriptLoader scriptLoader;
     [SerializeField] private SceneTransitionManager sceneTransitionManager;
 
+    private string saveFilePath = "Assets/Resources/save.json";
+
     // Variables for choice selection
     private int currentChoiceIndex = 0;
     private bool isChoosingOption = false;
-    
+
 
     public string GetCurrentSceneId()
     {
@@ -50,7 +52,6 @@ public class ScriptPlotManagerScript : MonoBehaviour
             Debug.LogError("Game script is not loaded!");
             return;
         }
-
         //StartCoroutine(LoadSceneWithFade("scene1"));
     }
 
@@ -102,7 +103,7 @@ public class ScriptPlotManagerScript : MonoBehaviour
     {
         if (sceneId != "scene1")
         {
-            StartCoroutine(sceneTransitionManager.Fade("FadeOut", "FadeIn", 1f));
+            yield return StartCoroutine(sceneTransitionManager.Fade("FadeOut", "FadeIn", 1f));
         }
 
         foreach (Scene scene in gameScript.scenes)
@@ -219,7 +220,7 @@ public class ScriptPlotManagerScript : MonoBehaviour
                 }
                 else
                 {
-                    Debug.LogWarning($"Could not load texture: {emotionPath}"); 
+                    Debug.LogWarning($"Could not load texture: {emotionPath}");
                 }
             }
         }
@@ -287,7 +288,7 @@ public class ScriptPlotManagerScript : MonoBehaviour
                 choicesText += "    ";
             }
 
-                choicesText += currentScene.next.choices[i].text;
+            choicesText += currentScene.next.choices[i].text;
         }
 
         choiceTextArea.text = choicesText;
@@ -317,6 +318,7 @@ public class ScriptPlotManagerScript : MonoBehaviour
             }
         }
     }
+
     public int GetCurrentDialogueIndex()
     {
         return currentDialogueIndex;
@@ -350,7 +352,4 @@ public class ScriptPlotManagerScript : MonoBehaviour
         currentChoiceIndex = choiceIndex;
         isChoosingOption = isChoosing;
     }
-
-
 }
-
