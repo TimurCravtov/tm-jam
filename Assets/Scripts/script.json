@@ -13,7 +13,7 @@
                         {
                             "id": "Anita",
                             "name": "Anita",
-                            "emotion": "happy",
+                            "emotion": "neutral",
                             "position": "center",
                             "visible": true,
                             "isSpeaking": true
@@ -28,7 +28,7 @@
                         {
                             "id": "Anita",
                             "name": "Anita",
-                            "emotion": "thoughtful",
+                            "emotion": "neutral",
                             "position": "center",
                             "visible": true,
                             "isSpeaking": true
@@ -36,23 +36,23 @@
                     ]
                 },
                 {
-                    "text": "Hey Ben, do you think it's going to rain later?",
+                    "text": "Hey Brianna, do you think it's going to rain later?",
                     "animation": "speak",
                     "waitForInput": true,
                     "characters": [
                         {
                             "id": "Anita",
                             "name": "Anita",
-                            "emotion": "curious",
+                            "emotion": "neutral",
                             "position": "center",
                             "visible": true,
                             "isSpeaking": true
                         },
                         {
-                            "id": "Ben",
-                            "name": "Ben",
+                            "id": "Brianna",
+                            "name": "Brianna",
                             "emotion": "neutral",
-                            "position": "right",
+                            "position": "left",
                             "visible": true,
                             "isSpeaking": false
                         }
@@ -66,15 +66,15 @@
                         {
                             "id": "Anita",
                             "name": "Anita",
-                            "emotion": "happy",
+                            "emotion": "neutral",
                             "position": "center",
                             "visible": true,
                             "isSpeaking": false
                         },
                         {
-                            "id": "Ben",
-                            "name": "Ben",
-                            "emotion": "confident",
+                            "id": "Brianna",
+                            "name": "Brianna",
+                            "emotion": "neutral",
                             "position": "right",
                             "visible": true,
                             "isSpeaking": true

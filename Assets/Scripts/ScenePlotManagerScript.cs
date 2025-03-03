@@ -37,6 +37,7 @@ public class ScriptPlotManagerScript : MonoBehaviour
     {
         return currentScene.id;
     }
+
     void Start()
     {
         choicePanelOuter.SetActive(false);
@@ -221,8 +222,15 @@ public class ScriptPlotManagerScript : MonoBehaviour
             if (characterObject != null && character.visible)
             {
                 characterObject.SetActive(true);
-                characterAnimator.StartAnimation(characterObject, character, !phrase.isTextFullyDisplayed);
+
+                if (character.isSpeaking) characterAnimator.StartAnimation(characterObject, character, () => !phrase.isTextFullyDisplayed);
+
+                else
+                {
+                    SetCharacterTexture(characterObject, character);
+                }
             }
+
 
         }
     }
@@ -243,6 +251,20 @@ public class ScriptPlotManagerScript : MonoBehaviour
                 return null;
         }
     }
+
+    public Texture GetCharacterTexture(DialogueCharacter character)
+    {
+        string emotionPath = $"Characters/{character.id}/{character.emotion}";
+        return Resources.Load<Texture>(emotionPath);
+       
+    }
+
+    public void SetCharacterTexture(GameObject characterObject, DialogueCharacter character)
+    {
+
+        characterObject.GetComponent<RawImage>().texture = GetCharacterTexture(character); 
+    } 
+
 
     public void ShowChoices()
     {

@@ -9,10 +9,10 @@ public class CharacterAnimator : MonoBehaviour
     private GameObject characterObject;
     private DialogueCharacter character;
     public float animationSpeed = 0.1f;
-    private bool isSpeaking;
+    private Func<bool> isSpeaking;
     
 
-    public void StartAnimation(GameObject pCharacterObject, DialogueCharacter pCharacter, bool pIsSpeaking)
+    public void StartAnimation(GameObject pCharacterObject, DialogueCharacter pCharacter, Func<bool> pIsSpeaking)
     {
         StopAllCoroutines(); // Stop any ongoing text animations
         characterObject = pCharacterObject;
@@ -23,8 +23,8 @@ public class CharacterAnimator : MonoBehaviour
 
     IEnumerator Speak()
     {
-        string emotionPath = $"Characters/{character.id}/neutral";
-        while (isSpeaking)
+        string emotionPath = $"Characters/{character.id}/{character.emotion}";
+        while (isSpeaking())
         {
             Texture openMouth = Resources.Load<Texture>(emotionPath + "_o");
             Texture closedMouth = Resources.Load<Texture>(emotionPath);
@@ -33,13 +33,16 @@ public class CharacterAnimator : MonoBehaviour
             {
                 characterObject.GetComponent<RawImage>().texture = openMouth;
                 yield return new WaitForSeconds(animationSpeed);
+
             }
+            else break;
 
             if (closedMouth != null)
             {
                 characterObject.GetComponent<RawImage>().texture = closedMouth;
                 yield return new WaitForSeconds(animationSpeed);
             }
+            else break;
         }
     }
 }
