@@ -74,7 +74,6 @@ public class SaveManager : MonoBehaviour
         plotManager.SetCurrentDialogueIndex(loadedData.currentDialogueIndex);
         plotManager.SetChoiceSelection(loadedData.currentChoiceIndex, loadedData.isChoosingOption);
         StartCoroutine(plotManager.LoadSceneWithFade(loadedData.currentSceneId));
-
     }
 }
 
