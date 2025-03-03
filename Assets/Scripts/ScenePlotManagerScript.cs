@@ -61,11 +61,19 @@ public class ScriptPlotManagerScript : MonoBehaviour
         {
             HandleChoiceNavigation();
         }
-        else if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.RightArrow))
+        else if (Input.GetKeyDown(KeyCode.Space))
         {
-            ShowDialogue();
+            if (!phrase.isTextFullyDisplayed)
+            {
+                phrase.SkipOrNext(); // First press skips text animation
+            }
+            else
+            {
+                ShowDialogue(); // Second press moves to the next dialogue
+            }
         }
     }
+
 
     void HandleChoiceNavigation()
     {
