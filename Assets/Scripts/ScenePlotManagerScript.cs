@@ -24,6 +24,7 @@ public class ScriptPlotManagerScript : MonoBehaviour
     private Scene currentScene;
     [SerializeField] private ScriptLoader scriptLoader;
     [SerializeField] private SceneTransitionManager sceneTransitionManager;
+    [SerializeField] private CharacterAnimator characterAnimator;
 
     private string saveFilePath = "Assets/Resources/save.json";
 
@@ -220,25 +221,14 @@ public class ScriptPlotManagerScript : MonoBehaviour
             if (characterObject != null && character.visible)
             {
                 characterObject.SetActive(true);
-
-                // Load the character emotion texture using the format: characterID/emotion
-                string emotionPath = $"{character.id}/{character.emotion}";
-                Texture characterTexture = Resources.Load<Texture>(emotionPath);
-
-                if (characterTexture != null)
-                {
-                    characterObject.GetComponent<RawImage>().texture = characterTexture;
-                }
-                else
-                {
-                    Debug.LogWarning($"Could not load texture: {emotionPath}");
-                }
+                characterAnimator.StartAnimation(characterObject, character, !phrase.isTextFullyDisplayed);
             }
+
         }
     }
 
     // Helper method to get the appropriate character GameObject based on position
-    GameObject GetCharacterGameObject(string position)
+    public GameObject GetCharacterGameObject(string position)
     {
         switch (position.ToLower())
         {
