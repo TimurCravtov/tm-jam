@@ -1044,6 +1044,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70dc5a1288e22fd4c86d60daab9f32f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  phrase: {fileID: 711515664}
   phraseText: {fileID: 8712650562589971363}
   phraseSpeakerName: {fileID: 8969044207838121122}
   localBackground: {fileID: 5488365744535626350}
@@ -1055,6 +1056,52 @@ MonoBehaviour:
   characterRight: {fileID: 1788485691}
   scriptLoader: {fileID: 78006843}
   sceneTransitionManager: {fileID: 230931257}
+--- !u!1 &711515663
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 711515665}
+  - component: {fileID: 711515664}
+  m_Layer: 0
+  m_Name: TextCreator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &711515664
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 711515663}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e03e76e21520bf04ba06f8c5e3284ecd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  viewText: {fileID: 8712650562589971363}
+  textSpeed: 0.03
+--- !u!4 &711515665
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 711515663}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 959.62964, y: 540.653, z: -7.9429097}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1172940412
 GameObject:
   m_ObjectHideFlags: 0
@@ -2753,3 +2800,4 @@ SceneRoots:
   - {fileID: 78006844}
   - {fileID: 230931258}
   - {fileID: 1172940414}
+  - {fileID: 711515665}
