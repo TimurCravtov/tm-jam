@@ -57,6 +57,8 @@ public class ScriptPlotManagerScript : MonoBehaviour
 
     void Update()
     {
+        if (sceneTransitionManager.IsFading()) return; // Prevent input during fade
+
         if (isChoosingOption)
         {
             HandleChoiceNavigation();
@@ -73,6 +75,7 @@ public class ScriptPlotManagerScript : MonoBehaviour
             }
         }
     }
+
 
 
     void HandleChoiceNavigation()
