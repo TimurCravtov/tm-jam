@@ -55,11 +55,7 @@ public class SaveManager : MonoBehaviour
         if (File.ReadAllText(saveFilePath) == "")
         {
             Debug.Log("Save file empty.");
-<<<<<<< HEAD
-            StartCoroutine(plotManager.LoadSceneWithFade("scene_old_office1"));
-=======
             StartCoroutine(plotManager.LoadSceneWithFade("start"));
->>>>>>> 407db1d322939e4f0689aba626f14a7922bfc9d1
             return;
         }
 
