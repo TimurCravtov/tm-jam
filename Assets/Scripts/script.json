@@ -1,79 +1,51 @@
 {
     "scenes": [
         {
-            "id": "scene1",
-            "background": "street",
+            "id": "start",
+            "background": "corporate_office",
             "transition": true,
             "dialogue": [
                 {
-                    "text": "Hey there! It's such a nice day, isn't it?",
+                    "text": "After years of dedication, this is how it ends? An AI taking my place?",
                     "animation": "blink",
                     "waitForInput": true,
+                    "speakerName": "Anita",
                     "characters": [
                         {
                             "id": "Anita",
                             "name": "Anita",
-                            "emotion": "neutral",
-                            "position": "center",
-                            "visible": true,
-                            "isSpeaking": true
-                        }
-                    ]
-                },
-                {
-                    "text": "I love coming to the park to clear my mind.",
-                    "animation": "speak",
-                    "waitForInput": true,
-                    "characters": [
-                        {
-                            "id": "Anita",
-                            "name": "Anita",
-                            "emotion": "neutral",
-                            "position": "center",
-                            "visible": true,
-                            "isSpeaking": true
-                        }
-                    ]
-                },
-                {
-                    "text": "Hey Brianna, do you think it's going to rain later?",
-                    "animation": "speak",
-                    "waitForInput": true,
-                    "characters": [
-                        {
-                            "id": "Anita",
-                            "name": "Anita",
-                            "emotion": "neutral",
+                            "emotion": "sad",
                             "position": "center",
                             "visible": true,
                             "isSpeaking": true
                         },
                         {
-                            "id": "Brianna",
-                            "name": "Brianna",
+                            "id": "Manager",
+                            "name": "Manager",
                             "emotion": "neutral",
-                            "position": "left",
+                            "position": "right",
                             "visible": true,
                             "isSpeaking": false
                         }
                     ]
                 },
                 {
-                    "text": "I don't think so. The sky looks clear!",
+                    "text": "Anita, you've been an asset. But our new AI system is more efficient. Today is your last day.",
                     "animation": "speak",
                     "waitForInput": true,
+                    "speakerName": "Manager",
                     "characters": [
                         {
                             "id": "Anita",
                             "name": "Anita",
-                            "emotion": "neutral",
+                            "emotion": "angry",
                             "position": "center",
                             "visible": true,
                             "isSpeaking": false
                         },
                         {
-                            "id": "Brianna",
-                            "name": "Brianna",
+                            "id": "Manager",
+                            "name": "Manager",
                             "emotion": "neutral",
                             "position": "right",
                             "visible": true,
@@ -82,53 +54,34 @@
                     ]
                 }
             ],
-            "next":
-            {
+            "next": {
                 "choices": [
                     {
-                        "text": "Agree with Anita",
-                        "nextScene": "scene2_positive"
+                        "text": "Accept the situation",
+                        "nextScene": "scene2_adaptation"
                     },
                     {
-                        "text": "In with Anita",
-                        "nextScene": "scene2_positive"
-                    },
-                    {
-                        "text": "Disagree with Anita",
-                        "nextScene": "scene2_negative"
+                        "text": "Resist and fight back",
+                        "nextScene": "scene2_resistance"
                     }
                 ]
             }
         },
         {
-            "id": "scene2_positive",
-            "background": "neon_street",
+            "id": "scene2_adaptation",
+            "background": "home_apartment",
             "transition": true,
             "dialogue": [
                 {
-                    "text": "Yeah, it does feel like a perfect evening.",
-                    "animation": "smile",
+                    "text": "Maybe I can learn to work with AI, not against it...",
+                    "animation": "speak",
                     "waitForInput": true,
-                    "characters": [
-                        {
-                            "id": "Brianna",
-                            "name": "Brianna",
-                            "emotion": "neutral",
-                            "position": "right",
-                            "visible": true,
-                            "isSpeaking": true
-                        }
-                    ]
-                },
-                {
-                    "text": "I knew you'd agree! Let's enjoy the moment.",
-                    "animation": "laugh",
-                    "waitForInput": true,
+                    "speakerName": "Anita",
                     "characters": [
                         {
                             "id": "Anita",
                             "name": "Anita",
-                            "emotion": "neutral",
+                            "emotion": "sad",
                             "position": "center",
                             "visible": true,
                             "isSpeaking": true
@@ -137,33 +90,71 @@
                 }
             ],
             "next": {
-                "scene": "scene3"
+                "choices": [
+                    {
+                        "text": "Pursue peaceful path",
+                        "nextScene": "scene3_peaceful"
+                    },
+                    {
+                        "text": "Seek revenge",
+                        "nextScene": "scene3_resistance"
+                    }
+                ]
             }
         },
         {
-            "id": "scene2_negative",
-            "background": "room",
+            "id": "scene2_resistance",
+            "background": "underground_meeting",
             "transition": true,
             "dialogue": [
                 {
-                    "text": "I don't know... those clouds look pretty dark.",
-                    "animation": "worried",
+                    "text": "We can't let AI replace everything human stands for!",
+                    "animation": "speak",
                     "waitForInput": true,
+                    "speakerName": "Anita",
                     "characters": [
                         {
-                            "id": "Ben",
-                            "name": "Ben",
+                            "id": "Anita",
+                            "name": "Anita",
+                            "emotion": "angry",
+                            "position": "center",
+                            "visible": true,
+                            "isSpeaking": true
+                        },
+                        {
+                            "id": "Aria",
+                            "name": "Aria",
                             "emotion": "neutral",
                             "position": "right",
                             "visible": true,
-                            "isSpeaking": true
+                            "isSpeaking": false
                         }
                     ]
-                },
+                }
+            ],
+            "next": {
+                "choices": [
+                    {
+                        "text": "Cyber Investigation",
+                        "nextScene": "scene3_cyber"
+                    },
+                    {
+                        "text": "Cultural Resistance",
+                        "nextScene": "scene3_cultural"
+                    }
+                ]
+            }
+        },
+        {
+            "id": "scene3_peaceful",
+            "background": "office",
+            "transition": true,
+            "dialogue": [
                 {
-                    "text": "Maybe you're right. We should find shelter just in case!",
-                    "animation": "alert",
+                    "text": "I'll try to adapt and find my place alongside AI.",
+                    "animation": "speak",
                     "waitForInput": true,
+                    "speakerName": "Anita",
                     "characters": [
                         {
                             "id": "Anita",
@@ -177,7 +168,68 @@
                 }
             ],
             "next": {
-                "scene": "scene3"
+                "scene": "final_scene"
+            }
+        },
+        {
+            "id": "scene3_resistance",
+            "background": "underground_base",
+            "transition": true,
+            "dialogue": [
+                {
+                    "text": "We will fight back against AI domination!",
+                    "animation": "speak",
+                    "waitForInput": true,
+                    "speakerName": "Anita",
+                    "characters": [
+                        {
+                            "id": "Anita",
+                            "name": "Anita",
+                            "emotion": "angry",
+                            "position": "center",
+                            "visible": true,
+                            "isSpeaking": true
+                        }
+                    ]
+                }
+            ],
+            "next": {
+                "scene": "final_scene"
+            }
+        },
+        {
+            "id": "final_scene",
+            "background": "soul_corridor",
+            "transition": true,
+            "dialogue": [
+                {
+                    "text": "This is the moment of truth.",
+                    "animation": "speak",
+                    "waitForInput": true,
+                    "speakerName": "Anita",
+                    "characters": [
+                        {
+                            "id": "Anita",
+                            "name": "Anita",
+                            "emotion": "neutral",
+                            "position": "center",
+                            "visible": true,
+                            "isSpeaking": true
+                        }
+                    ]
+                }
+            ],
+            "next": {
+                "choices": [
+                    {
+                        "text": "Surrender to AI",
+                        "nextScene": "ending_ai_dominance"
+                    },
+                    {
+                        "text": "Fight for Humanity",
+                        "nextScene": "ending_human_victory"
+                    }
+                ]
             }
         },
         {

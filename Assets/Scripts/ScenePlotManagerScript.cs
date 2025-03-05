@@ -114,7 +114,7 @@ public class ScriptPlotManagerScript : MonoBehaviour
 
     public IEnumerator LoadSceneWithFade(string sceneId)
     {
-        if (sceneId != "scene1")
+        if (sceneId != "start")
         {
             yield return StartCoroutine(sceneTransitionManager.Fade("FadeOut", "FadeIn", 1f));
         }
@@ -154,22 +154,9 @@ public class ScriptPlotManagerScript : MonoBehaviour
         // Use the new scrolling text function
         phrase.StartTextScroll(line.text);
 
-        // Display speaker name
-        DialogueCharacter speakingCharacter = null;
-        if (line.characters != null)
-        {
-            foreach (DialogueCharacter character in line.characters)
-            {
-                if (character.isSpeaking)
-                {
-                    speakingCharacter = character;
-                    break;
-                }
-            }
-        }
-        phraseSpeakerName.text = speakingCharacter != null ? speakingCharacter.name : "";
 
-        // Update character display
+        phraseSpeakerName.text = line.speakerName;
+
         UpdateCharacterDisplay(line);
 
         if (line.waitForInput)

@@ -16,7 +16,8 @@ public class DialogueCharacter
 public class Dialogue
 {
     public string text;             // The dialogue text
-    public string animation;        // Optional animation to play
+    public string animation;
+    public string speakerName;
     public bool waitForInput;       // Whether to wait for user input before continuing
     public List<DialogueCharacter> characters;  // All characters in the scene for this dialogue
 }
