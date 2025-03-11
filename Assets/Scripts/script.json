@@ -2,31 +2,31 @@
     "scenes": [
         {
             "id": "start",
-            "background": "corporate_office",
+            "background": "black",
             "transition": true,
             "dialogue": [
                 {
-                    "text": "After years of dedication, this is how it ends? An AI taking my place?",
+                    "text": "Year 2033. 5 AM. ",
                     "animation": "blink",
                     "waitForInput": true,
-                    "speakerName": "Anita",
+                    "speakerName": "Narrator",
                     "characters": [
-                        {
-                            "id": "Anita",
-                            "name": "Anita",
-                            "emotion": "sad",
-                            "position": "center",
-                            "visible": true,
-                            "isSpeaking": true
-                        },
-                        {
-                            "id": "Manager",
-                            "name": "Manager",
-                            "emotion": "neutral",
-                            "position": "right",
-                            "visible": true,
-                            "isSpeaking": false
-                        }
+                    ]
+                },
+                {
+                    "text": "Some people wake up. Some just go to bed",
+                    "animation": "blink",
+                    "waitForInput": true,
+                    "speakerName": "Narrator",
+                    "characters": [
+                    ]
+                },
+                {
+                    "text": "AI is slowly replacing people everywhere:",
+                    "animation": "blink",
+                    "waitForInput": true,
+                    "speakerName": "Narrator",
+                    "characters": [
                     ]
                 },
                 {
