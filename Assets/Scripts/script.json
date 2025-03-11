@@ -231,6 +231,102 @@
                     }
                 ]
             }
+        },
+        {
+            "id": "scene3",
+            "background": "scene_office",
+            "transition": true,
+            "dialogue": [
+                {
+                    "text": "A new day a new office",
+                    "animation": "worried",
+                    "waitForInput": true,
+                    "characters": [
+                        {
+                            "id": "Anita",
+                            "name": "Anita",
+                            "emotion": "neutral",
+                            "position": "center",
+                            "visible": true,
+                            "isSpeaking": true
+                        }
+                    ]
+                },
+                {
+                    "text": "Such a fucking joke, filling up the kaptcha, huh. Line after line, cat to the cat, motorcycle on the fucking picture with elephants",
+                    "animation": "alert",
+                    "waitForInput": true,
+                    "characters": [
+                        {
+                            "id": "Anita",
+                            "name": "Anita",
+                            "emotion": "neutral",
+                            "position": "center",
+                            "visible": true,
+                            "isSpeaking": true
+                        },
+                        {
+                            "id": "Misha",
+                            "name": "Misha",
+                            "emotion": "neutral",
+                            "position": "left",
+                            "visible": true,
+                            "isSpeaking": true
+                        }
+                    ]
+                }
+            ],
+            "next": {
+                "scene": "scene4"
+            }
+        },
+        {
+            "id": "scene_old_office1",
+            "background": "old_office",
+            "transition": true,
+            "dialogue": [
+                {
+                    "text": "We thank you for your service. You are free to go.",
+                    "animation": "worried",
+                    "waitForInput": true,
+                    "characters": [
+                        {
+                            "id": "Unknown",
+                            "name": "...",
+                            "emotion": "neutral",
+                            "position": "right",
+                            "visible": true,
+                            "isSpeaking": true
+                        },
+                        {
+                            "id": "Anita",
+                            "name": "Anita",
+                            "emotion": "neutral",
+                            "position": "left",
+                            "visible": true,
+                            "isSpeaking": false
+                        }
+                    ]
+                },
+                {
+                    "text": "I rawdogged this fucking thing and this is what I'm left with...",
+                    "animation": "alert",
+                    "waitForInput": true,
+                    "characters": [
+                        {
+                            "id": "Anita",
+                            "name": "Anita",
+                            "emotion": "neutral",
+                            "position": "center",
+                            "visible": true,
+                            "isSpeaking": true
+                        }
+                    ]
+                }
+            ],
+            "next": {
+                "scene": "scene1"
+            }
         }
     ]
 }
