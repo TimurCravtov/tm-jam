@@ -112,6 +112,45 @@ public class ScriptPlotManagerScript : MonoBehaviour
         UpdateChoiceText();
     }
 
+
+    public Scene LoadSceneById(string sceneId)
+    {
+
+        return gameScript.scenes.Find(scene => scene.id == sceneId);
+    }
+
+
+
+    public IEnumerator LoadScene(string sceneId, bool withFade)
+    {
+        if (sceneId != "start")
+        {
+            if (withFade) yield return StartCoroutine(sceneTransitionManager.Fade("FadeOut", "FadeIn", 1f));
+        }
+
+        foreach (Scene scene in gameScript.scenes)
+        {
+            if (scene.id == sceneId)
+            {
+                currentScene = scene;
+
+                localBackground.texture = Resources.Load<Texture>($"Backgrounds/{scene.background}");
+                if (scene.transition)
+                {
+                    StartCoroutine(sceneTransitionManager.Fade("FadeIn", "FadeOut", 1f));
+                }
+
+                currentDialogueIndex = 0;
+                isChoosingOption = false;
+                currentChoiceIndex = 0;
+                ShowDialogue();
+                yield break;
+            }
+        }
+        Debug.LogError("scene not load");
+    }
+
+
     public IEnumerator LoadSceneWithFade(string sceneId)
     {
         if (sceneId != "start")
@@ -172,9 +211,16 @@ public class ScriptPlotManagerScript : MonoBehaviour
         if (!string.IsNullOrEmpty(currentScene.next.scene))
         {
 
-            // Direct navigation to the next scene
-            StartCoroutine(LoadSceneWithFade(currentScene.next.scene));
+            Scene nextScene = LoadSceneById(currentScene.next.scene);
+
+
+            StartCoroutine(LoadScene(nextScene.id, nextScene.transition));
+
+            //StartCoroutine(LoadSceneWithFade(currentScene.next.scene));
         }
+
+
+
         // Otherwise, check if there are choices
         else if (currentScene.next.choices != null && currentScene.next.choices.Count > 0)
         {
@@ -320,6 +366,7 @@ public class ScriptPlotManagerScript : MonoBehaviour
             // Load the next scene based on the choice
             if (!string.IsNullOrEmpty(selectedChoice.nextScene))
             {
+
                 StartCoroutine(LoadSceneWithFade(selectedChoice.nextScene));
             }
             else

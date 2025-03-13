@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 00b0b74ac4b0c044a9a7f3ade3502985
+guid: 1aadf4ed6a2083c45a18c58a841bf814
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8195816491699183016
-    second: scene_office_0
+      213: 3568698656479460797
+    second: neutral_blinking_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: scene_office_0
+      name: neutral_blinking_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 6
         y: 0
-        width: 1980
-        height: 1116
+        width: 82
+        height: 96
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8ad94080da36db170800000000000000
-      internalID: 8195816491699183016
+      spriteID: dbd3fd13580968130800000000000000
+      internalID: 3568698656479460797
       vertices: []
       indices: 
       edges: []
@@ -147,8 +147,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      scene_office_0: 8195816491699183016
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
