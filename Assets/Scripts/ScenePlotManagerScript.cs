@@ -363,11 +363,15 @@ public class ScriptPlotManagerScript : MonoBehaviour
             // Hide choice panel
             choicePanelOuter.SetActive(false);
 
+
             // Load the next scene based on the choice
             if (!string.IsNullOrEmpty(selectedChoice.nextScene))
             {
+                Scene loadedScene = LoadSceneById(selectedChoice.nextScene);
 
-                StartCoroutine(LoadSceneWithFade(selectedChoice.nextScene));
+
+                StartCoroutine(LoadScene(loadedScene.id, loadedScene.transition));
+
             }
             else
             {

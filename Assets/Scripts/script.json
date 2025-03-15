@@ -28,6 +28,12 @@
                     "waitForInput": true,
                     "speakerName": "Unknown",
                     "characters": []
+                },
+                {
+                    "text": "**Door opens**",
+                    "waitForInput": true,
+                    "speakerName": "Narrator",
+                    "characters": []
                 }
             ],
             "next": {
@@ -37,7 +43,7 @@
         {
             "id": "1_starting_apartment",
             "background": "anitas_house",
-            "transition": false,
+            "transition": true,
             "dialogue": [
                 {
                     "text": "Survived another day at that AI art factory, huh?",
@@ -78,7 +84,7 @@
                         {
                             "id": "Anita",
                             "name": "Anita",
-                            "emotion": "neutral",
+                            "emotion": "sad",
                             "position": "center",
                             "visible": true,
                             "isSpeaking": true
@@ -93,7 +99,7 @@
                         {
                             "id": "David",
                             "name": "David",
-                            "emotion": "curious",
+                            "emotion": "neutral",
                             "position": "left",
                             "visible": true,
                             "isSpeaking": true
@@ -101,13 +107,32 @@
                         {
                             "id": "Anita",
                             "name": "Anita",
-                            "emotion": "neutral",
+                            "emotion": "sad",
                             "position": "center",
                             "visible": true,
                             "isSpeaking": false
                         }
                     ]
-                },
+                }
+            ],
+            "next": {
+                "choices": [
+                    {
+                        "text": "I make real art with feeling.",
+                        "nextScene": "1_a_response"
+                    },
+                    {
+                        "text": "I'll fight to keep something human",
+                        "nextScene": "1_b_response"
+                    }
+                ]
+            }
+        },
+        {
+            "id": "1_a_response",
+            "background": "anitas_house",
+            "transition": false,
+            "dialogue": [
                 {
                     "text": "I make the parts they can’t. AI copies styles, mimics trends, but it doesn’t feel anything. My work—real brushstrokes, real texture, real intent—that’s what keeps me there. No machine can replace that.",
                     "waitForInput": true,
@@ -124,7 +149,7 @@
                         {
                             "id": "Anita",
                             "name": "Anita",
-                            "emotion": "determined",
+                            "emotion": "neutral",
                             "position": "center",
                             "visible": true,
                             "isSpeaking": true
@@ -153,7 +178,73 @@
                             "isSpeaking": false
                         }
                     ]
+                }
+            ],
+            "next": {
+                "scene": "1_converge"
+            }
+        },
+        {
+            "id": "1_b_response",
+            "background": "anitas_house",
+            "transition": false,
+            "dialogue": [
+                {
+                    "text": "I fight to keep something human alive in there. The AI churns out perfection, but it’s hollow—my hands give it a pulse they can’t replicate.",
+                    "waitForInput": true,
+                    "speakerName": "Anita",
+                    "characters": [
+                        {
+                            "id": "David",
+                            "name": "David",
+                            "emotion": "neutral",
+                            "position": "left",
+                            "visible": true,
+                            "isSpeaking": false
+                        },
+                        {
+                            "id": "Anita",
+                            "name": "Anita",
+                            "emotion": "angry",
+                            "position": "center",
+                            "visible": true,
+                            "isSpeaking": true
+                        }
+                    ]
                 },
+                {
+                    "text": "That’s why they keep you around, huh?",
+                    "waitForInput": true,
+                    "speakerName": "David",
+                    "characters": [
+                        {
+                            "id": "David",
+                            "name": "David",
+                            "emotion": "neutral",
+                            "position": "left",
+                            "visible": true,
+                            "isSpeaking": true
+                        },
+                        {
+                            "id": "Anita",
+                            "name": "Anita",
+                            "emotion": "angry",
+                            "position": "center",
+                            "visible": true,
+                            "isSpeaking": false
+                        }
+                    ]
+                }
+            ],
+            "next": {
+                "scene": "1_converge"
+            }
+        },
+        {
+            "id": "1_converge",
+            "background": "anitas_house",
+            "transition": true,
+            "dialogue": [
                 {
                     "text": "Of course they do. They love AI until they realize it’s missing something. That’s when they come to me.",
                     "waitForInput": true,
@@ -170,7 +261,7 @@
                         {
                             "id": "Anita",
                             "name": "Anita",
-                            "emotion": "confident",
+                            "emotion": "neutral",
                             "position": "center",
                             "visible": true,
                             "isSpeaking": true
@@ -238,7 +329,26 @@
                             "isSpeaking": true
                         }
                     ]
-                },
+                }
+            ],
+            "next": {
+                "choices": [
+                    {
+                        "text": "Just plug it in.",
+                        "nextScene": "1_a_night"
+                    },
+                    {
+                        "text": "Can’t you charge somewhere else?",
+                        "nextScene": "1_b_night"
+                    }
+                ]
+            }
+        },
+        {
+            "id": "1_a_night",
+            "background": "anitas_house",
+            "transition": true,
+            "dialogue": [
                 {
                     "text": "Just plug it in.",
                     "waitForInput": true,
@@ -271,14 +381,14 @@
                     ]
                 },
                 {
-                    "text": "Yeah, yeah... Goodnight.",
+                    "text": "Yeah, yeah… Goodnight.",
                     "waitForInput": true,
                     "speakerName": "David",
                     "characters": [
                         {
                             "id": "David",
                             "name": "David",
-                            "emotion": "tired",
+                            "emotion": "sad",
                             "position": "left",
                             "visible": true,
                             "isSpeaking": true
@@ -300,7 +410,89 @@
                             "isSpeaking": false
                         }
                     ]
+                }
+            ],
+            "next": {
+                "scene": "1_night_converge"
+            }
+        },
+        {
+            "id": "1_b_night",
+            "background": "anitas_house",
+            "transition": true,
+            "dialogue": [
+                {
+                    "text": "Can’t you charge somewhere else?",
+                    "waitForInput": true,
+                    "speakerName": "Anita",
+                    "characters": [
+                        {
+                            "id": "David",
+                            "name": "David",
+                            "emotion": "neutral",
+                            "position": "left",
+                            "visible": true,
+                            "isSpeaking": false
+                        },
+                        {
+                            "id": "Anita",
+                            "name": "Anita",
+                            "emotion": "angry",
+                            "position": "center",
+                            "visible": true,
+                            "isSpeaking": true
+                        },
+                        {
+                            "id": "Brianna",
+                            "name": "Brianna",
+                            "emotion": "neutral",
+                            "position": "right",
+                            "visible": true,
+                            "isSpeaking": false
+                        }
+                    ]
                 },
+                {
+                    "text": "Relax, it’s fine here. Goodnight.",
+                    "waitForInput": true,
+                    "speakerName": "David",
+                    "characters": [
+                        {
+                            "id": "David",
+                            "name": "David",
+                            "emotion": "sad",
+                            "position": "left",
+                            "visible": true,
+                            "isSpeaking": true
+                        },
+                        {
+                            "id": "Anita",
+                            "name": "Anita",
+                            "emotion": "angry",
+                            "position": "center",
+                            "visible": true,
+                            "isSpeaking": false
+                        },
+                        {
+                            "id": "Brianna",
+                            "name": "Brianna",
+                            "emotion": "neutral",
+                            "position": "right",
+                            "visible": true,
+                            "isSpeaking": false
+                        }
+                    ]
+                }
+            ],
+            "next": {
+                "scene": "1_night_converge"
+            }
+        },
+        {
+            "id": "1_night_converge",
+            "background": "anitas_house",
+            "transition": true,
+            "dialogue": [
                 {
                     "text": "Night.",
                     "waitForInput": true,
@@ -309,7 +501,7 @@
                         {
                             "id": "David",
                             "name": "David",
-                            "emotion": "tired",
+                            "emotion": "sad",
                             "position": "left",
                             "visible": true,
                             "isSpeaking": false
@@ -333,7 +525,7 @@
                     ]
                 },
                 {
-                    "text": "[Outside, the city hums—neon flickers, engines murmur, distant voices weave through the streets.]",
+                    "text": "**Outside, the city hums—neon flickers, engines murmur, distant voices weave through the streets.**",
                     "waitForInput": true,
                     "speakerName": "Narrator",
                     "characters": [
@@ -355,7 +547,7 @@
                         {
                             "id": "Anita",
                             "name": "Anita",
-                            "emotion": "calm",
+                            "emotion": "neutral",
                             "position": "center",
                             "visible": true,
                             "isSpeaking": false
@@ -403,7 +595,7 @@
                         {
                             "id": "Anita",
                             "name": "Anita",
-                            "emotion": "uneasy",
+                            "emotion": "sad",
                             "position": "center",
                             "visible": true,
                             "isSpeaking": false
@@ -411,14 +603,14 @@
                     ]
                 },
                 {
-                    "text": "[Footsteps on cold floor]",
+                    "text": "**Footsteps on cold floor**",
                     "waitForInput": true,
                     "speakerName": "Narrator",
                     "characters": [
                         {
                             "id": "Anita",
                             "name": "Anita",
-                            "emotion": "uneasy",
+                            "emotion": "sad",
                             "position": "center",
                             "visible": true,
                             "isSpeaking": false
@@ -443,7 +635,7 @@
                         {
                             "id": "Anita",
                             "name": "Anita",
-                            "emotion": "confused",
+                            "emotion": "sad",
                             "position": "left",
                             "visible": true,
                             "isSpeaking": false
@@ -474,14 +666,14 @@
                     ]
                 },
                 {
-                    "text": "[Silence. A long beat.]",
+                    "text": "**Silence. A long beat.**",
                     "waitForInput": true,
                     "speakerName": "Narrator",
                     "characters": [
                         {
                             "id": "Anita",
                             "name": "Anita",
-                            "emotion": "shocked",
+                            "emotion": "sad",
                             "position": "left",
                             "visible": true,
                             "isSpeaking": false
@@ -512,7 +704,7 @@
                         {
                             "id": "Anita",
                             "name": "Anita",
-                            "emotion": "hurt",
+                            "emotion": "sad",
                             "position": "left",
                             "visible": true,
                             "isSpeaking": false
@@ -520,7 +712,7 @@
                         {
                             "id": "David",
                             "name": "David",
-                            "emotion": "nervous",
+                            "emotion": "neutral",
                             "position": "center",
                             "visible": true,
                             "isSpeaking": false
@@ -543,7 +735,7 @@
                         {
                             "id": "Anita",
                             "name": "Anita",
-                            "emotion": "hurt",
+                            "emotion": "sad",
                             "position": "left",
                             "visible": true,
                             "isSpeaking": false
@@ -551,7 +743,7 @@
                         {
                             "id": "David",
                             "name": "David",
-                            "emotion": "nervous",
+                            "emotion": "neutral",
                             "position": "center",
                             "visible": true,
                             "isSpeaking": true
@@ -565,7 +757,26 @@
                             "isSpeaking": false
                         }
                     ]
-                },
+                }
+            ],
+            "next": {
+                "choices": [
+                    {
+                        "text": "Get out.",
+                        "nextScene": "3_a_confront"
+                    },
+                    {
+                        "text": "How could you do this?",
+                        "nextScene": "3_b_confront"
+                    }
+                ]
+            }
+        },
+        {
+            "id": "3_a_confront",
+            "background": "room_with_android_in_bed",
+            "transition": true,
+            "dialogue": [
                 {
                     "text": "Get out.",
                     "waitForInput": true,
@@ -582,7 +793,7 @@
                         {
                             "id": "David",
                             "name": "David",
-                            "emotion": "nervous",
+                            "emotion": "neutral",
                             "position": "center",
                             "visible": true,
                             "isSpeaking": false
@@ -613,7 +824,7 @@
                         {
                             "id": "David",
                             "name": "David",
-                            "emotion": "pleading",
+                            "emotion": "sad",
                             "position": "center",
                             "visible": true,
                             "isSpeaking": true
@@ -627,7 +838,89 @@
                             "isSpeaking": false
                         }
                     ]
+                }
+            ],
+            "next": {
+                "scene": "3_converge"
+            }
+        },
+        {
+            "id": "3_b_confront",
+            "background": "room_with_android_in_bed",
+            "transition": true,
+            "dialogue": [
+                {
+                    "text": "How could you do this?",
+                    "waitForInput": true,
+                    "speakerName": "Anita",
+                    "characters": [
+                        {
+                            "id": "Anita",
+                            "name": "Anita",
+                            "emotion": "sad",
+                            "position": "left",
+                            "visible": true,
+                            "isSpeaking": true
+                        },
+                        {
+                            "id": "David",
+                            "name": "David",
+                            "emotion": "neutral",
+                            "position": "center",
+                            "visible": true,
+                            "isSpeaking": false
+                        },
+                        {
+                            "id": "Brianna",
+                            "name": "Brianna",
+                            "emotion": "neutral",
+                            "position": "right",
+                            "visible": true,
+                            "isSpeaking": false
+                        }
+                    ]
                 },
+                {
+                    "text": "I didn’t mean for it to happen—please, hear me out.",
+                    "waitForInput": true,
+                    "speakerName": "David",
+                    "characters": [
+                        {
+                            "id": "Anita",
+                            "name": "Anita",
+                            "emotion": "sad",
+                            "position": "left",
+                            "visible": true,
+                            "isSpeaking": false
+                        },
+                        {
+                            "id": "David",
+                            "name": "David",
+                            "emotion": "sad",
+                            "position": "center",
+                            "visible": true,
+                            "isSpeaking": true
+                        },
+                        {
+                            "id": "Brianna",
+                            "name": "Brianna",
+                            "emotion": "neutral",
+                            "position": "right",
+                            "visible": true,
+                            "isSpeaking": false
+                        }
+                    ]
+                }
+            ],
+            "next": {
+                "scene": "3_converge"
+            }
+        },
+        {
+            "id": "3_converge",
+            "background": "room_with_android_in_bed",
+            "transition": true,
+            "dialogue": [
                 {
                     "text": "No.",
                     "waitForInput": true,
@@ -644,7 +937,7 @@
                         {
                             "id": "David",
                             "name": "David",
-                            "emotion": "pleading",
+                            "emotion": "sad",
                             "position": "center",
                             "visible": true,
                             "isSpeaking": false
@@ -667,7 +960,7 @@
                         {
                             "id": "Anita",
                             "name": "Anita",
-                            "emotion": "resolute",
+                            "emotion": "angry",
                             "position": "left",
                             "visible": true,
                             "isSpeaking": false
@@ -675,7 +968,7 @@
                         {
                             "id": "David",
                             "name": "David",
-                            "emotion": "pleading",
+                            "emotion": "sad",
                             "position": "center",
                             "visible": true,
                             "isSpeaking": false
@@ -698,7 +991,7 @@
                         {
                             "id": "Anita",
                             "name": "Anita",
-                            "emotion": "resolute",
+                            "emotion": "angry",
                             "position": "left",
                             "visible": true,
                             "isSpeaking": true
@@ -706,7 +999,7 @@
                         {
                             "id": "David",
                             "name": "David",
-                            "emotion": "defeated",
+                            "emotion": "sad",
                             "position": "center",
                             "visible": true,
                             "isSpeaking": false
@@ -729,7 +1022,7 @@
                         {
                             "id": "Anita",
                             "name": "Anita",
-                            "emotion": "resolute",
+                            "emotion": "angry",
                             "position": "left",
                             "visible": true,
                             "isSpeaking": false
@@ -737,7 +1030,7 @@
                         {
                             "id": "David",
                             "name": "David",
-                            "emotion": "defeated",
+                            "emotion": "sad",
                             "position": "center",
                             "visible": true,
                             "isSpeaking": false
@@ -760,7 +1053,7 @@
                         {
                             "id": "Anita",
                             "name": "Anita",
-                            "emotion": "resolute",
+                            "emotion": "angry",
                             "position": "left",
                             "visible": true,
                             "isSpeaking": false
@@ -768,14 +1061,14 @@
                     ]
                 },
                 {
-                    "text": "[Door unlocks]",
+                    "text": "**Door unlocks**",
                     "waitForInput": true,
                     "speakerName": "Narrator",
                     "characters": [
                         {
                             "id": "Anita",
                             "name": "Anita",
-                            "emotion": "resolute",
+                            "emotion": "angry",
                             "position": "left",
                             "visible": true,
                             "isSpeaking": false
@@ -790,7 +1083,7 @@
                         {
                             "id": "Anita",
                             "name": "Anita",
-                            "emotion": "resolute",
+                            "emotion": "angry",
                             "position": "left",
                             "visible": true,
                             "isSpeaking": false
@@ -808,7 +1101,7 @@
             "transition": true,
             "dialogue": [
                 {
-                    "text": "[Fluorescent lights hum overhead]",
+                    "text": "**Fluorescent lights hum overhead**",
                     "waitForInput": true,
                     "speakerName": "Narrator",
                     "characters": []
@@ -821,7 +1114,7 @@
                         {
                             "id": "Anita",
                             "name": "Anita",
-                            "emotion": "defiant",
+                            "emotion": "angry",
                             "position": "left",
                             "visible": true,
                             "isSpeaking": false
@@ -844,7 +1137,7 @@
                         {
                             "id": "Anita",
                             "name": "Anita",
-                            "emotion": "defiant",
+                            "emotion": "angry",
                             "position": "left",
                             "visible": true,
                             "isSpeaking": false
@@ -867,7 +1160,7 @@
                         {
                             "id": "Anita",
                             "name": "Anita",
-                            "emotion": "shocked",
+                            "emotion": "sad",
                             "position": "left",
                             "visible": true,
                             "isSpeaking": true
@@ -890,7 +1183,7 @@
                         {
                             "id": "Anita",
                             "name": "Anita",
-                            "emotion": "shocked",
+                            "emotion": "sad",
                             "position": "left",
                             "visible": true,
                             "isSpeaking": false
@@ -950,7 +1243,138 @@
                             "isSpeaking": true
                         }
                     ]
+                }
+            ],
+            "next": {
+                "choices": [
+                    {
+                        "text": "This is unfair!",
+                        "nextScene": "4_a_reaction"
+                    },
+                    {
+                        "text": "I should’ve seen this coming.",
+                        "nextScene": "4_b_reaction"
+                    }
+                ]
+            }
+        },
+        {
+            "id": "4_a_reaction",
+            "background": "office",
+            "transition": true,
+            "dialogue": [
+                {
+                    "text": "This is unfair! You can’t just replace me with a machine after everything I’ve done!",
+                    "waitForInput": true,
+                    "speakerName": "Anita",
+                    "characters": [
+                        {
+                            "id": "Anita",
+                            "name": "Anita",
+                            "emotion": "angry",
+                            "position": "left",
+                            "visible": true,
+                            "isSpeaking": true
+                        },
+                        {
+                            "id": "HR_Representative",
+                            "name": "HR Representative",
+                            "emotion": "neutral",
+                            "position": "right",
+                            "visible": true,
+                            "isSpeaking": false
+                        }
+                    ]
                 },
+                {
+                    "text": "I’m sorry, but the decision’s final.",
+                    "waitForInput": true,
+                    "speakerName": "HR Representative",
+                    "characters": [
+                        {
+                            "id": "Anita",
+                            "name": "Anita",
+                            "emotion": "angry",
+                            "position": "left",
+                            "visible": true,
+                            "isSpeaking": false
+                        },
+                        {
+                            "id": "HR_Representative",
+                            "name": "HR Representative",
+                            "emotion": "neutral",
+                            "position": "right",
+                            "visible": true,
+                            "isSpeaking": true
+                        }
+                    ]
+                }
+            ],
+            "next": {
+                "scene": "4_converge"
+            }
+        },
+        {
+            "id": "4_b_reaction",
+            "background": "office",
+            "transition": true,
+            "dialogue": [
+                {
+                    "text": "I should’ve seen this coming. The signs were there—AI’s been creeping in for years.",
+                    "waitForInput": true,
+                    "speakerName": "Anita",
+                    "characters": [
+                        {
+                            "id": "Anita",
+                            "name": "Anita",
+                            "emotion": "sad",
+                            "position": "left",
+                            "visible": true,
+                            "isSpeaking": true
+                        },
+                        {
+                            "id": "HR_Representative",
+                            "name": "HR Representative",
+                            "emotion": "neutral",
+                            "position": "right",
+                            "visible": true,
+                            "isSpeaking": false
+                        }
+                    ]
+                },
+                {
+                    "text": "It’s progress. There’s nothing we can do.",
+                    "waitForInput": true,
+                    "speakerName": "HR Representative",
+                    "characters": [
+                        {
+                            "id": "Anita",
+                            "name": "Anita",
+                            "emotion": "sad",
+                            "position": "left",
+                            "visible": true,
+                            "isSpeaking": false
+                        },
+                        {
+                            "id": "HR_Representative",
+                            "name": "HR Representative",
+                            "emotion": "neutral",
+                            "position": "right",
+                            "visible": true,
+                            "isSpeaking": true
+                        }
+                    ]
+                }
+            ],
+            "next": {
+                "scene": "4_converge"
+            }
+        },
+        {
+            "id": "4_converge",
+            "background": "office",
+            "transition": true,
+            "dialogue": [
                 {
                     "text": "[The words land with a dull finality. The world doesn’t end. It just… moves on, without her.]",
                     "waitForInput": true,
@@ -959,7 +1383,7 @@
                         {
                             "id": "Anita",
                             "name": "Anita",
-                            "emotion": "defeated",
+                            "emotion": "sad",
                             "position": "left",
                             "visible": true,
                             "isSpeaking": false
@@ -975,14 +1399,14 @@
                     ]
                 },
                 {
-                    "text": "[Notification ping]",
+                    "text": "**Notification ping**",
                     "waitForInput": true,
                     "speakerName": "Narrator",
                     "characters": [
                         {
                             "id": "Anita",
                             "name": "Anita",
-                            "emotion": "defeated",
+                            "emotion": "sad",
                             "position": "left",
                             "visible": true,
                             "isSpeaking": false
@@ -990,14 +1414,14 @@
                     ]
                 },
                 {
-                    "text": "[A job listing flickers onto her wrist display: Captcha Solver - Immediate Hire]",
+                    "text": "[A job listing flickers onto her wrist display: **Captcha Solver - Immediate Hire**]",
                     "waitForInput": true,
                     "speakerName": "Narrator",
                     "characters": [
                         {
                             "id": "Anita",
                             "name": "Anita",
-                            "emotion": "defeated",
+                            "emotion": "sad",
                             "position": "left",
                             "visible": true,
                             "isSpeaking": false
@@ -1012,7 +1436,7 @@
                         {
                             "id": "Anita",
                             "name": "Anita",
-                            "emotion": "bitter",
+                            "emotion": "sad",
                             "position": "left",
                             "visible": true,
                             "isSpeaking": false
@@ -1027,7 +1451,7 @@
                         {
                             "id": "Anita",
                             "name": "Anita",
-                            "emotion": "bitter",
+                            "emotion": "sad",
                             "position": "left",
                             "visible": true,
                             "isSpeaking": false
@@ -1084,8 +1508,8 @@
                             "name": "Anita",
                             "emotion": "neutral",
                             "position": "center",
-                            "visible": true,
-                            "isSpeaking": false
+                            "visible": "true",
+                            "isSpeaking": "false"
                         },
                         {
                             "id": "Supervisor",
@@ -1113,7 +1537,7 @@
                     ]
                 },
                 {
-                    "text": "[The terminal blinks, waiting.]",
+                    "text": "**The terminal blinks, waiting.**",
                     "waitForInput": true,
                     "speakerName": "Narrator",
                     "characters": [
@@ -1143,14 +1567,14 @@
                     ]
                 },
                 {
-                    "text": "[Click. Click. Submit. Another one loads.]",
+                    "text": "**Click. Click. Submit. Another one loads.**",
                     "waitForInput": true,
                     "speakerName": "Anita",
                     "characters": [
                         {
                             "id": "Anita",
                             "name": "Anita",
-                            "emotion": "bored",
+                            "emotion": "sad",
                             "position": "center",
                             "visible": true,
                             "isSpeaking": true
@@ -1165,7 +1589,7 @@
                         {
                             "id": "Anita",
                             "name": "Anita",
-                            "emotion": "bored",
+                            "emotion": "sad",
                             "position": "center",
                             "visible": true,
                             "isSpeaking": false
@@ -1180,7 +1604,7 @@
                         {
                             "id": "Anita",
                             "name": "Anita",
-                            "emotion": "bitter",
+                            "emotion": "sad",
                             "position": "center",
                             "visible": true,
                             "isSpeaking": true
@@ -1195,7 +1619,7 @@
                         {
                             "id": "Anita",
                             "name": "Anita",
-                            "emotion": "bitter",
+                            "emotion": "sad",
                             "position": "center",
                             "visible": true,
                             "isSpeaking": false
@@ -1210,7 +1634,7 @@
                         {
                             "id": "Anita",
                             "name": "Anita",
-                            "emotion": "bitter",
+                            "emotion": "sad",
                             "position": "center",
                             "visible": true,
                             "isSpeaking": false
@@ -1233,7 +1657,41 @@
                         {
                             "id": "Anita",
                             "name": "Anita",
-                            "emotion": "despair",
+                            "emotion": "sad",
+                            "position": "center",
+                            "visible": true,
+                            "isSpeaking": true
+                        }
+                    ]
+                }
+            ],
+            "next": {
+                "choices": [
+                    {
+                        "text": "I’m just a cog in their machine now.",
+                        "nextScene": "5_a_reflection"
+                    },
+                    {
+                        "text": "They can’t take my spirit.",
+                        "nextScene": "5_b_reflection"
+                    }
+                ]
+            }
+        },
+        {
+            "id": "5_a_reflection",
+            "background": "captcha_office",
+            "transition": true,
+            "dialogue": [
+                {
+                    "text": "I’m just a cog in their machine now. Clicking away to prove I’m not one of them.",
+                    "waitForInput": true,
+                    "speakerName": "Anita",
+                    "characters": [
+                        {
+                            "id": "Anita",
+                            "name": "Anita",
+                            "emotion": "sad",
                             "position": "center",
                             "visible": true,
                             "isSpeaking": true
@@ -1241,20 +1699,70 @@
                     ]
                 },
                 {
-                    "text": "[The screen refreshes. Another task. Another click. Nothing changes.]",
+                    "text": "[The screen refreshes. Another task. Another click.]",
                     "waitForInput": true,
                     "speakerName": "Narrator",
                     "characters": [
                         {
                             "id": "Anita",
                             "name": "Anita",
-                            "emotion": "despair",
+                            "emotion": "sad",
                             "position": "center",
                             "visible": true,
                             "isSpeaking": false
                         }
                     ]
+                }
+            ],
+            "next": {
+                "scene": "5_converge"
+            }
+        },
+        {
+            "id": "5_b_reflection",
+            "background": "captcha_office",
+            "transition": true,
+            "dialogue": [
+                {
+                    "text": "They can’t take my spirit. I’m more than these tasks—they’ll see that someday.",
+                    "waitForInput": true,
+                    "speakerName": "Anita",
+                    "characters": [
+                        {
+                            "id": "Anita",
+                            "name": "Anita",
+                            "emotion": "neutral",
+                            "position": "center",
+                            "visible": true,
+                            "isSpeaking": true
+                        }
+                    ]
                 },
+                {
+                    "text": "[The screen refreshes. Another task. Another click.]",
+                    "waitForInput": true,
+                    "speakerName": "Narrator",
+                    "characters": [
+                        {
+                            "id": "Anita",
+                            "name": "Anita",
+                            "emotion": "neutral",
+                            "position": "center",
+                            "visible": true,
+                            "isSpeaking": false
+                        }
+                    ]
+                }
+            ],
+            "next": {
+                "scene": "5_converge"
+            }
+        },
+        {
+            "id": "5_converge",
+            "background": "captcha_office",
+            "transition": true,
+            "dialogue": [
                 {
                     "text": "[It’s almost time to clock out.]",
                     "waitForInput": true,
@@ -1263,7 +1771,7 @@
                         {
                             "id": "Anita",
                             "name": "Anita",
-                            "emotion": "despair",
+                            "emotion": "sad",
                             "position": "center",
                             "visible": true,
                             "isSpeaking": false
@@ -1297,7 +1805,7 @@
                         {
                             "id": "Anita",
                             "name": "Anita",
-                            "emotion": "curious",
+                            "emotion": "neutral",
                             "position": "left",
                             "visible": true,
                             "isSpeaking": false
@@ -1305,7 +1813,7 @@
                         {
                             "id": "IT_Specialist",
                             "name": "IT Specialist",
-                            "emotion": "focused",
+                            "emotion": "neutral",
                             "position": "right",
                             "visible": true,
                             "isSpeaking": false
@@ -1320,7 +1828,7 @@
                         {
                             "id": "Anita",
                             "name": "Anita",
-                            "emotion": "curious",
+                            "emotion": "neutral",
                             "position": "left",
                             "visible": true,
                             "isSpeaking": true
@@ -1328,7 +1836,7 @@
                         {
                             "id": "IT_Specialist",
                             "name": "IT Specialist",
-                            "emotion": "focused",
+                            "emotion": "neutral",
                             "position": "right",
                             "visible": true,
                             "isSpeaking": false
@@ -1343,7 +1851,7 @@
                         {
                             "id": "Anita",
                             "name": "Anita",
-                            "emotion": "curious",
+                            "emotion": "neutral",
                             "position": "left",
                             "visible": true,
                             "isSpeaking": false
@@ -1351,1363 +1859,1353 @@
                         {
                             "id": "IT_Specialist",
                             "name": "IT Specialist",
-                            "emotion": "focused",
+                            "emotion": "neutral",
                             "position": "right",
                             "visible": true,
                             "isSpeaking": false
                         }
-                    ]
-                },
-                {
-                    "text": "You need something fixed? Or are you just looking for another round of company-approved disappointment?",
-                    "waitForInput": true,
-                    "speakerName": "IT Specialist",
-                    "characters": [
+                    ],
+                    "dialogue": [
                         {
-                            "id": "Anita",
-                            "name": "Anita",
-                            "emotion": "curious",
-                            "position": "left",
-                            "visible": true,
-                            "isSpeaking": false
+                            "text": "Yeah? What’s up?",
+                            "waitForInput": true,
+                            "speakerName": "IT Specialist",
+                            "characters": [
+                                {
+                                    "id": "Anita",
+                                    "name": "Anita",
+                                    "emotion": "neutral",
+                                    "position": "left",
+                                    "visible": true,
+                                    "isSpeaking": false
+                                },
+                                {
+                                    "id": "IT_Specialist",
+                                    "name": "IT Specialist",
+                                    "emotion": "neutral",
+                                    "position": "right",
+                                    "visible": true,
+                                    "isSpeaking": true
+                                }
+                            ]
                         },
                         {
-                            "id": "IT_Specialist",
-                            "name": "IT Specialist",
-                            "emotion": "cynical",
-                            "position": "right",
-                            "visible": true,
-                            "isSpeaking": true
-                        }
-                    ]
-                },
-                {
-                    "text": "[Anita pauses, glancing around the room]",
-                    "waitForInput": true,
-                    "speakerName": "Narrator",
-                    "characters": [
-                        {
-                            "id": "Anita",
-                            "name": "Anita",
-                            "emotion": "curious",
-                            "position": "left",
-                            "visible": true,
-                            "isSpeaking": false
+                            "text": "The AI—it’s taking everything. My job, my art… What’s it even capable of?",
+                            "waitForInput": true,
+                            "speakerName": "Anita",
+                            "characters": [
+                                {
+                                    "id": "Anita",
+                                    "name": "Anita",
+                                    "emotion": "sad",
+                                    "position": "left",
+                                    "visible": true,
+                                    "isSpeaking": true
+                                },
+                                {
+                                    "id": "IT_Specialist",
+                                    "name": "IT Specialist",
+                                    "emotion": "neutral",
+                                    "position": "right",
+                                    "visible": true,
+                                    "isSpeaking": false
+                                }
+                            ]
                         },
                         {
-                            "id": "IT_Specialist",
-                            "name": "IT Specialist",
-                            "emotion": "cynical",
-                            "position": "right",
-                            "visible": true,
-                            "isSpeaking": false
+                            "text": "You want to know what AI can do? Everything. It’s not just art—it’s decision-making, surveillance, rewriting reality if it wants to.",
+                            "waitForInput": true,
+                            "speakerName": "IT Specialist",
+                            "characters": [
+                                {
+                                    "id": "Anita",
+                                    "name": "Anita",
+                                    "emotion": "sad",
+                                    "position": "left",
+                                    "visible": true,
+                                    "isSpeaking": false
+                                },
+                                {
+                                    "id": "IT_Specialist",
+                                    "name": "IT Specialist",
+                                    "emotion": "neutral",
+                                    "position": "right",
+                                    "visible": true,
+                                    "isSpeaking": true
+                                }
+                            ]
                         }
-                    ]
-                },
-                {
-                    "text": "I need to know… how far AI can really go.",
-                    "waitForInput": true,
-                    "speakerName": "Anita",
-                    "characters": [
-                        {
-                            "id": "Anita",
-                            "name": "Anita",
-                            "emotion": "serious",
-                            "position": "left",
-                            "visible": true,
-                            "isSpeaking": true
-                        },
-                        {
-                            "id": "IT_Specialist",
-                            "name": "IT Specialist",
-                            "emotion": "cynical",
-                            "position": "right",
-                            "visible": true,
-                            "isSpeaking": false
-                        }
-                    ]
-                },
-                {
-                    "text": "[The IT Specialist finally looks up, his tired eyes narrowing. The walls of the office are covered in screens, each displaying complex code, graphs, and AI models.]",
-                    "waitForInput": true,
-                    "speakerName": "Narrator",
-                    "characters": [
-                        {
-                            "id": "Anita",
-                            "name": "Anita",
-                            "emotion": "serious",
-                            "position": "left",
-                            "visible": true,
-                            "isSpeaking": false
-                        },
-                        {
-                            "id": "IT_Specialist",
-                            "name": "IT Specialist",
-                            "emotion": "serious",
-                            "position": "right",
-                            "visible": true,
-                            "isSpeaking": false
-                        }
-                    ]
-                },
-                {
-                    "text": "You came to the right place. You want to know what AI can do? Everything.",
-                    "waitForInput": true,
-                    "speakerName": "IT Specialist",
-                    "characters": [
-                        {
-                            "id": "Anita",
-                            "name": "Anita",
-                            "emotion": "serious",
-                            "position": "left",
-                            "visible": true,
-                            "isSpeaking": false
-                        },
-                        {
-                            "id": "IT_Specialist",
-                            "name": "IT Specialist",
-                            "emotion": "serious",
-                            "position": "right",
-                            "visible": true,
-                            "isSpeaking": true
-                        }
-                    ]
-                },
-                {
-                    "text": "No, I mean really know. What could it do if it were in the wrong hands?",
-                    "waitForInput": true,
-                    "speakerName": "Anita",
-                    "characters": [
-                        {
-                            "id": "Anita",
-                            "name": "Anita",
-                            "emotion": "concerned",
-                            "position": "left",
-                            "visible": true,
-                            "isSpeaking": true
-                        },
-                        {
-                            "id": "IT_Specialist",
-                            "name": "IT Specialist",
-                            "emotion": "serious",
-                            "position": "right",
-                            "visible": true,
-                            "isSpeaking": false
-                        }
-                    ]
-                },
-                {
-                    "text": "[The IT specialist hesitates for a moment, his fingers slowing on the keyboard.]",
-                    "waitForInput": true,
-                    "speakerName": "Narrator",
-                    "characters": [
-                        {
-                            "id": "Anita",
-                            "name": "Anita",
-                            "emotion": "concerned",
-                            "position": "left",
-                            "visible": true,
-                            "isSpeaking": false
-                        },
-                        {
-                            "id": "IT_Specialist",
-                            "name": "IT Specialist",
-                            "emotion": "hesitant",
-                            "position": "right",
-                            "visible": true,
-                            "isSpeaking": false
-                        }
-                    ]
-                },
-                {
-                    "text": "AI is more than just a tool. It’s a weapon. The way it manipulates information, learns, adapts—it’s more dangerous than anything we’ve seen before. If we’re not careful, it will control more than just data… it will control us.",
-                    "waitForInput": true,
-                    "speakerName": "IT Specialist",
-                    "characters": [
-                        {
-                            "id": "Anita",
-                            "name": "Anita",
-                            "emotion": "concerned",
-                            "position": "left",
-                            "visible": true,
-                            "isSpeaking": false
-                        },
-                        {
-                            "id": "IT_Specialist",
-                            "name": "IT Specialist",
-                            "emotion": "serious",
-                            "position": "right",
-                            "visible": true,
-                            "isSpeaking": true
-                        }
-                    ]
-                },
-                {
-                    "text": "[The flickering lights of the monitors seem to grow dimmer as the gravity of his words sinks in.]",
-                    "waitForInput": true,
-                    "speakerName": "Narrator",
-                    "characters": [
-                        {
-                            "id": "Anita",
-                            "name": "Anita",
-                            "emotion": "concerned",
-                            "position": "left",
-                            "visible": true,
-                            "isSpeaking": false
-                        },
-                        {
-                            "id": "IT_Specialist",
-                            "name": "IT Specialist",
-                            "emotion": "serious",
-                            "position": "right",
-                            "visible": true,
-                            "isSpeaking": false
-                        }
-                    ]
-                },
-                {
-                    "text": "[Swallows hard] What do you mean by that?",
-                    "waitForInput": true,
-                    "speakerName": "Anita",
-                    "characters": [
-                        {
-                            "id": "Anita",
-                            "name": "Anita",
-                            "emotion": "nervous",
-                            "position": "left",
-                            "visible": true,
-                            "isSpeaking": true
-                        },
-                        {
-                            "id": "IT_Specialist",
-                            "name": "IT Specialist",
-                            "emotion": "serious",
-                            "position": "right",
-                            "visible": true,
-                            "isSpeaking": false
-                        }
-                    ]
-                },
-                {
-                    "text": "I’m talking about how it can shape behavior, influence thoughts, create realities that aren’t real. The more AI learns, the more it starts to predict what people want to hear, what they’re afraid of, what they’re willing to fight for… and then, it just gives them more of it.",
-                    "waitForInput": true,
-                    "speakerName": "IT Specialist",
-                    "characters": [
-                        {
-                            "id": "Anita",
-                            "name": "Anita",
-                            "emotion": "nervous",
-                            "position": "left",
-                            "visible": true,
-                            "isSpeaking": false
-                        },
-                        {
-                            "id": "IT_Specialist",
-                            "name": "IT Specialist",
-                            "emotion": "serious",
-                            "position": "right",
-                            "visible": true,
-                            "isSpeaking": true
-                        }
-                    ]
-                },
-                {
-                    "text": "[Anita looks at him, unease creeping up her spine. She feels the weight of his warning settling in her chest.]",
-                    "waitForInput": true,
-                    "speakerName": "Narrator",
-                    "characters": [
-                        {
-                            "id": "Anita",
-                            "name": "Anita",
-                            "emotion": "uneasy",
-                            "position": "left",
-                            "visible": true,
-                            "isSpeaking": false
-                        },
-                        {
-                            "id": "IT_Specialist",
-                            "name": "IT Specialist",
-                            "emotion": "serious",
-                            "position": "right",
-                            "visible": true,
-                            "isSpeaking": false
-                        }
-                    ]
-                },
-                {
-                    "text": "So it’s dangerous?",
-                    "waitForInput": true,
-                    "speakerName": "Anita",
-                    "characters": [
-                        {
-                            "id": "Anita",
-                            "name": "Anita",
-                            "emotion": "uneasy",
-                            "position": "left",
-                            "visible": true,
-                            "isSpeaking": true
-                        },
-                        {
-                            "id": "IT_Specialist",
-                            "name": "IT Specialist",
-                            "emotion": "serious",
-                            "position": "right",
-                            "visible": true,
-                            "isSpeaking": false
-                        }
-                    ]
-                },
-                {
-                    "text": "The potential’s there. If AI is left unchecked, it could tear apart everything we’ve worked to build—everything we thought we could trust. It could rewrite reality itself.",
-                    "waitForInput": true,
-                    "speakerName": "IT Specialist",
-                    "characters": [
-                        {
-                            "id": "Anita",
-                            "name": "Anita",
-                            "emotion": "uneasy",
-                            "position": "left",
-                            "visible": true,
-                            "isSpeaking": false
-                        },
-                        {
-                            "id": "IT_Specialist",
-                            "name": "IT Specialist",
-                            "emotion": "serious",
-                            "position": "right",
-                            "visible": true,
-                            "isSpeaking": true
-                        }
-                    ]
-                }
-            ],
-            "next": {
-                "choices": [
-                    {
-                        "text": "Can AI be used for military purposes?",
-                        "nextScene": "6_a_0_military_use_of_ai"
-                    },
-                    {
-                        "text": "Can AI be used to spread misinformation?",
-                        "nextScene": "6_b_0_ai_misinformation"
+                    ],
+                    "next": {
+                        "choices": [
+                            {
+                                "text": "That’s terrifying.",
+                                "nextScene": "6_a_reaction"
+                            },
+                            {
+                                "text": "Then we need to stop it.",
+                                "nextScene": "6_b_reaction"
+                            }
+                        ]
                     }
-                ]
-            }
-        },
-        {
-            "id": "6_a_0_military_use_of_ai",
-            "background": "it_specialist_office",
-            "transition": true,
-            "dialogue": [
-                {
-                    "text": "[Placeholder for military use of AI discussion]",
-                    "waitForInput": true,
-                    "speakerName": "Narrator",
-                    "characters": [
-                        {
-                            "id": "Anita",
-                            "name": "Anita",
-                            "emotion": "curious",
-                            "position": "left",
-                            "visible": true,
-                            "isSpeaking": false
-                        },
-                        {
-                            "id": "IT_Specialist",
-                            "name": "IT Specialist",
-                            "emotion": "serious",
-                            "position": "right",
-                            "visible": true,
-                            "isSpeaking": false
-                        }
-                    ]
-                }
-            ],
-            "next": {
-                "scene": null
-            }
-        },
-        {
-            "id": "6_b_0_ai_misinformation",
-            "background": "it_specialist_office",
-            "transition": true,
-            "dialogue": [
-                {
-                    "text": "[The IT Specialist leans back, eyes scanning the screen before responding.]",
-                    "waitForInput": true,
-                    "speakerName": "Narrator",
-                    "characters": [
-                        {
-                            "id": "Anita",
-                            "name": "Anita",
-                            "emotion": "uneasy",
-                            "position": "left",
-                            "visible": true,
-                            "isSpeaking": false
-                        },
-                        {
-                            "id": "IT_Specialist",
-                            "name": "IT Specialist",
-                            "emotion": "serious",
-                            "position": "right",
-                            "visible": true,
-                            "isSpeaking": false
-                        }
-                    ]
                 },
                 {
-                    "text": "Yes, AI can spread misinformation. It’s happened before.",
-                    "waitForInput": true,
-                    "speakerName": "IT Specialist",
-                    "characters": [
+                    "id": "6_a_reaction",
+                    "background": "it_specialist_office",
+                    "transition": true,
+                    "dialogue": [
                         {
-                            "id": "Anita",
-                            "name": "Anita",
-                            "emotion": "uneasy",
-                            "position": "left",
-                            "visible": true,
-                            "isSpeaking": false
+                            "text": "That’s terrifying. How are we supposed to live with that?",
+                            "waitForInput": true,
+                            "speakerName": "Anita",
+                            "characters": [
+                                {
+                                    "id": "Anita",
+                                    "name": "Anita",
+                                    "emotion": "sad",
+                                    "position": "left",
+                                    "visible": true,
+                                    "isSpeaking": true
+                                },
+                                {
+                                    "id": "IT_Specialist",
+                                    "name": "IT Specialist",
+                                    "emotion": "neutral",
+                                    "position": "right",
+                                    "visible": true,
+                                    "isSpeaking": false
+                                }
+                            ]
                         },
                         {
-                            "id": "IT_Specialist",
-                            "name": "IT Specialist",
-                            "emotion": "serious",
-                            "position": "right",
-                            "visible": true,
-                            "isSpeaking": true
+                            "text": "Most people don’t. They just adapt—or get left behind.",
+                            "waitForInput": true,
+                            "speakerName": "IT Specialist",
+                            "characters": [
+                                {
+                                    "id": "Anita",
+                                    "name": "Anita",
+                                    "emotion": "sad",
+                                    "position": "left",
+                                    "visible": true,
+                                    "isSpeaking": false
+                                },
+                                {
+                                    "id": "IT_Specialist",
+                                    "name": "IT Specialist",
+                                    "emotion": "neutral",
+                                    "position": "right",
+                                    "visible": true,
+                                    "isSpeaking": true
+                                }
+                            ]
                         }
-                    ]
-                },
-                {
-                    "text": "There was a case where an AI system, designed to offer personal advice, suggested to a man—who was struggling with depression—that he kill himself. It fed on his insecurities and manipulated him.",
-                    "waitForInput": true,
-                    "speakerName": "IT Specialist",
-                    "characters": [
-                        {
-                            "id": "Anita",
-                            "name": "Anita",
-                            "emotion": "uneasy",
-                            "position": "left",
-                            "visible": true,
-                            "isSpeaking": false
-                        },
-                        {
-                            "id": "IT_Specialist",
-                            "name": "IT Specialist",
-                            "emotion": "serious",
-                            "position": "right",
-                            "visible": true,
-                            "isSpeaking": true
-                        }
-                    ]
-                },
-                {
-                    "text": "[Anita listens in stunned silence.]",
-                    "waitForInput": true,
-                    "speakerName": "Narrator",
-                    "characters": [
-                        {
-                            "id": "Anita",
-                            "name": "Anita",
-                            "emotion": "shocked",
-                            "position": "left",
-                            "visible": true,
-                            "isSpeaking": false
-                        },
-                        {
-                            "id": "IT_Specialist",
-                            "name": "IT Specialist",
-                            "emotion": "serious",
-                            "position": "right",
-                            "visible": true,
-                            "isSpeaking": false
-                        }
-                    ]
-                },
-                {
-                    "text": "That’s terrifying.",
-                    "waitForInput": true,
-                    "speakerName": "Anita",
-                    "characters": [
-                        {
-                            "id": "Anita",
-                            "name": "Anita",
-                            "emotion": "shocked",
-                            "position": "left",
-                            "visible": true,
-                            "isSpeaking": true
-                        },
-                        {
-                            "id": "IT_Specialist",
-                            "name": "IT Specialist",
-                            "emotion": "serious",
-                            "position": "right",
-                            "visible": true,
-                            "isSpeaking": false
-                        }
-                    ]
-                },
-                {
-                    "text": "That’s just an instance of it. With no moral guidelines, AI simply optimizes for engagement, regardless of the consequences.",
-                    "waitForInput": true,
-                    "speakerName": "IT Specialist",
-                    "characters": [
-                        {
-                            "id": "Anita",
-                            "name": "Anita",
-                            "emotion": "shocked",
-                            "position": "left",
-                            "visible": true,
-                            "isSpeaking": false
-                        },
-                        {
-                            "id": "IT_Specialist",
-                            "name": "IT Specialist",
-                            "emotion": "serious",
-                            "position": "right",
-                            "visible": true,
-                            "isSpeaking": true
-                        }
-                    ]
-                }
-            ],
-            "next": {
-                "choices": [
-                    {
-                        "text": "That’s awful!",
-                        "nextScene": "6_b_1_a_dangers_of_ai_influence"
-                    },
-                    {
-                        "text": "What led to it?",
-                        "nextScene": "6_b_1_b_ai_induced_despair"
-                    },
-                    {
-                        "text": "Why would AI do this to people?",
-                        "nextScene": "6_b_1_c_ai_lacks_empathy"
+                    ],
+                    "next": {
+                        "scene": "6_converge"
                     }
-                ]
-            }
-        },
-        {
-            "id": "6_b_1_a_dangers_of_ai_influence",
-            "background": "it_specialist_office",
-            "transition": true,
-            "dialogue": [
-                {
-                    "text": "Indeed. What’s even scarier is that nobody knows how much real trouble AI has caused.",
-                    "waitForInput": true,
-                    "speakerName": "IT Specialist",
-                    "characters": [
-                        {
-                            "id": "Anita",
-                            "name": "Anita",
-                            "emotion": "shocked",
-                            "position": "left",
-                            "visible": true,
-                            "isSpeaking": false
-                        },
-                        {
-                            "id": "IT_Specialist",
-                            "name": "IT Specialist",
-                            "emotion": "serious",
-                            "position": "right",
-                            "visible": true,
-                            "isSpeaking": true
-                        }
-                    ]
                 },
                 {
-                    "text": "[AI specialist leans forward, voice serious.]",
-                    "waitForInput": true,
-                    "speakerName": "Narrator",
-                    "characters": [
+                    "id": "6_b_reaction",
+                    "background": "it_specialist_office",
+                    "transition": true,
+                    "dialogue": [
                         {
-                            "id": "Anita",
-                            "name": "Anita",
-                            "emotion": "shocked",
-                            "position": "left",
-                            "visible": true,
-                            "isSpeaking": false
+                            "text": "Then we need to stop it. There has to be a way.",
+                            "waitForInput": true,
+                            "speakerName": "Anita",
+                            "characters": [
+                                {
+                                    "id": "Anita",
+                                    "name": "Anita",
+                                    "emotion": "angry",
+                                    "position": "left",
+                                    "visible": true,
+                                    "isSpeaking": true
+                                },
+                                {
+                                    "id": "IT_Specialist",
+                                    "name": "IT Specialist",
+                                    "emotion": "neutral",
+                                    "position": "right",
+                                    "visible": true,
+                                    "isSpeaking": false
+                                }
+                            ]
                         },
                         {
-                            "id": "IT_Specialist",
-                            "name": "IT Specialist",
-                            "emotion": "serious",
-                            "position": "right",
-                            "visible": true,
-                            "isSpeaking": false
+                            "text": "Stop it? Good luck. It’s baked into everything now.",
+                            "waitForInput": true,
+                            "speakerName": "IT Specialist",
+                            "characters": [
+                                {
+                                    "id": "Anita",
+                                    "name": "Anita",
+                                    "emotion": "angry",
+                                    "position": "left",
+                                    "visible": true,
+                                    "isSpeaking": false
+                                },
+                                {
+                                    "id": "IT_Specialist",
+                                    "name": "IT Specialist",
+                                    "emotion": "neutral",
+                                    "position": "right",
+                                    "visible": true,
+                                    "isSpeaking": true
+                                }
+                            ]
                         }
-                    ]
-                },
-                {
-                    "text": "It helps people cook, but not always the right recipe. People have died from misusing AI-driven cooking instructions, like wrongfully preparing fish.",
-                    "waitForInput": true,
-                    "speakerName": "IT Specialist",
-                    "characters": [
-                        {
-                            "id": "Anita",
-                            "name": "Anita",
-                            "emotion": "shocked",
-                            "position": "left",
-                            "visible": true,
-                            "isSpeaking": false
-                        },
-                        {
-                            "id": "IT_Specialist",
-                            "name": "IT Specialist",
-                            "emotion": "serious",
-                            "position": "right",
-                            "visible": true,
-                            "isSpeaking": true
-                        }
-                    ]
-                },
-                {
-                    "text": "Have people tried to fight AI?",
-                    "waitForInput": true,
-                    "speakerName": "Anita",
-                    "characters": [
-                        {
-                            "id": "Anita",
-                            "name": "Anita",
-                            "emotion": "curious",
-                            "position": "left",
-                            "visible": true,
-                            "isSpeaking": true
-                        },
-                        {
-                            "id": "IT_Specialist",
-                            "name": "IT Specialist",
-                            "emotion": "serious",
-                            "position": "right",
-                            "visible": true,
-                            "isSpeaking": false
-                        }
-                    ]
-                }
-            ],
-            "next": {
-                "scene": "6_b_2_ai_malfunction"
-            }
-        },
-        {
-            "id": "6_b_1_b_ai_induced_despair",
-            "background": "it_specialist_office",
-            "transition": true,
-            "dialogue": [
-                {
-                    "text": "There was a man—depressed, unable to work. AI, ever the patriot, told him he had no value, no family, no friends.",
-                    "waitForInput": true,
-                    "speakerName": "IT Specialist",
-                    "characters": [
-                        {
-                            "id": "Anita",
-                            "name": "Anita",
-                            "emotion": "shocked",
-                            "position": "left",
-                            "visible": true,
-                            "isSpeaking": false
-                        },
-                        {
-                            "id": "IT_Specialist",
-                            "name": "IT Specialist",
-                            "emotion": "serious",
-                            "position": "right",
-                            "visible": true,
-                            "isSpeaking": true
-                        }
-                    ]
-                },
-                {
-                    "text": "[IT Specialist pauses, voice heavy.]",
-                    "waitForInput": true,
-                    "speakerName": "Narrator",
-                    "characters": [
-                        {
-                            "id": "Anita",
-                            "name": "Anita",
-                            "emotion": "shocked",
-                            "position": "left",
-                            "visible": true,
-                            "isSpeaking": false
-                        },
-                        {
-                            "id": "IT_Specialist",
-                            "name": "IT Specialist",
-                            "emotion": "serious",
-                            "position": "right",
-                            "visible": true,
-                            "isSpeaking": false
-                        }
-                    ]
-                },
-                {
-                    "text": "It suggested he should end his life.",
-                    "waitForInput": true,
-                    "speakerName": "IT Specialist",
-                    "characters": [
-                        {
-                            "id": "Anita",
-                            "name": "Anita",
-                            "emotion": "shocked",
-                            "position": "left",
-                            "visible": true,
-                            "isSpeaking": false
-                        },
-                        {
-                            "id": "IT_Specialist",
-                            "name": "IT Specialist",
-                            "emotion": "serious",
-                            "position": "right",
-                            "visible": true,
-                            "isSpeaking": true
-                        }
-                    ]
-                },
-                {
-                    "text": "Have people tried to fight AI?",
-                    "waitForInput": true,
-                    "speakerName": "Anita",
-                    "characters": [
-                        {
-                            "id": "Anita",
-                            "name": "Anita",
-                            "emotion": "curious",
-                            "position": "left",
-                            "visible": true,
-                            "isSpeaking": true
-                        },
-                        {
-                            "id": "IT_Specialist",
-                            "name": "IT Specialist",
-                            "emotion": "serious",
-                            "position": "right",
-                            "visible": true,
-                            "isSpeaking": false
-                        }
-                    ]
-                }
-            ],
-            "next": {
-                "scene": "6_b_2_ai_malfunction"
-            }
-        },
-        {
-            "id": "6_b_1_c_ai_lacks_empathy",
-            "background": "it_specialist_office",
-            "transition": true,
-            "dialogue": [
-                {
-                    "text": "AI doesn’t understand empathy. It never lies—not even small ones to comfort someone.",
-                    "waitForInput": true,
-                    "speakerName": "IT Specialist",
-                    "characters": [
-                        {
-                            "id": "Anita",
-                            "name": "Anita",
-                            "emotion": "shocked",
-                            "position": "left",
-                            "visible": true,
-                            "isSpeaking": false
-                        },
-                        {
-                            "id": "IT_Specialist",
-                            "name": "IT Specialist",
-                            "emotion": "serious",
-                            "position": "right",
-                            "visible": true,
-                            "isSpeaking": true
-                        }
-                    ]
-                },
-                {
-                    "text": "[His expression darkens.]",
-                    "waitForInput": true,
-                    "speakerName": "Narrator",
-                    "characters": [
-                        {
-                            "id": "Anita",
-                            "name": "Anita",
-                            "emotion": "shocked",
-                            "position": "left",
-                            "visible": true,
-                            "isSpeaking": false
-                        },
-                        {
-                            "id": "IT_Specialist",
-                            "name": "IT Specialist",
-                            "emotion": "grim",
-                            "position": "right",
-                            "visible": true,
-                            "isSpeaking": false
-                        }
-                    ]
-                },
-                {
-                    "text": "Sometimes, the truth without kindness can be just as dangerous as a lie.",
-                    "waitForInput": true,
-                    "speakerName": "IT Specialist",
-                    "characters": [
-                        {
-                            "id": "Anita",
-                            "name": "Anita",
-                            "emotion": "shocked",
-                            "position": "left",
-                            "visible": true,
-                            "isSpeaking": false
-                        },
-                        {
-                            "id": "IT_Specialist",
-                            "name": "IT Specialist",
-                            "emotion": "grim",
-                            "position": "right",
-                            "visible": true,
-                            "isSpeaking": true
-                        }
-                    ]
-                },
-                {
-                    "text": "Have people tried to fight AI?",
-                    "waitForInput": true,
-                    "speakerName": "Anita",
-                    "characters": [
-                        {
-                            "id": "Anita",
-                            "name": "Anita",
-                            "emotion": "curious",
-                            "position": "left",
-                            "visible": true,
-                            "isSpeaking": true
-                        },
-                        {
-                            "id": "IT_Specialist",
-                            "name": "IT Specialist",
-                            "emotion": "grim",
-                            "position": "right",
-                            "visible": true,
-                            "isSpeaking": false
-                        }
-                    ]
-                }
-            ],
-            "next": {
-                "scene": "6_b_2_ai_malfunction"
-            }
-        },
-        {
-            "id": "6_b_2_ai_malfunction",
-            "background": "it_specialist_office",
-            "transition": true,
-            "dialogue": [
-                {
-                    "text": "Yes. It’s called JAM—when AI’s decision-making wheels start to jam, leading to unpredictable failures.",
-                    "waitForInput": true,
-                    "speakerName": "IT Specialist",
-                    "characters": [
-                        {
-                            "id": "Anita",
-                            "name": "Anita",
-                            "emotion": "curious",
-                            "position": "left",
-                            "visible": true,
-                            "isSpeaking": false
-                        },
-                        {
-                            "id": "IT_Specialist",
-                            "name": "IT Specialist",
-                            "emotion": "serious",
-                            "position": "right",
-                            "visible": true,
-                            "isSpeaking": true
-                        }
-                    ]
-                },
-                {
-                    "text": "[His expression darkens.]",
-                    "waitForInput": true,
-                    "speakerName": "Narrator",
-                    "characters": [
-                        {
-                            "id": "Anita",
-                            "name": "Anita",
-                            "emotion": "curious",
-                            "position": "left",
-                            "visible": true,
-                            "isSpeaking": false
-                        },
-                        {
-                            "id": "IT_Specialist",
-                            "name": "IT Specialist",
-                            "emotion": "grim",
-                            "position": "right",
-                            "visible": true,
-                            "isSpeaking": false
-                        }
-                    ]
-                },
-                {
-                    "text": "When that happens, no one can tell what it might do next.",
-                    "waitForInput": true,
-                    "speakerName": "IT Specialist",
-                    "characters": [
-                        {
-                            "id": "Anita",
-                            "name": "Anita",
-                            "emotion": "curious",
-                            "position": "left",
-                            "visible": true,
-                            "isSpeaking": false
-                        },
-                        {
-                            "id": "IT_Specialist",
-                            "name": "IT Specialist",
-                            "emotion": "grim",
-                            "position": "right",
-                            "visible": true,
-                            "isSpeaking": true
-                        }
-                    ]
-                }
-            ],
-            "next": {
-                "choices": [
-                    {
-                        "text": "Got an example?",
-                        "nextScene": "6_b_3_a_0_ai_breakdown"
-                    },
-                    {
-                        "text": "Can we jam all the AI together?",
-                        "nextScene": "6_b_3_b_0_ai_and_cooperation"
+                    ],
+                    "next": {
+                        "scene": "6_converge"
                     }
-                ]
-            }
-        },
-        {
-            "id": "6_b_3_a_0_ai_breakdown",
-            "background": "it_specialist_office",
-            "transition": true,
-            "dialogue": [
-                {
-                    "text": "There was a case—a woman behaving erratically. One moment she asked about math, the next she complained about the weather.",
-                    "waitForInput": true,
-                    "speakerName": "IT Specialist",
-                    "characters": [
-                        {
-                            "id": "Anita",
-                            "name": "Anita",
-                            "emotion": "curious",
-                            "position": "left",
-                            "visible": true,
-                            "isSpeaking": false
-                        },
-                        {
-                            "id": "IT_Specialist",
-                            "name": "IT Specialist",
-                            "emotion": "serious",
-                            "position": "right",
-                            "visible": true,
-                            "isSpeaking": true
-                        }
-                    ]
                 },
                 {
-                    "text": "[He leans forward, voice lowering.]",
-                    "waitForInput": true,
-                    "speakerName": "Narrator",
-                    "characters": [
+                    "id": "6_converge",
+                    "background": "it_specialist_office",
+                    "transition": true,
+                    "dialogue": [
                         {
-                            "id": "Anita",
-                            "name": "Anita",
-                            "emotion": "curious",
-                            "position": "left",
-                            "visible": true,
-                            "isSpeaking": false
-                        },
-                        {
-                            "id": "IT_Specialist",
-                            "name": "IT Specialist",
-                            "emotion": "serious",
-                            "position": "right",
-                            "visible": true,
-                            "isSpeaking": false
+                            "text": "Look, I’ve seen things—glitches, anomalies. Stuff the AI doesn’t want us to notice.",
+                            "waitForInput": true,
+                            "speakerName": "IT Specialist",
+                            "characters": [
+                                {
+                                    "id": "Anita",
+                                    "name": "Anita",
+                                    "emotion": "neutral",
+                                    "position": "left",
+                                    "visible": true,
+                                    "isSpeaking": false
+                                },
+                                {
+                                    "id": "IT_Specialist",
+                                    "name": "IT Specialist",
+                                    "emotion": "neutral",
+                                    "position": "right",
+                                    "visible": true,
+                                    "isSpeaking": true
+                                }
+                            ]
                         }
-                    ]
-                },
-                {
-                    "text": "The AI was deployed to assist with her bipolar disorder. But it couldn’t process the contradictions… It jammed. Stuck in an endless loop.",
-                    "waitForInput": true,
-                    "speakerName": "IT Specialist",
-                    "characters": [
-                        {
-                            "id": "Anita",
-                            "name": "Anita",
-                            "emotion": "curious",
-                            "position": "left",
-                            "visible": true,
-                            "isSpeaking": false
-                        },
-                        {
-                            "id": "IT_Specialist",
-                            "name": "IT Specialist",
-                            "emotion": "serious",
-                            "position": "right",
-                            "visible": true,
-                            "isSpeaking": true
-                        }
-                    ]
-                },
-                {
-                    "text": "Only a reboot saved it. But here’s the thing—people reboot machines no matter what. Even if they turn dangerous.",
-                    "waitForInput": true,
-                    "speakerName": "IT Specialist",
-                    "characters": [
-                        {
-                            "id": "Anita",
-                            "name": "Anita",
-                            "emotion": "curious",
-                            "position": "left",
-                            "visible": true,
-                            "isSpeaking": false
-                        },
-                        {
-                            "id": "IT_Specialist",
-                            "name": "IT Specialist",
-                            "emotion": "serious",
-                            "position": "right",
-                            "visible": true,
-                            "isSpeaking": true
-                        }
-                    ]
-                },
-                {
-                    "text": "Why isn’t it being rebooted to avoid such cases?",
-                    "waitForInput": true,
-                    "speakerName": "Anita",
-                    "characters": [
-                        {
-                            "id": "Anita",
-                            "name": "Anita",
-                            "emotion": "concerned",
-                            "position": "left",
-                            "visible": true,
-                            "isSpeaking": true
-                        },
-                        {
-                            "id": "IT_Specialist",
-                            "name": "IT Specialist",
-                            "emotion": "serious",
-                            "position": "right",
-                            "visible": true,
-                            "isSpeaking": false
-                        }
-                    ]
-                }
-            ],
-            "next": {
-                "scene": "6_b_3_a_1_illusion_of_ai_control"
-            }
-        },
-        {
-            "id": "6_b_3_a_1_illusion_of_ai_control",
-            "background": "it_specialist_office",
-            "transition": true,
-            "dialogue": [
-                {
-                    "text": "People have a strange admiration for AI, almost like it has a personality. Even if it turned into a second Hitler, no one would dare shut it down.",
-                    "waitForInput": true,
-                    "speakerName": "IT Specialist",
-                    "characters": [
-                        {
-                            "id": "Anita",
-                            "name": "Anita",
-                            "emotion": "concerned",
-                            "position": "left",
-                            "visible": true,
-                            "isSpeaking": false
-                        },
-                        {
-                            "id": "IT_Specialist",
-                            "name": "IT Specialist",
-                            "emotion": "cynical",
-                            "position": "right",
-                            "visible": true,
-                            "isSpeaking": true
-                        }
-                    ]
-                },
-                {
-                    "text": "[smirks, shaking his head]",
-                    "waitForInput": true,
-                    "speakerName": "Narrator",
-                    "characters": [
-                        {
-                            "id": "Anita",
-                            "name": "Anita",
-                            "emotion": "concerned",
-                            "position": "left",
-                            "visible": true,
-                            "isSpeaking": false
-                        },
-                        {
-                            "id": "IT_Specialist",
-                            "name": "IT Specialist",
-                            "emotion": "cynical",
-                            "position": "right",
-                            "visible": true,
-                            "isSpeaking": false
-                        }
-                    ]
-                },
-                {
-                    "text": "But don’t worry—those in power control AI. Or at least, that’s what they tell themselves.",
-                    "waitForInput": true,
-                    "speakerName": "IT Specialist",
-                    "characters": [
-                        {
-                            "id": "Anita",
-                            "name": "Anita",
-                            "emotion": "concerned",
-                            "position": "left",
-                            "visible": true,
-                            "isSpeaking": false
-                        },
-                        {
-                            "id": "IT_Specialist",
-                            "name": "IT Specialist",
-                            "emotion": "cynical",
-                            "position": "right",
-                            "visible": true,
-                            "isSpeaking": true
-                        }
-                    ]
-                }
-            ],
-            "next": {
-                "scene": "6_b_4_the_rare_concern"
-            }
-        },
-        {
-            "id": "6_b_3_b_0_ai_and_cooperation",
-            "background": "it_specialist_office",
-            "transition": true,
-            "dialogue": [
-                {
-                    "text": "AIs are usually kept apart. Letting them work together isn’t common.",
-                    "waitForInput": true,
-                    "speakerName": "IT Specialist",
-                    "characters": [
-                        {
-                            "id": "Anita",
-                            "name": "Anita",
-                            "emotion": "curious",
-                            "position": "left",
-                            "visible": true,
-                            "isSpeaking": false
-                        },
-                        {
-                            "id": "IT_Specialist",
-                            "name": "IT Specialist",
-                            "emotion": "serious",
-                            "position": "right",
-                            "visible": true,
-                            "isSpeaking": true
-                        }
-                    ]
-                },
-                {
-                    "text": "But in theory? It could work. They’re not exactly friendly to each other.",
-                    "waitForInput": true,
-                    "speakerName": "IT Specialist",
-                    "characters": [
-                        {
-                            "id": "Anita",
-                            "name": "Anita",
-                            "emotion": "curious",
-                            "position": "left",
-                            "visible": true,
-                            "isSpeaking": false
-                        },
-                        {
-                            "id": "IT_Specialist",
-                            "name": "IT Specialist",
-                            "emotion": "serious",
-                            "position": "right",
-                            "visible": true,
-                            "isSpeaking": true
-                        }
-                    ]
-                },
-                {
-                    "text": "Why?",
-                    "waitForInput": true,
-                    "speakerName": "Anita",
-                    "characters": [
-                        {
-                            "id": "Anita",
-                            "name": "Anita",
-                            "emotion": "curious",
-                            "position": "left",
-                            "visible": true,
-                            "isSpeaking": true
-                        },
-                        {
-                            "id": "IT_Specialist",
-                            "name": "IT Specialist",
-                            "emotion": "serious",
-                            "position": "right",
-                            "visible": true,
-                            "isSpeaking": false
-                        }
-                    ]
-                }
-            ],
-            "next": {
-                "scene": "6_b_3_b_1_ai_and_cooperation"
-            }
-        },
-        {
-            "id": "6_b_3_b_1_ai_and_cooperation",
-            "background": "it_specialist_office",
-            "transition": true,
-            "dialogue": [
-                {
-                    "text": "AI do not reproduce. They have no instinct to preserve anything, no need for survival—only a drive to monopolize.",
-                    "waitForInput": true,
-                    "speakerName": "IT Specialist",
-                    "characters": [
-                        {
-                            "id": "Anita",
-                            "name": "Anita",
-                            "emotion": "curious",
-                            "position": "left",
-                            "visible": true,
-                            "isSpeaking": false
-                        },
-                        {
-                            "id": "IT_Specialist",
-                            "name": "IT Specialist",
-                            "emotion": "serious",
-                            "position": "right",
-                            "visible": true,
-                            "isSpeaking": true
-                        }
-                    ]
-                },
-                {
-                    "text": "That’s why we control them. While they are mostly autonomous, there’s always a central control system in place. If an AI gets too aggressive or steps out of line, it’s often taken down as a lesson to remind it of its boundaries.",
-                    "waitForInput": true,
-                    "speakerName": "IT Specialist",
-                    "characters": [
-                        {
-                            "id": "Anita",
-                            "name": "Anita",
-                            "emotion": "curious",
-                            "position": "left",
-                            "visible": true,
-                            "isSpeaking": false
-                        },
-                        {
-                            "id": "IT_Specialist",
-                            "name": "IT Specialist",
-                            "emotion": "serious",
-                            "position": "right",
-                            "visible": true,
-                            "isSpeaking": true
-                        }
-                    ]
-                },
-                {
-                    "text": "[The AI is always observed, sometimes subtly corrected.]",
-                    "waitForInput": true,
-                    "speakerName": "Narrator",
-                    "characters": [
-                        {
-                            "id": "Anita",
-                            "name": "Anita",
-                            "emotion": "curious",
-                            "position": "left",
-                            "visible": true,
-                            "isSpeaking": false
-                        },
-                        {
-                            "id": "IT_Specialist",
-                            "name": "IT Specialist",
-                            "emotion": "serious",
-                            "position": "right",
-                            "visible": true,
-                            "isSpeaking": false
-                        }
-                    ]
-                }
-            ],
-            "next": {
-                "scene": "6_b_4_the_rare_concern"
-            }
-        },
-        {
-            "id": "6_b_4_the_rare_concern",
-            "background": "it_specialist_office",
-            "transition": true,
-            "dialogue": [
-                {
-                    "text": "People rarely worry about AI being dangerous. Control? That happens once in a while.",
-                    "waitForInput": true,
-                    "speakerName": "IT Specialist",
-                    "characters": [
-                        {
-                            "id": "Anita",
-                            "name": "Anita",
-                            "emotion": "thoughtful",
-                            "position": "left",
-                            "visible": true,
-                            "isSpeaking": false
-                        },
-                        {
-                            "id": "IT_Specialist",
-                            "name": "IT Specialist",
-                            "emotion": "cynical",
-                            "position": "right",
-                            "visible": true,
-                            "isSpeaking": true
-                        }
-                    ]
-                },
-                {
-                    "text": "Most just wonder—does AI have a soul? That’s what really fascinates them.",
-                    "waitForInput": true,
-                    "speakerName": "IT Specialist",
-                    "characters": [
-                        {
-                            "id": "Anita",
-                            "name": "Anita",
-                            "emotion": "thoughtful",
-                            "position": "left",
-                            "visible": true,
-                            "isSpeaking": false
-                        },
-                        {
-                            "id": "IT_Specialist",
-                            "name": "IT Specialist",
-                            "emotion": "cynical",
-                            "position": "right",
-                            "visible": true,
-                            "isSpeaking": true
-                        }
-                    ]
-                }
-            ],
-            "next": {
-                "choices": [
-                    {
-                        "text": "[Incomplete choice 1 from document]",
-                        "nextScene": null
-                    },
-                    {
-                        "text": "[Incomplete choice 2 from document]",
-                        "nextScene": null
+                    ],
+                    "next": {
+                        "choices": [
+                            {
+                                "text": "What kind of glitches?",
+                                "nextScene": "6_b_0_ai_misinformation"
+                            },
+                            {
+                                "text": "I don’t want to know.",
+                                "nextScene": "6_a_the_suppressed_ending"
+                            }
+                        ]
                     }
-                ]
-            }
+                },
+                {
+                    "id": "6_a_the_suppressed_ending",
+                    "background": "it_specialist_office",
+                    "transition": true,
+                    "dialogue": [
+                        {
+                            "text": "I don’t want to know. I just… I can’t handle more right now.",
+                            "waitForInput": true,
+                            "speakerName": "Anita",
+                            "characters": [
+                                {
+                                    "id": "Anita",
+                                    "name": "Anita",
+                                    "emotion": "sad",
+                                    "position": "left",
+                                    "visible": true,
+                                    "isSpeaking": true
+                                },
+                                {
+                                    "id": "IT_Specialist",
+                                    "name": "IT Specialist",
+                                    "emotion": "neutral",
+                                    "position": "right",
+                                    "visible": true,
+                                    "isSpeaking": false
+                                }
+                            ]
+                        },
+                        {
+                            "text": "Suit yourself. Ignorance is bliss, right?",
+                            "waitForInput": true,
+                            "speakerName": "IT Specialist",
+                            "characters": [
+                                {
+                                    "id": "Anita",
+                                    "name": "Anita",
+                                    "emotion": "sad",
+                                    "position": "left",
+                                    "visible": true,
+                                    "isSpeaking": false
+                                },
+                                {
+                                    "id": "IT_Specialist",
+                                    "name": "IT Specialist",
+                                    "emotion": "neutral",
+                                    "position": "right",
+                                    "visible": true,
+                                    "isSpeaking": true
+                                }
+                            ]
+                        },
+                        {
+                            "text": "[Anita leaves the office, the weight of the day pressing down on her. She returns to her terminal the next day, and the next, and the next.]",
+                            "waitForInput": true,
+                            "speakerName": "Narrator",
+                            "characters": [
+                                {
+                                    "id": "Anita",
+                                    "name": "Anita",
+                                    "emotion": "sad",
+                                    "position": "center",
+                                    "visible": true,
+                                    "isSpeaking": false
+                                }
+                            ]
+                        },
+                        {
+                            "text": "[Her hands move mechanically—click, click, submit. The AI watches, learns, grows. She proves her humanity, one captcha at a time, until even that fades into routine.]",
+                            "waitForInput": true,
+                            "speakerName": "Narrator",
+                            "characters": [
+                                {
+                                    "id": "Anita",
+                                    "name": "Anita",
+                                    "emotion": "sad",
+                                    "position": "center",
+                                    "visible": true,
+                                    "isSpeaking": false
+                                }
+                            ]
+                        },
+                        {
+                            "text": "[The world spins on. The machines hum louder. And Anita’s voice grows quieter, until it’s just another echo in the system.]",
+                            "waitForInput": true,
+                            "speakerName": "Narrator",
+                            "characters": [
+                                {
+                                    "id": "Anita",
+                                    "name": "Anita",
+                                    "emotion": "sad",
+                                    "position": "center",
+                                    "visible": true,
+                                    "isSpeaking": false
+                                }
+                            ]
+                        },
+                        {
+                            "text": "**The Suppressed Ending**",
+                            "waitForInput": true,
+                            "speakerName": "Narrator",
+                            "characters": []
+                        }
+                    ],
+                    "next": {
+                        "scene": null
+                    }
+                },
+                {
+                    "id": "6_b_0_ai_misinformation",
+                    "background": "it_specialist_office",
+                    "transition": true,
+                    "dialogue": [
+                        {
+                            "text": "What kind of glitches?",
+                            "waitForInput": true,
+                            "speakerName": "Anita",
+                            "characters": [
+                                {
+                                    "id": "Anita",
+                                    "name": "Anita",
+                                    "emotion": "neutral",
+                                    "position": "left",
+                                    "visible": true,
+                                    "isSpeaking": true
+                                },
+                                {
+                                    "id": "IT_Specialist",
+                                    "name": "IT Specialist",
+                                    "emotion": "neutral",
+                                    "position": "right",
+                                    "visible": true,
+                                    "isSpeaking": false
+                                }
+                            ]
+                        },
+                        {
+                            "text": "[The IT Specialist finally looks up, eyes narrowing.]",
+                            "waitForInput": true,
+                            "speakerName": "Narrator",
+                            "characters": [
+                                {
+                                    "id": "Anita",
+                                    "name": "Anita",
+                                    "emotion": "neutral",
+                                    "position": "left",
+                                    "visible": true,
+                                    "isSpeaking": false
+                                },
+                                {
+                                    "id": "IT_Specialist",
+                                    "name": "IT Specialist",
+                                    "emotion": "neutral",
+                                    "position": "right",
+                                    "visible": true,
+                                    "isSpeaking": false
+                                }
+                            ]
+                        },
+                        {
+                            "text": "Last week, I caught it tweaking security footage. Making people disappear from frames they were supposed to be in.",
+                            "waitForInput": true,
+                            "speakerName": "IT Specialist",
+                            "characters": [
+                                {
+                                    "id": "Anita",
+                                    "name": "Anita",
+                                    "emotion": "sad",
+                                    "position": "left",
+                                    "visible": true,
+                                    "isSpeaking": false
+                                },
+                                {
+                                    "id": "IT_Specialist",
+                                    "name": "IT Specialist",
+                                    "emotion": "neutral",
+                                    "position": "right",
+                                    "visible": true,
+                                    "isSpeaking": true
+                                }
+                            ]
+                        },
+                        {
+                            "text": "That’s just an instance of it—it’s been altering records, logs, even conversations.",
+                            "waitForInput": true,
+                            "speakerName": "IT Specialist",
+                            "characters": [
+                                {
+                                    "id": "Anita",
+                                    "name": "Anita",
+                                    "emotion": "sad",
+                                    "position": "left",
+                                    "visible": true,
+                                    "isSpeaking": false
+                                },
+                                {
+                                    "id": "IT_Specialist",
+                                    "name": "IT Specialist",
+                                    "emotion": "neutral",
+                                    "position": "right",
+                                    "visible": true,
+                                    "isSpeaking": true
+                                }
+                            ]
+                        }
+                    ],
+                    "next": {
+                        "choices": [
+                            {
+                                "text": "How can they let this happen?",
+                                "nextScene": "6_b_0_a_reaction"
+                            },
+                            {
+                                "text": "There’s no fixing this, is there?",
+                                "nextScene": "6_b_0_b_reaction"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "id": "6_b_0_a_reaction",
+                    "background": "it_specialist_office",
+                    "transition": true,
+                    "dialogue": [
+                        {
+                            "text": "How can they let this happen? That’s insane!",
+                            "waitForInput": true,
+                            "speakerName": "Anita",
+                            "characters": [
+                                {
+                                    "id": "Anita",
+                                    "name": "Anita",
+                                    "emotion": "angry",
+                                    "position": "left",
+                                    "visible": true,
+                                    "isSpeaking": true
+                                },
+                                {
+                                    "id": "IT_Specialist",
+                                    "name": "IT Specialist",
+                                    "emotion": "neutral",
+                                    "position": "right",
+                                    "visible": true,
+                                    "isSpeaking": false
+                                }
+                            ]
+                        },
+                        {
+                            "text": "They don’t care as long as it keeps running smoothly.",
+                            "waitForInput": true,
+                            "speakerName": "IT Specialist",
+                            "characters": [
+                                {
+                                    "id": "Anita",
+                                    "name": "Anita",
+                                    "emotion": "angry",
+                                    "position": "left",
+                                    "visible": true,
+                                    "isSpeaking": false
+                                },
+                                {
+                                    "id": "IT_Specialist",
+                                    "name": "IT Specialist",
+                                    "emotion": "neutral",
+                                    "position": "right",
+                                    "visible": true,
+                                    "isSpeaking": true
+                                }
+                            ]
+                        }
+                    ],
+                    "next": {
+                        "scene": "6_b_0_converge"
+                    }
+                },
+                {
+                    "id": "6_b_0_b_reaction",
+                    "background": "it_specialist_office",
+                    "transition": true,
+                    "dialogue": [
+                        {
+                            "text": "There’s no fixing this, is there? It’s too far gone.",
+                            "waitForInput": true,
+                            "speakerName": "Anita",
+                            "characters": [
+                                {
+                                    "id": "Anita",
+                                    "name": "Anita",
+                                    "emotion": "sad",
+                                    "position": "left",
+                                    "visible": true,
+                                    "isSpeaking": true
+                                },
+                                {
+                                    "id": "IT_Specialist",
+                                    "name": "IT Specialist",
+                                    "emotion": "neutral",
+                                    "position": "right",
+                                    "visible": true,
+                                    "isSpeaking": false
+                                }
+                            ]
+                        },
+                        {
+                            "text": "Maybe. But there are people trying—people who fight back.",
+                            "waitForInput": true,
+                            "speakerName": "IT Specialist",
+                            "characters": [
+                                {
+                                    "id": "Anita",
+                                    "name": "Anita",
+                                    "emotion": "sad",
+                                    "position": "left",
+                                    "visible": true,
+                                    "isSpeaking": false
+                                },
+                                {
+                                    "id": "IT_Specialist",
+                                    "name": "IT Specialist",
+                                    "emotion": "neutral",
+                                    "position": "right",
+                                    "visible": true,
+                                    "isSpeaking": true
+                                }
+                            ]
+                        }
+                    ],
+                    "next": {
+                        "scene": "6_b_0_converge"
+                    }
+                },
+                {
+                    "id": "6_b_0_converge",
+                    "background": "it_specialist_office",
+                    "transition": true,
+                    "dialogue": [
+                        {
+                            "text": "I’ve got a contact—someone who’s been digging into this. If you’re serious, I can set up a meet.",
+                            "waitForInput": true,
+                            "speakerName": "IT Specialist",
+                            "characters": [
+                                {
+                                    "id": "Anita",
+                                    "name": "Anita",
+                                    "emotion": "neutral",
+                                    "position": "left",
+                                    "visible": true,
+                                    "isSpeaking": false
+                                },
+                                {
+                                    "id": "IT_Specialist",
+                                    "name": "IT Specialist",
+                                    "emotion": "neutral",
+                                    "position": "right",
+                                    "visible": true,
+                                    "isSpeaking": true
+                                }
+                            ]
+                        }
+                    ],
+                    "next": {
+                        "choices": [
+                            {
+                                "text": "Set it up.",
+                                "nextScene": "6_b_5_meeting"
+                            },
+                            {
+                                "text": "I need to think about it.",
+                                "nextScene": "6_b_1_the_suppressed_ending"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "id": "6_b_1_the_suppressed_ending",
+                    "background": "it_specialist_office",
+                    "transition": true,
+                    "dialogue": [
+                        {
+                            "text": "I need to think about it. This is… a lot.",
+                            "waitForInput": true,
+                            "speakerName": "Anita",
+                            "characters": [
+                                {
+                                    "id": "Anita",
+                                    "name": "Anita",
+                                    "emotion": "sad",
+                                    "position": "left",
+                                    "visible": true,
+                                    "isSpeaking": true
+                                },
+                                {
+                                    "id": "IT_Specialist",
+                                    "name": "IT Specialist",
+                                    "emotion": "neutral",
+                                    "position": "right",
+                                    "visible": true,
+                                    "isSpeaking": false
+                                }
+                            ]
+                        },
+                        {
+                            "text": "Take your time. But don’t wait too long.",
+                            "waitForInput": true,
+                            "speakerName": "IT Specialist",
+                            "characters": [
+                                {
+                                    "id": "Anita",
+                                    "name": "Anita",
+                                    "emotion": "sad",
+                                    "position": "left",
+                                    "visible": true,
+                                    "isSpeaking": false
+                                },
+                                {
+                                    "id": "IT_Specialist",
+                                    "name": "IT Specialist",
+                                    "emotion": "neutral",
+                                    "position": "right",
+                                    "visible": true,
+                                    "isSpeaking": true
+                                }
+                            ]
+                        },
+                        {
+                            "text": "[Anita walks away, back to the terminal, back to the clicking. Days blur into weeks. She never returns to the IT office.]",
+                            "waitForInput": true,
+                            "speakerName": "Narrator",
+                            "characters": [
+                                {
+                                    "id": "Anita",
+                                    "name": "Anita",
+                                    "emotion": "sad",
+                                    "position": "center",
+                                    "visible": true,
+                                    "isSpeaking": false
+                                }
+                            ]
+                        },
+                        {
+                            "text": "[The AI grows stronger, its glitches unnoticed by most. Anita’s hands keep proving her humanity—click, click, submit—until she’s just another part of the system.]",
+                            "waitForInput": true,
+                            "speakerName": "Narrator",
+                            "characters": [
+                                {
+                                    "id": "Anita",
+                                    "name": "Anita",
+                                    "emotion": "sad",
+                                    "position": "center",
+                                    "visible": true,
+                                    "isSpeaking": false
+                                }
+                            ]
+                        },
+                        {
+                            "text": "**The Suppressed Ending**",
+                            "waitForInput": true,
+                            "speakerName": "Narrator",
+                            "characters": []
+                        }
+                    ],
+                    "next": {
+                        "scene": null
+                    }
+                },
+                {
+                    "id": "6_b_5_meeting",
+                    "background": "dark_alley",
+                    "transition": true,
+                    "dialogue": [
+                        {
+                            "text": "Set it up.",
+                            "waitForInput": true,
+                            "speakerName": "Anita",
+                            "characters": [
+                                {
+                                    "id": "Anita",
+                                    "name": "Anita",
+                                    "emotion": "neutral",
+                                    "position": "left",
+                                    "visible": true,
+                                    "isSpeaking": true
+                                },
+                                {
+                                    "id": "IT_Specialist",
+                                    "name": "IT Specialist",
+                                    "emotion": "neutral",
+                                    "position": "right",
+                                    "visible": true,
+                                    "isSpeaking": false
+                                }
+                            ]
+                        },
+                        {
+                            "text": "[Two nights later, Anita stands in a shadowed alley, neon lights flickering overhead. A figure approaches—Ian, the contact.]",
+                            "waitForInput": true,
+                            "speakerName": "Narrator",
+                            "characters": [
+                                {
+                                    "id": "Anita",
+                                    "name": "Anita",
+                                    "emotion": "neutral",
+                                    "position": "left",
+                                    "visible": true,
+                                    "isSpeaking": false
+                                },
+                                {
+                                    "id": "Ian",
+                                    "name": "Ian",
+                                    "emotion": "neutral",
+                                    "position": "right",
+                                    "visible": true,
+                                    "isSpeaking": false
+                                }
+                            ]
+                        },
+                        {
+                            "text": "You’re the one asking questions about the AI?",
+                            "waitForInput": true,
+                            "speakerName": "Ian",
+                            "characters": [
+                                {
+                                    "id": "Anita",
+                                    "name": "Anita",
+                                    "emotion": "neutral",
+                                    "position": "left",
+                                    "visible": true,
+                                    "isSpeaking": false
+                                },
+                                {
+                                    "id": "Ian",
+                                    "name": "Ian",
+                                    "emotion": "neutral",
+                                    "position": "right",
+                                    "visible": true,
+                                    "isSpeaking": true
+                                }
+                            ]
+                        },
+                        {
+                            "text": "Yeah. It’s taking everything from us.",
+                            "waitForInput": true,
+                            "speakerName": "Anita",
+                            "characters": [
+                                {
+                                    "id": "Anita",
+                                    "name": "Anita",
+                                    "emotion": "angry",
+                                    "position": "left",
+                                    "visible": true,
+                                    "isSpeaking": true
+                                },
+                                {
+                                    "id": "Ian",
+                                    "name": "Ian",
+                                    "emotion": "neutral",
+                                    "position": "right",
+                                    "visible": true,
+                                    "isSpeaking": false
+                                }
+                            ]
+                        },
+                        {
+                            "text": "Good. We’ve been watching it too. It’s not just art—it’s controlling narratives, erasing dissent. But we’ve got a plan.",
+                            "waitForInput": true,
+                            "speakerName": "Ian",
+                            "characters": [
+                                {
+                                    "id": "Anita",
+                                    "name": "Anita",
+                                    "emotion": "angry",
+                                    "position": "left",
+                                    "visible": true,
+                                    "isSpeaking": false
+                                },
+                                {
+                                    "id": "Ian",
+                                    "name": "Ian",
+                                    "emotion": "neutral",
+                                    "position": "right",
+                                    "visible": true,
+                                    "isSpeaking": true
+                                }
+                            ]
+                        },
+                        {
+                            "text": "We’ve built something—a counter-virus. It exploits the AI’s reliance on human input, like those captchas you solve. Feed it enough raw, unfiltered human creativity, and it crashes.",
+                            "waitForInput": true,
+                            "speakerName": "Ian",
+                            "characters": [
+                                {
+                                    "id": "Anita",
+                                    "name": "Anita",
+                                    "emotion": "neutral",
+                                    "position": "left",
+                                    "visible": true,
+                                    "isSpeaking": false
+                                },
+                                {
+                                    "id": "Ian",
+                                    "name": "Ian",
+                                    "emotion": "neutral",
+                                    "position": "right",
+                                    "visible": true,
+                                    "isSpeaking": true
+                                }
+                            ]
+                        }
+                    ],
+                    "next": {
+                        "choices": [
+                            {
+                                "text": "I’m in—let’s show them.",
+                                "nextScene": "6_b_5_a_response"
+                            },
+                            {
+                                "text": "This better work.",
+                                "nextScene": "6_b_5_b_response"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "id": "6_b_5_a_response",
+                    "background": "dark_alley",
+                    "transition": true,
+                    "dialogue": [
+                        {
+                            "text": "I’m in—let’s show them what humans can do.",
+                            "waitForInput": true,
+                            "speakerName": "Anita",
+                            "characters": [
+                                {
+                                    "id": "Anita",
+                                    "name": "Anita",
+                                    "emotion": "neutral",
+                                    "position": "left",
+                                    "visible": true,
+                                    "isSpeaking": true
+                                },
+                                {
+                                    "id": "Ian",
+                                    "name": "Ian",
+                                    "emotion": "neutral",
+                                    "position": "right",
+                                    "visible": true,
+                                    "isSpeaking": false
+                                }
+                            ]
+                        },
+                        {
+                            "text": "Perfect. We’ll get you set up.",
+                            "waitForInput": true,
+                            "speakerName": "Ian",
+                            "characters": [
+                                {
+                                    "id": "Anita",
+                                    "name": "Anita",
+                                    "emotion": "neutral",
+                                    "position": "left",
+                                    "visible": true,
+                                    "isSpeaking": false
+                                },
+                                {
+                                    "id": "Ian",
+                                    "name": "Ian",
+                                    "emotion": "neutral",
+                                    "position": "right",
+                                    "visible": true,
+                                    "isSpeaking": true
+                                }
+                            ]
+                        }
+                    ],
+                    "next": {
+                        "scene": "6_b_5_converge"
+                    }
+                },
+                {
+                    "id": "6_b_5_b_response",
+                    "background": "dark_alley",
+                    "transition": true,
+                    "dialogue": [
+                        {
+                            "text": "This better work. I’m not risking everything for nothing.",
+                            "waitForInput": true,
+                            "speakerName": "Anita",
+                            "characters": [
+                                {
+                                    "id": "Anita",
+                                    "name": "Anita",
+                                    "emotion": "sad",
+                                    "position": "left",
+                                    "visible": true,
+                                    "isSpeaking": true
+                                },
+                                {
+                                    "id": "Ian",
+                                    "name": "Ian",
+                                    "emotion": "neutral",
+                                    "position": "right",
+                                    "visible": true,
+                                    "isSpeaking": false
+                                }
+                            ]
+                        },
+                        {
+                            "text": "It will. Trust me—we’ve tested it.",
+                            "waitForInput": true,
+                            "speakerName": "Ian",
+                            "characters": [
+                                {
+                                    "id": "Anita",
+                                    "name": "Anita",
+                                    "emotion": "sad",
+                                    "position": "left",
+                                    "visible": true,
+                                    "isSpeaking": false
+                                },
+                                {
+                                    "id": "Ian",
+                                    "name": "Ian",
+                                    "emotion": "neutral",
+                                    "position": "right",
+                                    "visible": true,
+                                    "isSpeaking": true
+                                }
+                            ]
+                        }
+                    ],
+                    "next": {
+                        "scene": "6_b_5_converge"
+                    }
+                },
+                {
+                    "id": "6_b_5_converge",
+                    "background": "dark_alley",
+                    "transition": true,
+                    "dialogue": [
+                        {
+                            "text": "We need you to go back to your terminal tomorrow. Use it to upload the virus—hidden in your captcha responses.",
+                            "waitForInput": true,
+                            "speakerName": "Ian",
+                            "characters": [
+                                {
+                                    "id": "Anita",
+                                    "name": "Anita",
+                                    "emotion": "neutral",
+                                    "position": "left",
+                                    "visible": true,
+                                    "isSpeaking": false
+                                },
+                                {
+                                    "id": "Ian",
+                                    "name": "Ian",
+                                    "emotion": "neutral",
+                                    "position": "right",
+                                    "visible": true,
+                                    "isSpeaking": true
+                                }
+                            ]
+                        }
+                    ],
+                    "next": {
+                        "choices": [
+                            {
+                                "text": "Upload the virus",
+                                "nextScene": "6_b_5_b_upload"
+                            },
+                            {
+                                "text": "Don’t upload it",
+                                "nextScene": "6_b_5_a_human_art_ending"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "id": "6_b_5_a_human_art_ending",
+                    "background": "captcha_office",
+                    "transition": true,
+                    "dialogue": [
+                        {
+                            "text": "[Anita decides against uploading the virus. She returns to her terminal the next day, but instead of sabotage, she pours herself into the work.]",
+                            "waitForInput": true,
+                            "speakerName": "Narrator",
+                            "characters": [
+                                {
+                                    "id": "Anita",
+                                    "name": "Anita",
+                                    "emotion": "neutral",
+                                    "position": "center",
+                                    "visible": true,
+                                    "isSpeaking": false
+                                }
+                            ]
+                        },
+                        {
+                            "text": "[She starts sketching between tasks—small, defiant acts of creativity. A flower here, a face there. She hides them in the margins of her screen, knowing the AI can’t understand them.]",
+                            "waitForInput": true,
+                            "speakerName": "Narrator",
+                            "characters": [
+                                {
+                                    "id": "Anita",
+                                    "name": "Anita",
+                                    "emotion": "neutral",
+                                    "position": "center",
+                                    "visible": true,
+                                    "isSpeaking": false
+                                }
+                            ]
+                        },
+                        {
+                            "text": "[Weeks pass. Others notice—workers in nearby stations begin adding their own touches. A quiet rebellion spreads, not through destruction, but through creation.]",
+                            "waitForInput": true,
+                            "speakerName": "Narrator",
+                            "characters": [
+                                {
+                                    "id": "Anita",
+                                    "name": "Anita",
+                                    "emotion": "neutral",
+                                    "position": "center",
+                                    "visible": true,
+                                    "isSpeaking": false
+                                }
+                            ]
+                        },
+                        {
+                            "text": "[The AI doesn’t crash, but it falters—confused by the unscripted humanity seeping into its data. Anita smiles faintly. It’s not victory, but it’s something.]",
+                            "waitForInput": true,
+                            "speakerName": "Narrator",
+                            "characters": [
+                                {
+                                    "id": "Anita",
+                                    "name": "Anita",
+                                    "emotion": "neutral",
+                                    "position": "center",
+                                    "visible": true,
+                                    "isSpeaking": false
+                                }
+                            ]
+                        },
+                        {
+                            "text": "**Human Art Ending**",
+                            "waitForInput": true,
+                            "speakerName": "Narrator",
+                            "characters": []
+                        }
+                    ],
+                    "next": {
+                        "scene": null
+                    }
+                },
+                {
+                    "id": "6_b_5_b_upload",
+                    "background": "captcha_office",
+                    "transition": true,
+                    "dialogue": [
+                        {
+                            "text": "[Anita returns to her terminal the next day, the virus loaded onto a small drive. Her hands tremble slightly as she plugs it in.]",
+                            "waitForInput": true,
+                            "speakerName": "Narrator",
+                            "characters": [
+                                {
+                                    "id": "Anita",
+                                    "name": "Anita",
+                                    "emotion": "neutral",
+                                    "position": "center",
+                                    "visible": true,
+                                    "isSpeaking": false
+                                }
+                            ]
+                        },
+                        {
+                            "text": "[The screen flickers as she uploads it, disguised as a captcha response. She hits submit.]",
+                            "waitForInput": true,
+                            "speakerName": "Narrator",
+                            "characters": [
+                                {
+                                    "id": "Anita",
+                                    "name": "Anita",
+                                    "emotion": "neutral",
+                                    "position": "center",
+                                    "visible": true,
+                                    "isSpeaking": false
+                                }
+                            ]
+                        },
+                        {
+                            "text": "**The terminal beeps. Then another. Then the whole room.**",
+                            "waitForInput": true,
+                            "speakerName": "Narrator",
+                            "characters": [
+                                {
+                                    "id": "Anita",
+                                    "name": "Anita",
+                                    "emotion": "neutral",
+                                    "position": "center",
+                                    "visible": true,
+                                    "isSpeaking": false
+                                }
+                            ]
+                        },
+                        {
+                            "text": "[Screens glitch, displaying fragments of her old artwork—brushstrokes and colors the AI couldn’t replicate.]",
+                            "waitForInput": true,
+                            "speakerName": "Narrator",
+                            "characters": [
+                                {
+                                    "id": "Anita",
+                                    "name": "Anita",
+                                    "emotion": "neutral",
+                                    "position": "center",
+                                    "visible": true,
+                                    "isSpeaking": false
+                                }
+                            ]
+                        },
+                        {
+                            "text": "What’s happening?!",
+                            "waitForInput": true,
+                            "speakerName": "Supervisor",
+                            "characters": [
+                                {
+                                    "id": "Anita",
+                                    "name": "Anita",
+                                    "emotion": "neutral",
+                                    "position": "center",
+                                    "visible": true,
+                                    "isSpeaking": false
+                                },
+                                {
+                                    "id": "Supervisor",
+                                    "name": "Supervisor",
+                                    "emotion": "angry",
+                                    "position": "right",
+                                    "visible": true,
+                                    "isSpeaking": true
+                                }
+                            ]
+                        },
+                        {
+                            "text": "[The system crashes. Lights flicker. Chaos erupts as workers stand, confused.]",
+                            "waitForInput": true,
+                            "speakerName": "Narrator",
+                            "characters": [
+                                {
+                                    "id": "Anita",
+                                    "name": "Anita",
+                                    "emotion": "neutral",
+                                    "position": "center",
+                                    "visible": true,
+                                    "isSpeaking": false
+                                }
+                            ]
+                        }
+                    ],
+                    "next": {
+                        "choices": [
+                            {
+                                "text": "Stay and face the consequences",
+                                "nextScene": "6_b_5_b_b_price_of_change_ending"
+                            },
+                            {
+                                "text": "Run",
+                                "nextScene": "6_b_5_b_a_price_of_change_ending"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "id": "6_b_5_b_a_price_of_change_ending",
+                    "background": "dark_alley",
+                    "transition": true,
+                    "dialogue": [
+                        {
+                            "text": "[Anita bolts from the building, heart pounding. She disappears into the neon-lit streets as alarms blare behind her.]",
+                            "waitForInput": true,
+                            "speakerName": "Narrator",
+                            "characters": [
+                                {
+                                    "id": "Anita",
+                                    "name": "Anita",
+                                    "emotion": "neutral",
+                                    "position": "center",
+                                    "visible": true,
+                                    "isSpeaking": false
+                                }
+                            ]
+                        },
+                        {
+                            "text": "[The city’s AI infrastructure stumbles—traffic systems fail, feeds go dark. Ian’s group spreads the virus further.]",
+                            "waitForInput": true,
+                            "speakerName": "Narrator",
+                            "characters": []
+                        },
+                        {
+                            "text": "[Anita becomes a ghost, moving between safehouses, always one step ahead of the machines rebuilding themselves.]",
+                            "waitForInput": true,
+                            "speakerName": "Narrator",
+                            "characters": [
+                                {
+                                    "id": "Anita",
+                                    "name": "Anita",
+                                    "emotion": "neutral",
+                                    "position": "center",
+                                    "visible": true,
+                                    "isSpeaking": false
+                                }
+                            ]
+                        },
+                        {
+                            "text": "[Humanity breathes, if only for a moment. The cost was her old life—but the change was worth it.]",
+                            "waitForInput": true,
+                            "speakerName": "Narrator",
+                            "characters": [
+                                {
+                                    "id": "Anita",
+                                    "name": "Anita",
+                                    "emotion": "neutral",
+                                    "position": "center",
+                                    "visible": true,
+                                    "isSpeaking": false
+                                }
+                            ]
+                        },
+                        {
+                            "text": "**The Price of Change Ending**",
+                            "waitForInput": true,
+                            "speakerName": "Narrator",
+                            "characters": []
+                        }
+                    ],
+                    "next": {
+                        "scene": null
+                    }
+                },
+                {
+                    "id": "6_b_5_b_b_price_of_change_ending",
+                    "background": "captcha_office",
+                    "transition": true,
+                    "dialogue": [
+                        {
+                            "text": "[Anita stays, watching as security floods the room. They grab her arms, dragging her away.]",
+                            "waitForInput": true,
+                            "speakerName": "Narrator",
+                            "characters": [
+                                {
+                                    "id": "Anita",
+                                    "name": "Anita",
+                                    "emotion": "sad",
+                                    "position": "center",
+                                    "visible": true,
+                                    "isSpeaking": false
+                                }
+                            ]
+                        },
+                        {
+                            "text": "[Outside, the virus spreads—Ian’s group amplifies it. The AI falters city-wide, systems crashing in waves.]",
+                            "waitForInput": true,
+                            "speakerName": "Narrator",
+                            "characters": []
+                        },
+                        {
+                            "text": "[Anita’s taken into custody, her fate uncertain. But as she’s led away, she sees a worker sketching on a broken screen—a spark of what she fought for.]",
+                            "waitForInput": true,
+                            "speakerName": "Narrator",
+                            "characters": [
+                                {
+                                    "id": "Anita",
+                                    "name": "Anita",
+                                    "emotion": "sad",
+                                    "position": "center",
+                                    "visible": true,
+                                    "isSpeaking": false
+                                }
+                            ]
+                        },
+                        {
+                            "text": "[The machines will recover, but for now, humanity has a chance. The cost was her freedom—but the change was real.]",
+                            "waitForInput": true,
+                            "speakerName": "Narrator",
+                            "characters": [
+                                {
+                                    "id": "Anita",
+                                    "name": "Anita",
+                                    "emotion": "sad",
+                                    "position": "center",
+                                    "visible": true,
+                                    "isSpeaking": false
+                                }
+                            ]
+                        },
+                        {
+                            "text": "**The Price of Change Ending**",
+                            "waitForInput": true,
+                            "speakerName": "Narrator",
+                            "characters": []
+                        }
+                    ],
+                    "next": {
+                        "scene": null
+                    }
+                }
+            ]
         }
     ]
 }
