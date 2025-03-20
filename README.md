@@ -34,9 +34,8 @@ The game follows **Anita**, an artist navigating a world increasingly controlled
 ## **📁 File Structure**
 - **/Assets/** → Unity project files.
 - **/Scripts/** → C# scripts for game logic, dialogue system, and audio.
-- **/Graphics/** → Custom-made visual assets.
-- **/Audio/** → Sound effects and background music.
-- **/Saves/** → Save files for player progress.
+- **/Assets/Resources/** → Custom-made visual assets.
+- **/Assets/Resources/Music/** → Sound effects and background music.
 - **script.json** → The structured narrative flow and dialogue system.
 
 ## **🛠️ Installation & Running the Game**
