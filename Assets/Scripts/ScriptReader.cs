@@ -44,6 +44,7 @@ public class Scene
     public bool transition;
     public List<Dialogue> dialogue;
     public SceneNext next;
+    public string music;
 }
 
 [Serializable]

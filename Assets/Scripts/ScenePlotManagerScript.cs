@@ -120,9 +120,10 @@ public class ScriptPlotManagerScript : MonoBehaviour
     }
 
 
-
     public IEnumerator LoadScene(string sceneId, bool withFade)
     {
+        Debug.Log("=== LoadScene() called in ScriptPlotManagerScript with Scene ID: " + sceneId + " ===");
+
         if (sceneId != "start")
         {
             if (withFade) yield return StartCoroutine(sceneTransitionManager.Fade("FadeOut", "FadeIn", 1f));
@@ -134,7 +135,11 @@ public class ScriptPlotManagerScript : MonoBehaviour
             {
                 currentScene = scene;
 
+                Debug.Log("Scene found: " + scene.id);
+
+                // Update Background
                 localBackground.texture = Resources.Load<Texture>($"Backgrounds/{scene.background}");
+
                 if (scene.transition)
                 {
                     StartCoroutine(sceneTransitionManager.Fade("FadeIn", "FadeOut", 1f));
@@ -143,11 +148,46 @@ public class ScriptPlotManagerScript : MonoBehaviour
                 currentDialogueIndex = 0;
                 isChoosingOption = false;
                 currentChoiceIndex = 0;
+
+                // Handle Music Change (or continue previous)
+                if (!string.IsNullOrEmpty(scene.music))
+                {
+                    Debug.Log("New music detected: " + scene.music);
+                    AudioClip newMusicClip = Resources.Load<AudioClip>("Music/" + scene.music);
+
+                    if (newMusicClip != null)
+                    {
+                        if (MusicManager.Instance.currentMusicClip != newMusicClip)
+                        {
+                            Debug.Log("Playing new music: " + newMusicClip.name);
+                            MusicManager.Instance.PlayMusic(newMusicClip, fadeDuration: 1.0f, forceRestart: true);
+                        }
+                        else
+                        {
+                            Debug.Log("Music is the same as the previous scene, keeping it.");
+                        }
+                    }
+                    else
+                    {
+                        Debug.LogError("Music file NOT found in Resources/Music: " + scene.music);
+                    }
+                }
+                else
+                {
+                    Debug.Log("🎵 No music specified for this scene. Keeping previous track.");
+
+                    if (MusicManager.Instance.currentMusicClip != null && !MusicManager.Instance.audioSource.isPlaying)
+                    {
+                        Debug.Log("🎵 Resuming previous track: " + MusicManager.Instance.currentMusicClip.name);
+                        MusicManager.Instance.PlayMusic(MusicManager.Instance.currentMusicClip, fadeDuration: 1.0f, forceRestart: false);
+                    }
+                }
+
                 ShowDialogue();
                 yield break;
             }
         }
-        Debug.LogError("scene not load");
+        Debug.LogError("Scene not found: " + sceneId);
     }
 
 
@@ -231,7 +271,7 @@ public class ScriptPlotManagerScript : MonoBehaviour
         }
         else
         {
-          StartCoroutine(sceneTransitionManager.Fade("FadeOut", "FadeIn", 1f));
+            StartCoroutine(sceneTransitionManager.Fade("FadeOut", "FadeIn", 1f));
             SceneManager.LoadScene("EndingScene");
         }
     }
@@ -290,14 +330,14 @@ public class ScriptPlotManagerScript : MonoBehaviour
     {
         string emotionPath = $"Characters/{character.id}/{character.emotion}";
         return Resources.Load<Texture>(emotionPath);
-       
+
     }
 
     public void SetCharacterTexture(GameObject characterObject, DialogueCharacter character)
     {
 
-        characterObject.GetComponent<RawImage>().texture = GetCharacterTexture(character); 
-    } 
+        characterObject.GetComponent<RawImage>().texture = GetCharacterTexture(character);
+    }
 
 
     public void ShowChoices()

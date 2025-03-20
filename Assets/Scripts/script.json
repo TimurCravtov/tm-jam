@@ -3,6 +3,7 @@
         {
             "id": "start",
             "background": "black",
+            "music": "test1",
             "transition": true,
             "dialogue": [
                 {
@@ -43,6 +44,7 @@
         {
             "id": "1_starting_apartment",
             "background": "anitas_house",
+            "music": "test2",
             "transition": true,
             "dialogue": [
                 {
