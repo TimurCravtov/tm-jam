@@ -55,7 +55,7 @@ The game follows **Anita**, an artist navigating a world increasingly controlled
 - **QA & Playtesting**: Timur Cravțov & Vladimir Vitcovschii & Nicolae Marga & Alexandru Rudoi & Artur Țugui
 
 ## **📝 License & Credits**
-- All assets, code, and music were created **in-house**.
+- All assets and code were created **in-house**.
 - This project is **for educational purposes** under the Tehnologii Multimedia course.
 - External tools used: Unity, FL Studio.
 
