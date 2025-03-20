@@ -2158,7 +2158,7 @@
                 }
             ],
             "next": {
-                "nextScene": "6_c_0_meet_old_hacker"
+                "scene": "6_c_0_meet_old_hacker"
             }
         },
         {
@@ -2649,7 +2649,7 @@
                 }
             ],
             "next": {
-                "nextScene": "6_c_3_military_ending"
+                "scene": "6_c_3_military_ending"
             }
         },
         {

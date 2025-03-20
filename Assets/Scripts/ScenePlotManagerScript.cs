@@ -124,10 +124,11 @@ public class ScriptPlotManagerScript : MonoBehaviour
     {
         Debug.Log("=== LoadScene() called in ScriptPlotManagerScript with Scene ID: " + sceneId + " ===");
 
-        if (sceneId != "start")
+        /*if (sceneId != "start")
         {
             if (withFade) yield return StartCoroutine(sceneTransitionManager.Fade("FadeOut", "FadeIn", 1f));
         }
+        */
 
         foreach (Scene scene in gameScript.scenes)
         {
@@ -193,10 +194,10 @@ public class ScriptPlotManagerScript : MonoBehaviour
 
     public IEnumerator LoadSceneWithFade(string sceneId)
     {
-        if (sceneId != "start")
+        /*if (sceneId != "start")
         {
             yield return StartCoroutine(sceneTransitionManager.Fade("FadeOut", "FadeIn", 1f));
-        }
+        }*/
 
         foreach (Scene scene in gameScript.scenes)
         {
