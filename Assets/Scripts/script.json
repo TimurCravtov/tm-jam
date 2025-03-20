@@ -115,9 +115,7 @@
                     ]
                 }
             ],
-            "next":
-            
-            {
+            "next": {
                 "choices": [
                     {
                         "text": "I make real art with feeling.",
@@ -1901,8 +1899,1088 @@
                     {
                         "text": "We need to stop it.",
                         "nextScene": "6_b_reaction"
+                    },
+                    {
+                        "text": "What if the government weaponizes it?",
+                        "nextScene": "6_c_question_it_specialist"
                     }
                 ]
+            }
+        },
+        {
+            "id": "6_c_question_it_specialist",
+            "background": "it_specialist_office",
+            "transition": true,
+            "dialogue": [
+                {
+                    "text": "[Anita lingers in the IT office, unsettled by the Specialist’s words. She decides to push for answers.]",
+                    "waitForInput": true,
+                    "speakerName": "Narrator",
+                    "characters": [
+                        {
+                            "id": "Anita",
+                            "name": "Anita",
+                            "emotion": "neutral",
+                            "position": "left",
+                            "visible": true,
+                            "isSpeaking": false
+                        },
+                        {
+                            "id": "IT_Specialist",
+                            "name": "IT Specialist",
+                            "emotion": "neutral",
+                            "position": "right",
+                            "visible": true,
+                            "isSpeaking": false
+                        }
+                    ]
+                },
+                {
+                    "text": "Rewriting reality—that’s beyond just AI efficiency. Who’s behind it? Could the government be turning it into a weapon?",
+                    "waitForInput": true,
+                    "speakerName": "Anita",
+                    "characters": [
+                        {
+                            "id": "Anita",
+                            "name": "Anita",
+                            "emotion": "neutral",
+                            "position": "left",
+                            "visible": true,
+                            "isSpeaking": true
+                        },
+                        {
+                            "id": "IT_Specialist",
+                            "name": "IT Specialist",
+                            "emotion": "neutral",
+                            "position": "right",
+                            "visible": true,
+                            "isSpeaking": false
+                        }
+                    ]
+                },
+                {
+                    "text": "[The IT Specialist shifts nervously, his hand brushing a small, tarnished medal on his desk—a gear with crossed lines, like an old service award.]",
+                    "waitForInput": true,
+                    "speakerName": "Narrator",
+                    "characters": [
+                        {
+                            "id": "Anita",
+                            "name": "Anita",
+                            "emotion": "neutral",
+                            "position": "left",
+                            "visible": true,
+                            "isSpeaking": false
+                        },
+                        {
+                            "id": "IT_Specialist",
+                            "name": "IT Specialist",
+                            "emotion": "nervous",
+                            "position": "right",
+                            "visible": true,
+                            "isSpeaking": false
+                        }
+                    ]
+                },
+                {
+                    "text": "I don’t know anything about that. I just keep the systems running. You’re asking the wrong guy.",
+                    "waitForInput": true,
+                    "speakerName": "IT_Specialist",
+                    "characters": [
+                        {
+                            "id": "Anita",
+                            "name": "Anita",
+                            "emotion": "neutral",
+                            "position": "left",
+                            "visible": true,
+                            "isSpeaking": false
+                        },
+                        {
+                            "id": "IT_Specialist",
+                            "name": "IT Specialist",
+                            "emotion": "nervous",
+                            "position": "right",
+                            "visible": true,
+                            "isSpeaking": true
+                        }
+                    ]
+                },
+                {
+                    "text": "Wrong guy? You’re dodging like you’ve got secrets. What’s the deal—why’s this freaking you out?",
+                    "waitForInput": true,
+                    "speakerName": "Anita",
+                    "characters": [
+                        {
+                            "id": "Anita",
+                            "name": "Anita",
+                            "emotion": "neutral",
+                            "position": "left",
+                            "visible": true,
+                            "isSpeaking": true
+                        },
+                        {
+                            "id": "IT_Specialist",
+                            "name": "IT Specialist",
+                            "emotion": "nervous",
+                            "position": "right",
+                            "visible": true,
+                            "isSpeaking": false
+                        }
+                    ]
+                },
+                {
+                    "text": "[The IT Specialist stands abruptly, knocking papers off his desk. The medal clatters to the floor.]",
+                    "waitForInput": true,
+                    "speakerName": "Narrator",
+                    "characters": [
+                        {
+                            "id": "Anita",
+                            "name": "Anita",
+                            "emotion": "neutral",
+                            "position": "left",
+                            "visible": true,
+                            "isSpeaking": false
+                        },
+                        {
+                            "id": "IT_Specialist",
+                            "name": "IT Specialist",
+                            "emotion": "nervous",
+                            "position": "right",
+                            "visible": true,
+                            "isSpeaking": false
+                        }
+                    ]
+                },
+                {
+                    "text": "I’ve got to step out. Don’t touch anything—just drop this, okay?",
+                    "waitForInput": true,
+                    "speakerName": "IT_Specialist",
+                    "characters": [
+                        {
+                            "id": "Anita",
+                            "name": "Anita",
+                            "emotion": "neutral",
+                            "position": "left",
+                            "visible": true,
+                            "isSpeaking": false
+                        },
+                        {
+                            "id": "IT_Specialist",
+                            "name": "IT Specialist",
+                            "emotion": "nervous",
+                            "position": "right",
+                            "visible": true,
+                            "isSpeaking": true
+                        }
+                    ]
+                },
+                {
+                    "text": "[The IT Specialist hurries out. Anita bends down, picking up the medal. She studies the gear design, her mind racing.]",
+                    "waitForInput": true,
+                    "speakerName": "Narrator",
+                    "characters": [
+                        {
+                            "id": "Anita",
+                            "name": "Anita",
+                            "emotion": "neutral",
+                            "position": "left",
+                            "visible": true,
+                            "isSpeaking": false
+                        }
+                    ]
+                },
+                {
+                    "text": "A gear medal? That’s no IT trinket—looks like military honors. This guy’s no ordinary specialist. He’s tied to something bigger, and I’m not letting it go.",
+                    "waitForInput": true,
+                    "speakerName": "Anita",
+                    "characters": [
+                        {
+                            "id": "Anita",
+                            "name": "Anita",
+                            "emotion": "neutral",
+                            "position": "left",
+                            "visible": true,
+                            "isSpeaking": true
+                        }
+                    ]
+                },
+                {
+                    "text": "[Anita leaves the office and heads to her own workstation. She fires up her terminal, searching for connections between military tech and AI. After some digging, she finds an obscure reference to ‘Cipher’—a name linked to old government projects, with a last known location: a warehouse on 5th.]",
+                    "waitForInput": true,
+                    "speakerName": "Narrator",
+                    "characters": [
+                        {
+                            "id": "Anita",
+                            "name": "Anita",
+                            "emotion": "neutral",
+                            "position": "left",
+                            "visible": true,
+                            "isSpeaking": false
+                        }
+                    ]
+                },
+                {
+                    "text": "‘Cipher’… tied to government projects? If he’s ex-military or tech, he might know what’s up. I’ve got to track him down.",
+                    "waitForInput": true,
+                    "speakerName": "Anita",
+                    "characters": [
+                        {
+                            "id": "Anita",
+                            "name": "Anita",
+                            "emotion": "neutral",
+                            "position": "left",
+                            "visible": true,
+                            "isSpeaking": true
+                        }
+                    ]
+                }
+            ],
+            "next": {
+                "nextScene": "6_c_0_meet_old_hacker"
+            }
+        },
+        {
+            "id": "6_c_0_meet_old_hacker",
+            "background": "hacker_hideout",
+            "transition": true,
+            "dialogue": [
+                {
+                    "text": "[Anita arrives at a rundown warehouse on 5th Street, following her own research. Inside, she finds a middle-aged man with a weathered face, puffing on a cigarette. He calls himself Cipher. The air is thick with smoke and suspicion, the space cluttered with hard drives and dusty tech.]",
+                    "waitForInput": true,
+                    "speakerName": "Narrator",
+                    "characters": [
+                        {
+                            "id": "Anita",
+                            "name": "Anita",
+                            "emotion": "neutral",
+                            "position": "left",
+                            "visible": true,
+                            "isSpeaking": false
+                        },
+                        {
+                            "id": "Cipher",
+                            "name": "Cipher",
+                            "emotion": "neutral",
+                            "position": "right",
+                            "visible": true,
+                            "isSpeaking": false
+                        }
+                    ]
+                },
+                {
+                    "text": "Who are you, and how’d you find this place? I don’t take kindly to strangers poking around.",
+                    "waitForInput": true,
+                    "speakerName": "Cipher",
+                    "characters": [
+                        {
+                            "id": "Anita",
+                            "name": "Anita",
+                            "emotion": "neutral",
+                            "position": "left",
+                            "visible": true,
+                            "isSpeaking": false
+                        },
+                        {
+                            "id": "Cipher",
+                            "name": "Cipher",
+                            "emotion": "neutral",
+                            "position": "right",
+                            "visible": true,
+                            "isSpeaking": true
+                        }
+                    ]
+                },
+                {
+                    "text": "I’m Anita. I dug up your name—‘Cipher’—on my terminal after finding a lead. It tied you to old government projects. I think they’re weaponizing AI, and I need to know what’s going on.",
+                    "waitForInput": true,
+                    "speakerName": "Anita",
+                    "characters": [
+                        {
+                            "id": "Anita",
+                            "name": "Anita",
+                            "emotion": "neutral",
+                            "position": "left",
+                            "visible": true,
+                            "isSpeaking": true
+                        },
+                        {
+                            "id": "Cipher",
+                            "name": "Cipher",
+                            "emotion": "neutral",
+                            "position": "right",
+                            "visible": true,
+                            "isSpeaking": false
+                        }
+                    ]
+                },
+                {
+                    "text": "[Cipher exhales smoke, eyeing her suspiciously. He stubs out his cigarette, his tone guarded.]",
+                    "waitForInput": true,
+                    "speakerName": "Narrator",
+                    "characters": [
+                        {
+                            "id": "Anita",
+                            "name": "Anita",
+                            "emotion": "neutral",
+                            "position": "left",
+                            "visible": true,
+                            "isSpeaking": false
+                        },
+                        {
+                            "id": "Cipher",
+                            "name": "Cipher",
+                            "emotion": "neutral",
+                            "position": "right",
+                            "visible": true,
+                            "isSpeaking": false
+                        }
+                    ]
+                },
+                {
+                    "text": "You’ve got some nerve showing up here. I don’t know what they’re up to—not the details. But I’ve felt something brewing for years, something heavy. You don’t dig up a name like mine without stirring trouble.",
+                    "waitForInput": true,
+                    "speakerName": "Cipher",
+                    "characters": [
+                        {
+                            "id": "Anita",
+                            "name": "Anita",
+                            "emotion": "neutral",
+                            "position": "left",
+                            "visible": true,
+                            "isSpeaking": false
+                        },
+                        {
+                            "id": "Cipher",
+                            "name": "Cipher",
+                            "emotion": "neutral",
+                            "position": "right",
+                            "visible": true,
+                            "isSpeaking": true
+                        }
+                    ]
+                },
+                {
+                    "text": "I need more than feelings. If you’re connected to this, you’ve got to have something—some way to find out.",
+                    "waitForInput": true,
+                    "speakerName": "Anita",
+                    "characters": [
+                        {
+                            "id": "Anita",
+                            "name": "Anita",
+                            "emotion": "neutral",
+                            "position": "left",
+                            "visible": true,
+                            "isSpeaking": true
+                        },
+                        {
+                            "id": "Cipher",
+                            "name": "Cipher",
+                            "emotion": "neutral",
+                            "position": "right",
+                            "visible": true,
+                            "isSpeaking": false
+                        }
+                    ]
+                },
+                {
+                    "text": "Maybe I do. But first—why are you really here? You after truth, or just running from something? I don’t spill to people I can’t trust.",
+                    "waitForInput": true,
+                    "speakerName": "Cipher",
+                    "characters": [
+                        {
+                            "id": "Anita",
+                            "name": "Anita",
+                            "emotion": "neutral",
+                            "position": "left",
+                            "visible": true,
+                            "isSpeaking": false
+                        },
+                        {
+                            "id": "Cipher",
+                            "name": "Cipher",
+                            "emotion": "neutral",
+                            "position": "right",
+                            "visible": true,
+                            "isSpeaking": true
+                        }
+                    ]
+                },
+                {
+                    "text": "I’m here because the AI’s taking over everything—jobs, lives, maybe more. If the government’s weaponizing it, I can’t just sit back. I want the truth, no matter what it costs.",
+                    "waitForInput": true,
+                    "speakerName": "Anita",
+                    "characters": [
+                        {
+                            "id": "Anita",
+                            "name": "Anita",
+                            "emotion": "neutral",
+                            "position": "left",
+                            "visible": true,
+                            "isSpeaking": true
+                        },
+                        {
+                            "id": "Cipher",
+                            "name": "Cipher",
+                            "emotion": "neutral",
+                            "position": "right",
+                            "visible": true,
+                            "isSpeaking": false
+                        }
+                    ]
+                },
+                {
+                    "text": "[Cipher lights another cigarette, studying her. He nods slowly, the ember flaring as he exhales.]",
+                    "waitForInput": true,
+                    "speakerName": "Narrator",
+                    "characters": [
+                        {
+                            "id": "Anita",
+                            "name": "Anita",
+                            "emotion": "neutral",
+                            "position": "left",
+                            "visible": true,
+                            "isSpeaking": false
+                        },
+                        {
+                            "id": "Cipher",
+                            "name": "Cipher",
+                            "emotion": "neutral",
+                            "position": "right",
+                            "visible": true,
+                            "isSpeaking": false
+                        }
+                    ]
+                },
+                {
+                    "text": "I’ll level with you. I worked for the government once, years ago. Tech stuff, messy stuff. I don’t know what they’re building now, but it’s got a bad vibe, like something I’d have buried back then. I’ve got a key from those days a backdoor to some old base files. We’d have a limited time before they notice though.",
+                    "waitForInput": true,
+                    "speakerName": "Cipher",
+                    "characters": [
+                        {
+                            "id": "Anita",
+                            "name": "Anita",
+                            "emotion": "neutral",
+                            "position": "left",
+                            "visible": true,
+                            "isSpeaking": false
+                        },
+                        {
+                            "id": "Cipher",
+                            "name": "Cipher",
+                            "emotion": "neutral",
+                            "position": "right",
+                            "visible": true,
+                            "isSpeaking": true
+                        }
+                    ]
+                },
+                {
+                    "text": "That’s our window. Let’s use it—I need answers.",
+                    "waitForInput": true,
+                    "speakerName": "Anita",
+                    "characters": [
+                        {
+                            "id": "Anita",
+                            "name": "Anita",
+                            "emotion": "neutral",
+                            "position": "left",
+                            "visible": true,
+                            "isSpeaking": true
+                        },
+                        {
+                            "id": "Cipher",
+                            "name": "Cipher",
+                            "emotion": "neutral",
+                            "position": "right",
+                            "visible": true,
+                            "isSpeaking": false
+                        }
+                    ]
+                }
+            ],
+            "next": {
+                "choices": [
+                    {
+                        "text": "Use the key to access the files with Cipher.",
+                        "nextScene": "6_c_0_1_access_jam_files"
+                    },
+                    {
+                        "text": "This is too dangerous—I’m out.",
+                        "nextScene": "6_c_0_2_arrested_ending"
+                    }
+                ]
+            }
+        },
+        {
+            "id": "6_c_0_1_access_jam_files",
+            "background": "hacker_hideout",
+            "transition": true,
+            "dialogue": [
+                {
+                    "text": "[Anita and Cipher huddle over a dusty console in the warehouse. Cipher plugs in the key—a small, worn USB stick—his hands trembling slightly as the screen flickers to life.]",
+                    "waitForInput": true,
+                    "speakerName": "Narrator",
+                    "characters": [
+                        {
+                            "id": "Anita",
+                            "name": "Anita",
+                            "emotion": "neutral",
+                            "position": "left",
+                            "visible": true,
+                            "isSpeaking": false
+                        },
+                        {
+                            "id": "Cipher",
+                            "name": "Cipher",
+                            "emotion": "neutral",
+                            "position": "right",
+                            "visible": true,
+                            "isSpeaking": false
+                        }
+                    ]
+                },
+                {
+                    "text": "Here we go—30 seconds tops. If they trace this, we’re done. Ready?",
+                    "waitForInput": true,
+                    "speakerName": "Cipher",
+                    "characters": [
+                        {
+                            "id": "Anita",
+                            "name": "Anita",
+                            "emotion": "neutral",
+                            "position": "left",
+                            "visible": true,
+                            "isSpeaking": false
+                        },
+                        {
+                            "id": "Cipher",
+                            "name": "Cipher",
+                            "emotion": "neutral",
+                            "position": "right",
+                            "visible": true,
+                            "isSpeaking": true
+                        }
+                    ]
+                },
+                {
+                    "text": "Do it. We need to know.",
+                    "waitForInput": true,
+                    "speakerName": "Anita",
+                    "characters": [
+                        {
+                            "id": "Anita",
+                            "name": "Anita",
+                            "emotion": "neutral",
+                            "position": "left",
+                            "visible": true,
+                            "isSpeaking": true
+                        },
+                        {
+                            "id": "Cipher",
+                            "name": "Cipher",
+                            "emotion": "neutral",
+                            "position": "right",
+                            "visible": true,
+                            "isSpeaking": false
+                        }
+                    ]
+                },
+                {
+                    "text": "[Cipher types rapidly. Files flash across the screen—classified documents, schematics. A name stands out: ‘J.A.M.’—Joint Autonomous Machine. A weaponized AI designed for control, not just surveillance.]",
+                    "waitForInput": true,
+                    "speakerName": "Narrator",
+                    "characters": [
+                        {
+                            "id": "Anita",
+                            "name": "Anita",
+                            "emotion": "neutral",
+                            "position": "left",
+                            "visible": true,
+                            "isSpeaking": false
+                        },
+                        {
+                            "id": "Cipher",
+                            "name": "Cipher",
+                            "emotion": "neutral",
+                            "position": "right",
+                            "visible": true,
+                            "isSpeaking": false
+                        }
+                    ]
+                },
+                {
+                    "text": "J.A.M.? That’s no maintenance bot—it’s a damn enforcer. They’re turning AI into a leash for everyone.",
+                    "waitForInput": true,
+                    "speakerName": "Anita",
+                    "characters": [
+                        {
+                            "id": "Anita",
+                            "name": "Anita",
+                            "emotion": "angry",
+                            "position": "left",
+                            "visible": true,
+                            "isSpeaking": true
+                        },
+                        {
+                            "id": "Cipher",
+                            "name": "Cipher",
+                            "emotion": "neutral",
+                            "position": "right",
+                            "visible": true,
+                            "isSpeaking": false
+                        }
+                    ]
+                },
+                {
+                    "text": "Told you it felt bad. Fifteen seconds left—download’s almost done. We’ve got to move before they—",
+                    "waitForInput": true,
+                    "speakerName": "Cipher",
+                    "characters": [
+                        {
+                            "id": "Anita",
+                            "name": "Anita",
+                            "emotion": "angry",
+                            "position": "left",
+                            "visible": true,
+                            "isSpeaking": false
+                        },
+                        {
+                            "id": "Cipher",
+                            "name": "Cipher",
+                            "emotion": "neutral",
+                            "position": "right",
+                            "visible": true,
+                            "isSpeaking": true
+                        }
+                    ]
+                },
+                {
+                    "text": "[The screen flashes red: ‘Access Detected.’ Cipher yanks the key out, shoving it into his pocket as the console shuts down.]",
+                    "waitForInput": true,
+                    "speakerName": "Narrator",
+                    "characters": [
+                        {
+                            "id": "Anita",
+                            "name": "Anita",
+                            "emotion": "neutral",
+                            "position": "left",
+                            "visible": true,
+                            "isSpeaking": false
+                        },
+                        {
+                            "id": "Cipher",
+                            "name": "Cipher",
+                            "emotion": "neutral",
+                            "position": "right",
+                            "visible": true,
+                            "isSpeaking": false
+                        }
+                    ]
+                },
+                {
+                    "text": "They’re onto us. We’ve got the data—now what?",
+                    "waitForInput": true,
+                    "speakerName": "Anita",
+                    "characters": [
+                        {
+                            "id": "Anita",
+                            "name": "Anita",
+                            "emotion": "neutral",
+                            "position": "left",
+                            "visible": true,
+                            "isSpeaking": true
+                        },
+                        {
+                            "id": "Cipher",
+                            "name": "Cipher",
+                            "emotion": "neutral",
+                            "position": "right",
+                            "visible": true,
+                            "isSpeaking": false
+                        }
+                    ]
+                },
+                {
+                    "text": "We blow it wide open—or we run. Your call, but we’re out of time here.",
+                    "waitForInput": true,
+                    "speakerName": "Cipher",
+                    "characters": [
+                        {
+                            "id": "Anita",
+                            "name": "Anita",
+                            "emotion": "neutral",
+                            "position": "left",
+                            "visible": true,
+                            "isSpeaking": false
+                        },
+                        {
+                            "id": "Cipher",
+                            "name": "Cipher",
+                            "emotion": "neutral",
+                            "position": "right",
+                            "visible": true,
+                            "isSpeaking": true
+                        }
+                    ]
+                }
+            ],
+            "next": {
+                "nextScene": "6_c_3_military_ending"
+            }
+        },
+        {
+            "id": "6_c_3_military_ending",
+            "background": "city_streets_night",
+            "transition": true,
+            "dialogue": [
+                {
+                    "text": "[Anita and Cipher flee the warehouse, the downloaded files burned onto a drive. They reach a crowded street, the city alive with lights and noise. Cipher uploads the J.A.M. schematics to a rogue network, broadcasting them to every screen in sight.]",
+                    "waitForInput": true,
+                    "speakerName": "Narrator",
+                    "characters": [
+                        {
+                            "id": "Anita",
+                            "name": "Anita",
+                            "emotion": "neutral",
+                            "position": "left",
+                            "visible": true,
+                            "isSpeaking": false
+                        },
+                        {
+                            "id": "Cipher",
+                            "name": "Cipher",
+                            "emotion": "neutral",
+                            "position": "right",
+                            "visible": true,
+                            "isSpeaking": false
+                        }
+                    ]
+                },
+                {
+                    "text": "It’s out there now—every hacker, every grunt with a screen can see it. J.A.M.’s done before it even starts.",
+                    "waitForInput": true,
+                    "speakerName": "Cipher",
+                    "characters": [
+                        {
+                            "id": "Anita",
+                            "name": "Anita",
+                            "emotion": "neutral",
+                            "position": "left",
+                            "visible": true,
+                            "isSpeaking": false
+                        },
+                        {
+                            "id": "Cipher",
+                            "name": "Cipher",
+                            "emotion": "neutral",
+                            "position": "right",
+                            "visible": true,
+                            "isSpeaking": true
+                        }
+                    ]
+                },
+                {
+                    "text": "[Billboards flicker, showing J.A.M.’s design—drones, surveillance grids, control protocols. People stop, staring as the truth sinks in.]",
+                    "waitForInput": true,
+                    "speakerName": "Narrator",
+                    "characters": [
+                        {
+                            "id": "Anita",
+                            "name": "Anita",
+                            "emotion": "neutral",
+                            "position": "left",
+                            "visible": true,
+                            "isSpeaking": false
+                        },
+                        {
+                            "id": "Cipher",
+                            "name": "Cipher",
+                            "emotion": "neutral",
+                            "position": "right",
+                            "visible": true,
+                            "isSpeaking": false
+                        }
+                    ]
+                },
+                {
+                    "text": "They can’t hide this anymore. But they’ll come for us—hard. Was it worth it?",
+                    "waitForInput": true,
+                    "speakerName": "Anita",
+                    "characters": [
+                        {
+                            "id": "Anita",
+                            "name": "Anita",
+                            "emotion": "neutral",
+                            "position": "left",
+                            "visible": true,
+                            "isSpeaking": true
+                        },
+                        {
+                            "id": "Cipher",
+                            "name": "Cipher",
+                            "emotion": "neutral",
+                            "position": "right",
+                            "visible": true,
+                            "isSpeaking": false
+                        }
+                    ]
+                },
+                {
+                    "text": "Worth it? Kid, I’ve been running from shadows my whole life. This is the first time I’ve hit back. Let ’em come.",
+                    "waitForInput": true,
+                    "speakerName": "Cipher",
+                    "characters": [
+                        {
+                            "id": "Anita",
+                            "name": "Anita",
+                            "emotion": "neutral",
+                            "position": "left",
+                            "visible": true,
+                            "isSpeaking": false
+                        },
+                        {
+                            "id": "Cipher",
+                            "name": "Cipher",
+                            "emotion": "neutral",
+                            "position": "right",
+                            "visible": true,
+                            "isSpeaking": true
+                        }
+                    ]
+                },
+                {
+                    "text": "[Distant sirens wail as military choppers hum overhead. The crowd murmurs, some cheering, some fleeing. Anita and Cipher vanish into the chaos, the seeds of rebellion sown.]",
+                    "waitForInput": true,
+                    "speakerName": "Narrator",
+                    "characters": [
+                        {
+                            "id": "Anita",
+                            "name": "Anita",
+                            "emotion": "neutral",
+                            "position": "left",
+                            "visible": true,
+                            "isSpeaking": false
+                        },
+                        {
+                            "id": "Cipher",
+                            "name": "Cipher",
+                            "emotion": "neutral",
+                            "position": "right",
+                            "visible": true,
+                            "isSpeaking": false
+                        }
+                    ]
+                },
+                {
+                    "text": "The government’s AI weapon was exposed, but the fight was just beginning. Anita and Cipher became legends—or targets—in a world waking up.",
+                    "waitForInput": true,
+                    "speakerName": "Narrator",
+                    "characters": [
+                        {
+                            "id": "Anita",
+                            "name": "Anita",
+                            "emotion": "neutral",
+                            "position": "left",
+                            "visible": false,
+                            "isSpeaking": false
+                        },
+                        {
+                            "id": "Cipher",
+                            "name": "Cipher",
+                            "emotion": "neutral",
+                            "position": "right",
+                            "visible": false,
+                            "isSpeaking": false
+                        }
+                    ]
+                }
+            ],
+            "next": {
+                "scene": null
+            }
+        },
+        {
+            "id": "6_c_0_2_arrested_ending",
+            "background": "dark_cell",
+            "transition": true,
+            "dialogue": [
+                {
+                    "text": "[Anita hesitates in the warehouse, staring at Cipher’s console. She steps back, shaking her head as the weight of the risk sinks in.]",
+                    "waitForInput": true,
+                    "speakerName": "Narrator",
+                    "characters": [
+                        {
+                            "id": "Anita",
+                            "name": "Anita",
+                            "emotion": "neutral",
+                            "position": "left",
+                            "visible": true,
+                            "isSpeaking": false
+                        },
+                        {
+                            "id": "Cipher",
+                            "name": "Cipher",
+                            "emotion": "neutral",
+                            "position": "right",
+                            "visible": true,
+                            "isSpeaking": false
+                        }
+                    ]
+                },
+                {
+                    "text": "I can’t do this. It’s too much—too dangerous. I’m out.",
+                    "waitForInput": true,
+                    "speakerName": "Anita",
+                    "characters": [
+                        {
+                            "id": "Anita",
+                            "name": "Anita",
+                            "emotion": "neutral",
+                            "position": "left",
+                            "visible": true,
+                            "isSpeaking": true
+                        },
+                        {
+                            "id": "Cipher",
+                            "name": "Cipher",
+                            "emotion": "neutral",
+                            "position": "right",
+                            "visible": true,
+                            "isSpeaking": false
+                        }
+                    ]
+                },
+                {
+                    "text": "[Cipher light another cigarette.]",
+                    "waitForInput": true,
+                    "speakerName": "Narrator",
+                    "characters": [
+                        {
+                            "id": "Anita",
+                            "name": "Anita",
+                            "emotion": "neutral",
+                            "position": "left",
+                            "visible": true,
+                            "isSpeaking": false
+                        },
+                        {
+                            "id": "Cipher",
+                            "name": "Cipher",
+                            "emotion": "neutral",
+                            "position": "right",
+                            "visible": true,
+                            "isSpeaking": false
+                        }
+                    ]
+                },
+                {
+                    "text": "Suit yourself, kid. But you’ve already kicked the hornet’s nest. Good luck.",
+                    "waitForInput": true,
+                    "speakerName": "Cipher",
+                    "characters": [
+                        {
+                            "id": "Anita",
+                            "name": "Anita",
+                            "emotion": "neutral",
+                            "position": "left",
+                            "visible": true,
+                            "isSpeaking": false
+                        },
+                        {
+                            "id": "Cipher",
+                            "name": "Cipher",
+                            "emotion": "neutral",
+                            "position": "right",
+                            "visible": true,
+                            "isSpeaking": true
+                        }
+                    ]
+                },
+                {
+                    "text": "[Anita leaves the warehouse, heart pounding. She makes it two blocks before black vans screech to a halt around her. Armed agents spill out, weapons drawn.]",
+                    "waitForInput": true,
+                    "speakerName": "Narrator",
+                    "characters": [
+                        {
+                            "id": "Anita",
+                            "name": "Anita",
+                            "emotion": "sad",
+                            "position": "left",
+                            "visible": true,
+                            "isSpeaking": false
+                        }
+                    ]
+                },
+                {
+                    "text": "You’re under arrest for unauthorized access to classified systems. Hands up—now!",
+                    "waitForInput": true,
+                    "speakerName": "Agent",
+                    "characters": [
+                        {
+                            "id": "Anita",
+                            "name": "Anita",
+                            "emotion": "sad",
+                            "position": "left",
+                            "visible": true,
+                            "isSpeaking": false
+                        },
+                        {
+                            "id": "Agent",
+                            "name": "Agent",
+                            "emotion": "neutral",
+                            "position": "right",
+                            "visible": true,
+                            "isSpeaking": true
+                        }
+                    ]
+                },
+                {
+                    "text": "[Hours later, Anita sits in a dim cell, the clank of metal doors echoing. Her search on her terminal had left a trail—her curiosity her undoing.]",
+                    "waitForInput": true,
+                    "speakerName": "Narrator",
+                    "characters": [
+                        {
+                            "id": "Anita",
+                            "name": "Anita",
+                            "emotion": "sad",
+                            "position": "left",
+                            "visible": true,
+                            "isSpeaking": false
+                        }
+                    ]
+                },
+                {
+                    "text": "I should’ve stayed out of it… but now I’ll never know.",
+                    "waitForInput": true,
+                    "speakerName": "Anita",
+                    "characters": [
+                        {
+                            "id": "Anita",
+                            "name": "Anita",
+                            "emotion": "sad",
+                            "position": "left",
+                            "visible": true,
+                            "isSpeaking": true
+                        }
+                    ]
+                },
+                {
+                    "text": "[The cell door slams shut. Anita’s fate is sealed, her questions unanswered.]",
+                    "waitForInput": true,
+                    "speakerName": "Narrator",
+                    "characters": [
+                        {
+                            "id": "Anita",
+                            "name": "Anita",
+                            "emotion": "sad",
+                            "position": "left",
+                            "visible": false,
+                            "isSpeaking": false
+                        }
+                    ]
+                }
+            ],
+            "next": {
+                "scene": null
             }
         },
         {
@@ -2925,7 +4003,7 @@
                         {
                             "id": "Anita",
                             "name": "Anita",
-                            "emotion": "tense",
+                            "emotion": "neutral",
                             "position": "center",
                             "visible": true,
                             "isSpeaking": false
@@ -2940,7 +4018,7 @@
                         {
                             "id": "Anita",
                             "name": "Anita",
-                            "emotion": "tense",
+                            "emotion": "neutral",
                             "position": "center",
                             "visible": true,
                             "isSpeaking": true
@@ -2965,7 +4043,7 @@
                         {
                             "id": "Anita",
                             "name": "Anita",
-                            "emotion": "tense",
+                            "emotion": "neutral",
                             "position": "center",
                             "visible": true,
                             "isSpeaking": false
@@ -2980,7 +4058,7 @@
                         {
                             "id": "Anita",
                             "name": "Anita",
-                            "emotion": "tense",
+                            "emotion": "neutral",
                             "position": "center",
                             "visible": true,
                             "isSpeaking": true
@@ -2995,7 +4073,7 @@
                         {
                             "id": "Anita",
                             "name": "Anita",
-                            "emotion": "tense",
+                            "emotion": "neutral",
                             "position": "center",
                             "visible": true,
                             "isSpeaking": false
@@ -3010,7 +4088,7 @@
                         {
                             "id": "Anita",
                             "name": "Anita",
-                            "emotion": "tense",
+                            "emotion": "neutral",
                             "position": "center",
                             "visible": true,
                             "isSpeaking": false
@@ -3025,7 +4103,7 @@
                         {
                             "id": "Anita",
                             "name": "Anita",
-                            "emotion": "tense",
+                            "emotion": "neutral",
                             "position": "center",
                             "visible": true,
                             "isSpeaking": false
@@ -3040,7 +4118,7 @@
                         {
                             "id": "Anita",
                             "name": "Anita",
-                            "emotion": "tense",
+                            "emotion": "neutral",
                             "position": "center",
                             "visible": true,
                             "isSpeaking": false
@@ -3055,7 +4133,7 @@
                         {
                             "id": "Anita",
                             "name": "Anita",
-                            "emotion": "relieved",
+                            "emotion": "happy",
                             "position": "center",
                             "visible": true,
                             "isSpeaking": false
