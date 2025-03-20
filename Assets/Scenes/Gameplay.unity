@@ -496,7 +496,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!95 &76910698
 Animator:
   serializedVersion: 7
@@ -640,7 +640,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &101221405
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1563,7 +1563,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1788485692
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1953,7 +1953,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2082106470
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2148,7 +2148,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!222 &1404402159122083938
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2461,7 +2461,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: ea954d28a7c9f0845bb504360c1a7e4f, type: 3}
+  m_Texture: {fileID: 2800000, guid: 30fe9c623c3323d49807d795e3e7dcdd, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -2679,12 +2679,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u0448\u044B\u0432\u0430\u044B\u0432 \u044B\u0432\u0430\u0449 \u043B\u0432\u0449\u0430\u043B\u044B\u0432\u0449\u0430
-    \u043B\u044B\u0432\u0449\u0430\u043B \u044B\u0432\u0449\u0430\u043B \u044B\u0432\u0449\u0430\u043B\u044B\u0432
-    \u0449\u043B\u044B\u0432\u0430\u0449 \u043B\u0432\u0449\u0430 \u043B\u044B\u0432\u0449\u0430
-    \u043B\u044B\u0432\u0449 \u0430\u043B\u044B\u0432\u0449 \u0430\u043B\u044B\u0432\u0449\u0430
-    \u043B\u044B\u0432\u0430\u0449 \u043B\u044B\u0432 \u0430\u0449\u043B\u044B\u0432\u0430\u0449
-    \u044B\u0432"
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4de8ce196cd094b4f92e435171ca43cd, type: 2}
   m_sharedMaterial: {fileID: -7371749835394407957, guid: 4de8ce196cd094b4f92e435171ca43cd, type: 2}
@@ -2775,7 +2770,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Somebody
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4de8ce196cd094b4f92e435171ca43cd, type: 2}
   m_sharedMaterial: {fileID: -7371749835394407957, guid: 4de8ce196cd094b4f92e435171ca43cd, type: 2}
