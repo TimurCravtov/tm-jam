@@ -3,7 +3,7 @@
         {
             "id": "start",
             "background": "black",
-            "music": "test1",
+            "music": "Lacrimosa",
             "transition": true,
             "dialogue": [
                 {
@@ -44,7 +44,7 @@
         {
             "id": "1_starting_apartment",
             "background": "anitas_house",
-            "music": "test2",
+            "music": "SimulationTheory",
             "transition": true,
             "dialogue": [
                 {
@@ -627,6 +627,7 @@
         {
             "id": "3_infidelity_2",
             "background": "room_with_android_in_bed",
+            "music": "IntoTheDarkness",
             "transition": true,
             "dialogue": [
                 {
@@ -2632,6 +2633,7 @@
         {
             "id": "6_c_3_military_ending",
             "background": "city_streets_night",
+            "music": "Symphony",
             "transition": true,
             "dialogue": [
                 {
@@ -2803,6 +2805,7 @@
         {
             "id": "6_c_0_2_arrested_ending",
             "background": "dark_cell",
+            "music": "Dramatic",
             "transition": true,
             "dialogue": [
                 {
@@ -3142,6 +3145,7 @@
         {
             "id": "6_a_the_suppressed_ending",
             "background": "it_specialist_office",
+            "music": "Supressed",
             "transition": true,
             "dialogue": [
                 {
@@ -3514,6 +3518,7 @@
         {
             "id": "6_b_1_the_suppressed_ending",
             "background": "it_specialist_office",
+            "music": "Domination",
             "transition": true,
             "dialogue": [
                 {
@@ -4150,6 +4155,7 @@
         {
             "id": "6_b_9_aftermath",
             "background": "city_streets",
+            "music": "Revelation",
             "transition": true,
             "dialogue": [
                 {
