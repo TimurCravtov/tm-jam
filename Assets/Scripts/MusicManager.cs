@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using System.Collections;
 
 public class MusicManager : MonoBehaviour
@@ -8,8 +9,12 @@ public class MusicManager : MonoBehaviour
     public AudioSource audioSource;  // Main AudioSource for background music
     public AudioSource crossfadeSource; // Secondary AudioSource for crossfade
 
+    public AudioClip titleMusic;
     public AudioClip currentMusicClip;
     private bool isCrossfading = false;
+
+    private string[] resetMusicScenes = { "TitleScene", "SaveOptions", "Options", "LoadOptions" };
+
 
     void Awake()
     {
@@ -31,6 +36,34 @@ public class MusicManager : MonoBehaviour
 
         audioSource.loop = true;
         crossfadeSource.loop = true;
+
+        // Listen for scene changes
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    void Start()
+    {
+        // Play title music when the game starts
+        if (titleMusic != null && audioSource.clip == null)
+        {
+            Debug.Log("Playing Title Screen Music: " + titleMusic.name);
+            PlayMusic(titleMusic, fadeDuration: 1.0f, forceRestart: true);
+        }
+    }
+
+    void OnSceneLoaded(UnityEngine.SceneManagement.Scene scene, LoadSceneMode mode)
+    {
+        Debug.Log("Scene Loaded: " + scene.name);
+
+        // If entering title/lobby menu, reset to title music
+        if (System.Array.Exists(resetMusicScenes, s => s == scene.name))
+        {
+            if (titleMusic != null && currentMusicClip != titleMusic)
+            {
+                Debug.Log("🎵 Resetting music for scene: " + scene.name);
+                PlayMusic(titleMusic, fadeDuration: 1.0f, forceRestart: true);
+            }
+        }
     }
 
     public void PlayMusic(AudioClip newClip, float fadeDuration = 1.0f, bool forceRestart = false)

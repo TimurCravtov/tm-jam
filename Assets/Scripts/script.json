@@ -133,6 +133,7 @@
         {
             "id": "1_a_response",
             "background": "anitas_house",
+            "music": "SimulationTheory",
             "transition": false,
             "dialogue": [
                 {
@@ -189,6 +190,7 @@
         {
             "id": "1_b_response",
             "background": "anitas_house",
+            "music": "SimulationTheory",
             "transition": false,
             "dialogue": [
                 {
@@ -245,6 +247,7 @@
         {
             "id": "1_converge",
             "background": "anitas_house",
+            "music": "SimulationTheory",
             "transition": true,
             "dialogue": [
                 {
@@ -349,6 +352,7 @@
         {
             "id": "1_a_night",
             "background": "anitas_house",
+            "music": "SimulationTheory",
             "transition": true,
             "dialogue": [
                 {
@@ -421,6 +425,7 @@
         {
             "id": "1_b_night",
             "background": "anitas_house",
+            "music": "SimulationTheory",
             "transition": true,
             "dialogue": [
                 {
@@ -493,6 +498,7 @@
         {
             "id": "1_night_converge",
             "background": "anitas_house",
+            "music": "SimulationTheory",
             "transition": true,
             "dialogue": [
                 {
@@ -564,6 +570,7 @@
         {
             "id": "2_infidelity_1",
             "background": "anitas_house",
+            "music": "SimulationTheory",
             "transition": true,
             "dialogue": [
                 {
@@ -778,6 +785,7 @@
         {
             "id": "3_a_confront",
             "background": "room_with_android_in_bed",
+            "music": "IntoTheDarkness",
             "transition": true,
             "dialogue": [
                 {
@@ -850,6 +858,7 @@
         {
             "id": "3_b_confront",
             "background": "room_with_android_in_bed",
+            "music": "IntoTheDarkness",
             "transition": true,
             "dialogue": [
                 {
@@ -922,6 +931,7 @@
         {
             "id": "3_converge",
             "background": "room_with_android_in_bed",
+            "music": "IntoTheDarkness",
             "transition": true,
             "dialogue": [
                 {
@@ -1101,6 +1111,7 @@
         {
             "id": "4_discarded",
             "background": "office",
+            "music": "IntoTheDarkness",
             "transition": true,
             "dialogue": [
                 {
@@ -1264,6 +1275,7 @@
         {
             "id": "4_a_reaction",
             "background": "office",
+            "music": "IntoTheDarkness",
             "transition": true,
             "dialogue": [
                 {
@@ -1320,6 +1332,7 @@
         {
             "id": "4_b_reaction",
             "background": "office",
+            "music": "IntoTheDarkness",
             "transition": true,
             "dialogue": [
                 {
@@ -1376,6 +1389,7 @@
         {
             "id": "4_converge",
             "background": "office",
+            "music": "IntoTheDarkness",
             "transition": true,
             "dialogue": [
                 {
@@ -1469,6 +1483,7 @@
         {
             "id": "5_the_last_job",
             "background": "captcha_office",
+            "music": "IntoTheDarkness",
             "transition": true,
             "dialogue": [
                 {
@@ -1684,6 +1699,7 @@
         {
             "id": "5_a_reflection",
             "background": "captcha_office",
+            "music": "IntoTheDarkness",
             "transition": true,
             "dialogue": [
                 {
@@ -1724,6 +1740,7 @@
         {
             "id": "5_b_reflection",
             "background": "captcha_office",
+            "music": "IntoTheDarkness",
             "transition": true,
             "dialogue": [
                 {
@@ -1764,6 +1781,7 @@
         {
             "id": "5_converge",
             "background": "captcha_office",
+            "music": "IntoTheDarkness",
             "transition": true,
             "dialogue": [
                 {
@@ -1798,6 +1816,7 @@
         {
             "id": "6_talk_with_it_specialist",
             "background": "it_specialist_office",
+            "music": "IntoTheDarkness",
             "transition": true,
             "dialogue": [
                 {
@@ -1913,6 +1932,7 @@
         {
             "id": "6_c_question_it_specialist",
             "background": "it_specialist_office",
+            "music": "IntoTheDarkness",
             "transition": true,
             "dialogue": [
                 {
@@ -2144,6 +2164,7 @@
         {
             "id": "6_c_0_meet_old_hacker",
             "background": "hacker_hideout",
+            "music": "IntoTheDarkness",
             "transition": true,
             "dialogue": [
                 {
@@ -2416,6 +2437,7 @@
         {
             "id": "6_c_0_1_access_jam_files",
             "background": "hacker_hideout",
+            "music": "IntoTheDarkness",
             "transition": true,
             "dialogue": [
                 {
