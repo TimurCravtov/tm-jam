@@ -23,7 +23,9 @@ public class SceneManagerFinal : MonoBehaviour
         // Start text animation after fade-in completes
         if (textAnimator != null)
         {
+            
             textAnimator.SetTrigger("StartTextAnimation");
+            yield return new WaitForSeconds(30f);
         }
 
         SceneManager.LoadScene("TitleScene");

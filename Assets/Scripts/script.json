@@ -115,7 +115,9 @@
                     ]
                 }
             ],
-            "next": {
+            "next":
+            
+            {
                 "choices": [
                     {
                         "text": "I make real art with feeling.",

@@ -205,7 +205,7 @@ public class ScriptPlotManagerScript : MonoBehaviour
     }
 
 
-    public IEnumerator HandleNextNavigation()
+    public void HandleNextNavigation()
     {
         // Check if there's a direct next scene
         if (!string.IsNullOrEmpty(currentScene.next.scene))
@@ -231,7 +231,7 @@ public class ScriptPlotManagerScript : MonoBehaviour
         }
         else
         {
-            yield return StartCoroutine(sceneTransitionManager.Fade("FadeOut", "FadeIn", 1f));
+          StartCoroutine(sceneTransitionManager.Fade("FadeOut", "FadeIn", 1f));
             SceneManager.LoadScene("EndingScene");
         }
     }
