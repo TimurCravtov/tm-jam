@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      hacker_hideout_0: -7139871948268673698
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

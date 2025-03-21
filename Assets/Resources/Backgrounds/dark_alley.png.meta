@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      dark_alley_0: -5178398501742250785
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

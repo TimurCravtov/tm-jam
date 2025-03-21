@@ -1997,7 +1997,7 @@
                         {
                             "id": "IT_Specialist",
                             "name": "IT Specialist",
-                            "emotion": "nervous",
+                            "emotion": "neutral",
                             "position": "right",
                             "visible": true,
                             "isSpeaking": false
@@ -2020,7 +2020,7 @@
                         {
                             "id": "IT_Specialist",
                             "name": "IT Specialist",
-                            "emotion": "nervous",
+                            "emotion": "neutral",
                             "position": "right",
                             "visible": true,
                             "isSpeaking": true
@@ -2043,7 +2043,7 @@
                         {
                             "id": "IT_Specialist",
                             "name": "IT Specialist",
-                            "emotion": "nervous",
+                            "emotion": "neutral",
                             "position": "right",
                             "visible": true,
                             "isSpeaking": false
@@ -2066,7 +2066,7 @@
                         {
                             "id": "IT_Specialist",
                             "name": "IT Specialist",
-                            "emotion": "nervous",
+                            "emotion": "neutral",
                             "position": "right",
                             "visible": true,
                             "isSpeaking": false
@@ -2089,7 +2089,7 @@
                         {
                             "id": "IT_Specialist",
                             "name": "IT Specialist",
-                            "emotion": "nervous",
+                            "emotion": "neutral",
                             "position": "right",
                             "visible": true,
                             "isSpeaking": true

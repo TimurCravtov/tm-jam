@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      captcha_office_0: -6669973634299221097
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
