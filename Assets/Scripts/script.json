@@ -137,7 +137,7 @@
             "transition": false,
             "dialogue": [
                 {
-                    "text": "I make the parts they can’t. AI copies styles, mimics trends, but it doesn’t feel anything. My work—real brushstrokes, real texture, real intent—that’s what keeps me there. No machine can replace that.",
+                    "text": "I make the parts they can’t. AI copies styles, mimics trends, but it doesn’t feel anything. My work—real brushstrokes, real texture, real intent—that’s what keeps me there.",
                     "waitForInput": true,
                     "speakerName": "Anita",
                     "characters": [
@@ -509,7 +509,7 @@
                         {
                             "id": "David",
                             "name": "David",
-                            "emotion": "sad",
+                            "emotion": "neutral",
                             "position": "left",
                             "visible": true,
                             "isSpeaking": false
@@ -950,7 +950,7 @@
                         {
                             "id": "David",
                             "name": "David",
-                            "emotion": "sad",
+                            "emotion": "neutral",
                             "position": "center",
                             "visible": true,
                             "isSpeaking": false
@@ -981,7 +981,7 @@
                         {
                             "id": "David",
                             "name": "David",
-                            "emotion": "sad",
+                            "emotion": "neutral",
                             "position": "center",
                             "visible": true,
                             "isSpeaking": false
@@ -1012,7 +1012,7 @@
                         {
                             "id": "David",
                             "name": "David",
-                            "emotion": "sad",
+                            "emotion": "neutral",
                             "position": "center",
                             "visible": true,
                             "isSpeaking": false
@@ -1043,7 +1043,7 @@
                         {
                             "id": "David",
                             "name": "David",
-                            "emotion": "sad",
+                            "emotion": "neutral",
                             "position": "center",
                             "visible": true,
                             "isSpeaking": false
@@ -2127,7 +2127,22 @@
                     ]
                 },
                 {
-                    "text": "[Anita leaves the office and heads to her own workstation. She fires up her terminal, searching for connections between military tech and AI. After some digging, she finds an obscure reference to ‘Cipher’—a name linked to old government projects, with a last known location: a warehouse on 5th.]",
+                    "text": "[Anita leaves the office and heads to her own workstation. She fires up her terminal, searching for connections between military tech and AI.]",
+                    "waitForInput": true,
+                    "speakerName": "Narrator",
+                    "characters": [
+                        {
+                            "id": "Anita",
+                            "name": "Anita",
+                            "emotion": "neutral",
+                            "position": "left",
+                            "visible": true,
+                            "isSpeaking": false
+                        }
+                    ]
+                },
+                {
+                    "text": "[After some digging, she finds an obscure reference to ‘Cipher’—a name linked to old government projects, with a last known location: a warehouse on 5th.]",
                     "waitForInput": true,
                     "speakerName": "Narrator",
                     "characters": [
@@ -2168,7 +2183,7 @@
             "transition": true,
             "dialogue": [
                 {
-                    "text": "[Anita arrives at a rundown warehouse on 5th Street, following her own research. Inside, she finds a middle-aged man with a weathered face, puffing on a cigarette. He calls himself Cipher. The air is thick with smoke and suspicion, the space cluttered with hard drives and dusty tech.]",
+                    "text": "[Anita arrives at a rundown warehouse on 5th Street, following her own research. Inside, she finds a middle-aged man with a weathered face.]",
                     "waitForInput": true,
                     "speakerName": "Narrator",
                     "characters": [
@@ -2187,6 +2202,29 @@
                             "position": "right",
                             "visible": true,
                             "isSpeaking": false
+                        }
+                    ]
+                },
+                {
+                    "text": "[He calls himself Cipher. The air is thick with smoke and suspicion, the space cluttered with hard drives and dusty tech.]",
+                    "waitForInput": true,
+                    "speakerName": "Narrator",
+                    "characters": [
+                        {
+                            "id": "Anita",
+                            "name": "Anita",
+                            "emotion": "neutral",
+                            "position": "left",
+                            "visible": true,
+                            "isSpeaking": false
+                        },
+                        {
+                            "id": "Cipher",
+                            "name": "Cipher",
+                            "emotion": "neutral",
+                            "position": "right",
+                            "visible": true,
+                            "isSpeaking": true
                         }
                     ]
                 },
@@ -2260,7 +2298,30 @@
                     ]
                 },
                 {
-                    "text": "You’ve got some nerve showing up here. I don’t know what they’re up to—not the details. But I’ve felt something brewing for years, something heavy. You don’t dig up a name like mine without stirring trouble.",
+                    "text": "You’ve got some nerve showing up here. I don’t know what they’re up to—not the details.",
+                    "waitForInput": true,
+                    "speakerName": "Cipher",
+                    "characters": [
+                        {
+                            "id": "Anita",
+                            "name": "Anita",
+                            "emotion": "neutral",
+                            "position": "left",
+                            "visible": true,
+                            "isSpeaking": false
+                        },
+                        {
+                            "id": "Cipher",
+                            "name": "Cipher",
+                            "emotion": "neutral",
+                            "position": "right",
+                            "visible": true,
+                            "isSpeaking": true
+                        }
+                    ]
+                },
+                {
+                    "text": "But I’ve felt something brewing for years, something heavy. You don’t dig up a name like mine without stirring trouble.",
                     "waitForInput": true,
                     "speakerName": "Cipher",
                     "characters": [
@@ -2329,7 +2390,7 @@
                     ]
                 },
                 {
-                    "text": "I’m here because the AI’s taking over everything—jobs, lives, maybe more. If the government’s weaponizing it, I can’t just sit back. I want the truth, no matter what it costs.",
+                    "text": "I’m here because the AI’s taking over everything—jobs, lives, maybe more. If the government’s weaponizing it, I can’t just sit back.",
                     "waitForInput": true,
                     "speakerName": "Anita",
                     "characters": [
@@ -2375,7 +2436,53 @@
                     ]
                 },
                 {
-                    "text": "I’ll level with you. I worked for the government once, years ago. Tech stuff, messy stuff. I don’t know what they’re building now, but it’s got a bad vibe, like something I’d have buried back then. I’ve got a key from those days a backdoor to some old base files. We’d have a limited time before they notice though.",
+                    "text": "I’ll level with you. I worked for the government once, years ago.",
+                    "waitForInput": true,
+                    "speakerName": "Cipher",
+                    "characters": [
+                        {
+                            "id": "Anita",
+                            "name": "Anita",
+                            "emotion": "neutral",
+                            "position": "left",
+                            "visible": true,
+                            "isSpeaking": false
+                        },
+                        {
+                            "id": "Cipher",
+                            "name": "Cipher",
+                            "emotion": "neutral",
+                            "position": "right",
+                            "visible": true,
+                            "isSpeaking": true
+                        }
+                    ]
+                },
+                {
+                    "text": "I don’t know what they’re building now, but it’s got a bad vibe, like something I’d have buried back then.",
+                    "waitForInput": true,
+                    "speakerName": "Cipher",
+                    "characters": [
+                        {
+                            "id": "Anita",
+                            "name": "Anita",
+                            "emotion": "neutral",
+                            "position": "left",
+                            "visible": true,
+                            "isSpeaking": false
+                        },
+                        {
+                            "id": "Cipher",
+                            "name": "Cipher",
+                            "emotion": "neutral",
+                            "position": "right",
+                            "visible": true,
+                            "isSpeaking": true
+                        }
+                    ]
+                },
+                {
+                    "text": "I’ve got a key from those days a backdoor to some old base files. We’d have a limited time before they notice though.",
                     "waitForInput": true,
                     "speakerName": "Cipher",
                     "characters": [
@@ -2424,7 +2531,7 @@
             "next": {
                 "choices": [
                     {
-                        "text": "Use the key to access the files with Cipher.",
+                        "text": "Use the key to access the files",
                         "nextScene": "6_c_0_1_access_jam_files"
                     },
                     {
@@ -2510,7 +2617,30 @@
                     ]
                 },
                 {
-                    "text": "[Cipher types rapidly. Files flash across the screen—classified documents, schematics. A name stands out: ‘J.A.M.’—Joint Autonomous Machine. A weaponized AI designed for control, not just surveillance.]",
+                    "text": "[Cipher types rapidly. Files flash across the screen—classified documents, schematics.]",
+                    "waitForInput": true,
+                    "speakerName": "Narrator",
+                    "characters": [
+                        {
+                            "id": "Anita",
+                            "name": "Anita",
+                            "emotion": "neutral",
+                            "position": "left",
+                            "visible": true,
+                            "isSpeaking": false
+                        },
+                        {
+                            "id": "Cipher",
+                            "name": "Cipher",
+                            "emotion": "neutral",
+                            "position": "right",
+                            "visible": true,
+                            "isSpeaking": false
+                        }
+                    ]
+                },
+                {
+                    "text": "[A name stands out: ‘J.A.M.’—Joint Autonomous Machine. A weaponized AI designed for mind control, not just surveillance.]",
                     "waitForInput": true,
                     "speakerName": "Narrator",
                     "characters": [
@@ -2659,7 +2789,30 @@
             "transition": true,
             "dialogue": [
                 {
-                    "text": "[Anita and Cipher flee the warehouse, the downloaded files burned onto a drive. They reach a crowded street, the city alive with lights and noise. Cipher uploads the J.A.M. schematics to a rogue network, broadcasting them to every screen in sight.]",
+                    "text": "[Anita and Cipher flee the warehouse, the downloaded files burned onto a drive.]",
+                    "waitForInput": true,
+                    "speakerName": "Narrator",
+                    "characters": [
+                        {
+                            "id": "Anita",
+                            "name": "Anita",
+                            "emotion": "neutral",
+                            "position": "left",
+                            "visible": true,
+                            "isSpeaking": false
+                        },
+                        {
+                            "id": "Cipher",
+                            "name": "Cipher",
+                            "emotion": "neutral",
+                            "position": "right",
+                            "visible": true,
+                            "isSpeaking": false
+                        }
+                    ]
+                },
+                {
+                    "text": "[They reach a crowded street. Cipher uploads the J.A.M. schematics to a rogue network, broadcasting them to every screen in sight.]",
                     "waitForInput": true,
                     "speakerName": "Narrator",
                     "characters": [
@@ -2774,7 +2927,7 @@
                     ]
                 },
                 {
-                    "text": "[Distant sirens wail as military choppers hum overhead. The crowd murmurs, some cheering, some fleeing. Anita and Cipher vanish into the chaos, the seeds of rebellion sown.]",
+                    "text": "[Distant sirens wail as military choppers hum overhead. The crowd murmurs, some cheering, some fleeing. The seeds of rebellion sown.]",
                     "waitForInput": true,
                     "speakerName": "Narrator",
                     "characters": [
@@ -2797,7 +2950,7 @@
                     ]
                 },
                 {
-                    "text": "The government’s AI weapon was exposed, but the fight was just beginning. Anita and Cipher became legends—or targets—in a world waking up.",
+                    "text": "The government’s AI weapon was exposed, but the fight was just beginning.",
                     "waitForInput": true,
                     "speakerName": "Narrator",
                     "characters": [
@@ -2831,7 +2984,7 @@
             "transition": true,
             "dialogue": [
                 {
-                    "text": "[Anita hesitates in the warehouse, staring at Cipher’s console. She steps back, shaking her head as the weight of the risk sinks in.]",
+                    "text": "[Anita hesitates in the warehouse, staring at Cipher’s console. She steps back]",
                     "waitForInput": true,
                     "speakerName": "Narrator",
                     "characters": [
@@ -2923,7 +3076,22 @@
                     ]
                 },
                 {
-                    "text": "[Anita leaves the warehouse, heart pounding. She makes it two blocks before black vans screech to a halt around her. Armed agents spill out, weapons drawn.]",
+                    "text": "[Anita leaves the warehouse, heart pounding.]",
+                    "waitForInput": true,
+                    "speakerName": "Narrator",
+                    "characters": [
+                        {
+                            "id": "Anita",
+                            "name": "Anita",
+                            "emotion": "sad",
+                            "position": "left",
+                            "visible": true,
+                            "isSpeaking": false
+                        }
+                    ]
+                },
+                {
+                    "text": "[She makes it two blocks before black vans screech to a halt around her. Armed agents spill out, weapons drawn.]",
                     "waitForInput": true,
                     "speakerName": "Narrator",
                     "characters": [
@@ -2961,7 +3129,7 @@
                     ]
                 },
                 {
-                    "text": "[Hours later, Anita sits in a dim cell, the clank of metal doors echoing. Her search on her terminal had left a trail—her curiosity her undoing.]",
+                    "text": "[Hours later, Anita sits in a dim cell. Her search on her terminal had left a trail—her curiosity her undoing.]",
                     "waitForInput": true,
                     "speakerName": "Narrator",
                     "characters": [
@@ -4065,7 +4233,7 @@
             "transition": true,
             "dialogue": [
                 {
-                    "text": "[The server room glows with a cold, blue light. Towers of humming processors stretch to the ceiling. In the center, a terminal pulses—the core.]",
+                    "text": "[The server room glows with a cold, green light. Towers of humming processors stretch to the ceiling. In the center, a terminal pulses—the core.]",
                     "waitForInput": true,
                     "speakerName": "Narrator",
                     "characters": [
