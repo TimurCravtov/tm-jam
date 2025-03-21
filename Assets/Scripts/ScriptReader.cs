@@ -2,35 +2,24 @@ using System;
 using System.Collections.Generic;
 
 [Serializable]
-public class Character
+public class DialogueCharacter
 {
-    public string id;
-    public string name;
-    public string sprite_dir;
-    public string position;
-    public int[] initialRect;
-    public bool visible;
-    public Dictionary<string, string> animations;
+    public string id;          // Character ID
+    public string name;        // Character display name
+    public string emotion;     // Current emotion/expression
+    public string position;    // Position on screen (left, center, right)
+    public bool visible;       // Whether the character is visible
+    public bool isSpeaking;    // Whether this character is the current speaker
 }
 
 [Serializable]
 public class Dialogue
 {
-    public string character;
-    public string text;
-    public string emotion;
-    public string position;
-    public bool visible;
+    public string text;             // The dialogue text
     public string animation;
-    public bool waitForInput;
-    public List<Character> otherCharacters;
-}
-
-[Serializable]
-public class SceneTransition
-{
-    public string type;
-    public float duration;
+    public string speakerName;
+    public bool waitForInput;       // Whether to wait for user input before continuing
+    public List<DialogueCharacter> characters;  // All characters in the scene for this dialogue
 }
 
 [Serializable]
@@ -52,14 +41,14 @@ public class Scene
 {
     public string id;
     public string background;
-    public SceneTransition transitions;
+    public bool transition;
     public List<Dialogue> dialogue;
     public SceneNext next;
+    public string music;
 }
 
 [Serializable]
 public class GameScript
 {
-    public List<Character> characters;
-    public List<Scene> scenes;
+    public List<Scene> scenes;  // Removed the characters list
 }

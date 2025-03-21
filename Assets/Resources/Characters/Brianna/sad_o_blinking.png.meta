@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      sad_o_blinking_0: 3368043401657876669
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
