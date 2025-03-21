@@ -61,3 +61,66 @@ The game follows **Anita**, an artist navigating a world increasingly controlled
 ---
 Thank you for checking out JAM?! We hope you enjoy the experience and the philosophical dilemmas it presents. 🚀
 
+Mermaid diagram of the plot:
+
+```mermaid
+graph TD
+    A[start] --> B[1_starting_apartment]
+    B -->|Choice: I make real art| C[1_a_response]
+    B -->|Choice: I'll fight| D[1_b_response]
+    C --> E[1_converge]
+    D --> E
+    E -->|Choice: Plug it in| F[1_a_night]
+    E -->|Choice: Charge elsewhere| G[1_b_night]
+    F --> H[1_night_converge]
+    G --> H
+    H --> I[2_infidelity_1]
+    I --> J[3_infidelity_2]
+    J -->|Choice: Get out| K[3_a_confront]
+    J -->|Choice: How could you?| L[3_b_confront]
+    K --> M[3_converge]
+    L --> M
+    M --> N[4_discarded]
+    N -->|Choice: Unfair!| O[4_a_reaction]
+    N -->|Choice: Should’ve seen it| P[4_b_reaction]
+    O --> Q[4_converge]
+    P --> Q
+    Q --> R[5_the_last_job]
+    R -->|Choice: Cog in machine| S[5_a_reflection]
+    R -->|Choice: Can’t take spirit| T[5_b_reflection]
+    S --> U[5_converge]
+    T --> U
+    U -->|Choice: Go home| R
+    U -->|Choice: Talk to IT| V[6_talk_with_it_specialist]
+    V -->|Choice: Terrifying| W[6_a_reaction]
+    V -->|Choice: Stop it| X[6_b_reaction]
+    V -->|Choice: Government weapon?| Y[6_c_question_it_specialist]
+    W --> Z[6_converge]
+    X --> Z
+    Z -->|Choice: What glitches?| AA[6_b_0_ai_misinformation]
+    Z -->|Choice: Don’t want to know| AB[6_a_the_suppressed_ending]
+    AA -->|Choice: How can they?| AC[6_b_0_a_reaction]
+    AA -->|Choice: No fixing?| AD[6_b_0_b_reaction]
+    AC --> AE[6_b_0_converge]
+    AD --> AE
+    AE -->|Choice: Set it up| AF[6_b_5_meeting]
+    AE -->|Choice: Think about it| AG[6_b_1_the_suppressed_ending]
+    AF -->|Choice: Tell me more| AH[6_b_6_plan]
+    AF -->|Choice: Not ready| AG
+    AH -->|Choice: I’ll do it| AI[6_b_7_infiltration]
+    AH -->|Choice: Can’t risk it| AG
+    AI --> AJ[6_b_8_core]
+    AJ --> AK[6_b_9_aftermath]
+    Y --> AL[6_c_0_meet_old_hacker]
+    AL -->|Choice: Use the key| AM[6_c_0_1_access_jam_files]
+    AL -->|Choice: Too dangerous| AN[6_c_0_2_arrested_ending]
+    AM --> AO[6_c_3_military_ending]
+    
+    AB:::ending
+    AG:::ending
+    AK:::ending
+    AN:::ending
+    AO:::ending
+
+    classDef ending fill:#f9f,stroke:#333,stroke-width:2px;
+```
